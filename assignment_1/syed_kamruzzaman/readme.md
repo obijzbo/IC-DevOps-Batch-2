@@ -102,3 +102,7 @@ ___
 | Pull changes from remote repository | `git pull origin <branch name>` |
 | Add a remote repository | `git remote add origin ssh://git@github.com/<username>/<repository-name>.git` |
 | Set a repository's origin branch to SSH | `git remote set-url origin ssh://git@github.com/<username>/<repository-name>.git` |
+
+
+### Git Cheat Sheet
+![This is a alt text.](/assignment_1/images/git_cheat_sheet.png)
