@@ -1,8 +1,6 @@
-# README
+# 📝Scribe sheet of all the git commands in course (basic commands)
 
-## 📝Scribe sheet of all the git commands in course (basic commands)
-
-### ✒ Hasanul Haque Banna
+## ✒ Hasanul Haque Banna
 
 <br/><br/><br/>
 
@@ -29,7 +27,7 @@ Stages all changes in the current directory for the action of next commit
 git add .
 ```
 
-![Alt text](image.png)
+![Alt text](./screenshots/image.png)
 This command bascially do stages all modified, newly created or deleted files in the current directory for the action of next commit
 <br/><br/>
 
@@ -43,6 +41,7 @@ Stages a specific file for the action of next commit
 git add filename
 ```
 
+![Alt text](./screenshots/image2.png)
 This command is useful for selectively staging changes. [`Note:` Should have replace the `filename` with something `eg: 1st_assignment.txt`]
 <br/><br/>
 
@@ -56,6 +55,7 @@ Records the staged changes with a descriptive message
 git commit -m 'message'
 ```
 
+![Alt text](./screenshots/image3.png)
 This command creates a new commit with the staged changes. [`Note:` Should have replace the `message` with something `eg: My first git commit`]
 <br/> <br/>
 
@@ -74,6 +74,14 @@ This command shows that which changes have been staged, which haven’t, and whi
 
 ### Command: git branch
 
+**Usage:**
+
+```sh
+git branch
+```
+
+![Alt text](./screenshots/git_branch1.png)
+![Alt text](./screenshots/git_branch2.png)
 This command shows manages branches in the repository.
 <br/> <br/>
 
@@ -87,6 +95,7 @@ Displays a log of commits in the repository.
 git log
 ```
 
+![Alt text](./screenshots/image6.png)
 This command shows the commit history, including commit hashes, authors, dates, and messages.
 
 ### Command: git checkout branch
