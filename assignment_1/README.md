@@ -1,4 +1,4 @@
-#intialize git repository
+#initialize git repository
 git init
 
 #Clone a Repository
