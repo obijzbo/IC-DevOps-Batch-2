@@ -40,7 +40,7 @@ git merge <source-branch>
 
 #Delete a Branch
 git branch -d <branch-name>
-git branch -D <branch-name>  # Force delete
+git branch -D <branch-name>  
 
 #Add a Remote Repository
 git remote add <remote-name> <remote-url>
