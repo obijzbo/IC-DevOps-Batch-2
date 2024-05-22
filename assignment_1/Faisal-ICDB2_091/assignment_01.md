@@ -252,14 +252,14 @@ git log -n3
 
 ```
 
-![img17](images/Git_reset-2.png)
+![img17](images/git_reset-2.png)
 
 
 git reset --soft
 git reset --soft will undo a commit but will not remove it from the staging area.
 
 
-![img18](images/Git_reset-3.png)
+![img18](images/git_reset-3.png)
 
 
 ```bash
@@ -272,7 +272,7 @@ git status
 
 ```
 
-![img19](images/Git_reset-4.png)
+![img19](images/git_reset-4.png)
 
 git reset --hard
 
@@ -289,7 +289,7 @@ cat testfile.txt
 
 ```
 
-![img20](images/Git_reset-5.png)
+![img20](images/git_reset-5.png)
 
 git revert 
 
