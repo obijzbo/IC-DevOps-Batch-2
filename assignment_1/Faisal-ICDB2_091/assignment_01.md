@@ -45,20 +45,17 @@ git add README.md
 
 ![img3](images/git_add.png)
 
+## Git config command allows to set preferences such as your name and email for commit attribution, default text editor for commit messages, and other operational parameters.
 
 ```bash
 
-git commit
-
-```
-
-```bash
-
-## Configure the git user who will be the author of the commit/upcoming commits.
-
+# To configure email address
 git config user.email md.u.faisal@gmail.com
+git config user.email
+
+# To configure user name
 git config user.name mdufaisal
-git remote -v
+git config user.name
 
 ```
 
@@ -66,10 +63,19 @@ git remote -v
 
 ```bash
 
-## Add the file in the staging area.
+git commit
+
+```
+git commit command is used to keep track of our progress and changes as we work. Git considers each commit change point or "save point". 
+It is a point in the project you can go back to if you find a bug, or want to make a change. When we commit, we should always include a message.
+The commit command performs a commit, and the -m "message" adds a message.
+
+```bash
+
+## To add the file in the staging area.
 git add README.md
 
-## Commit the file.
+## To commit the file.
 git commit -m "Create README.md file"
 
 ```
@@ -93,21 +99,23 @@ echo .gitignore > .gitignore
 
 git branch
 
+git branch command is used to manage (create, list, delete) brances in a git repository.
+
 ```bash
 
-## Create a new branch
+## To create a new branch
 git branch branch-1
 
-## list branches
+## To list branches
 git branch -l
 
-## Show current branch
+## To show current branch
 git branch --show-current
 
-## Delete branch
+## To delete branch
 git branch -d branch-1
 
-## Create and Switch to the new branch 
+## To create and Switch to the new branch 
 git checkout -b branch-1
 
 ```
@@ -121,12 +129,11 @@ This command is used to merge changes from one branch into another. Till now we 
 
 ```bash
 
-## Switch to the branch we want to merge with
+## Toc switch to the branch we want to merge with
 git checkout main
 
-## merge branch-1 to the current (main) branch
+## To merge branch-1 to the current (main) branch
 git merge branch-1
-
 
 ```
 
@@ -138,7 +145,7 @@ git log
 
 ```bash
 
-## Print all commit logs in the current branch
+## To print all commit logs in the current branch
 git log
 
 ```
@@ -148,7 +155,7 @@ git log
 
 ```bash
 
-## Print all commit logs in the current branch with the filenames
+## To print all commit logs in the current branch with the filenames
 git log –name-only
 
 ```
@@ -158,7 +165,7 @@ git log –name-only
 
 ```bash
 
-## Print logs with the "short sha" and "short description"
+## To print logs with the "short sha" and "short description"
 
 git log --oneline
 
@@ -171,7 +178,7 @@ It’s an alias for: git log --pretty=oneline --abbrev-commit
 
 ```bash
 
-## Print last commit
+## To print last commit
 
 git log -n 1
 
@@ -187,6 +194,7 @@ Git remote command is used to manage remote repositories. We can clone a remote 
 
 ```bash
 
+# To add, remove and view remote repositories 
 git remote add origin git@github.com:mdufaisal/IC-DevOps-Batch-2.git
 git remote remove origin
 git remote -v
@@ -196,11 +204,13 @@ git remote -v
 
 git fetch & git rebase
 
-Git fetch command is used to fetch any changes made in the main branch of the remote repository; it does not apply the changes to the current branch until git rebase is executed.
+Git fetch command is used to fetch any changes made in the main branch of the remote repository; it does not apply the changes to the current branch until git rebase command is executed.
 
 ```bash
-
+# To fetch the changes from remote repository
 git fetch origin main
+
+# To apply the changes that were fetched.
 git rebase
 
 ```
@@ -211,10 +221,9 @@ git pull
 git pull does what git fetch & git rebase do together.
 
 
-Pulling remote changes to the Local repo
-
 ```bash
 
+# To pull remote changes to the Local repo
 git pull origin main
 
 ```
@@ -230,15 +239,23 @@ git reset command undo the specific commit. git reset without any option will un
 
 ```bash
 
+# Add some content to testfile.txt
 echo "This is line 1 of the testfile" > testfile.txt
+
+# To add testfile.txt in the staging are
 git add testfile.txt
+
+# To commit the changes
 git commit -m "Add line 1 to the testfile"
+
 echo "This is line 2 of the testfile" >> testfile.txt
 git add testfile.txt
 git commit -m "Add line 2 to the testfile"
 echo "This is line 3 of the testfile" >> testfile.txt
 git add testfile.txt
 git commit -m "Add line 3 to the testfile"
+
+# To verify the content just we have added.
 cat testfile.txt
 
 ```
@@ -247,9 +264,13 @@ cat testfile.txt
 
 
 ```bash
-
+# To reset the last commit ( This will undo the commit where line 3 was added)
 git reset HEAD~1
+
+# To check if the commit history changed because of resetting HEAD~1
 git log -n3
+
+# To reset last two commits (This will undo the commit where line 2 & 1 were added)
 git reset HEAD~2
 git log -n3
 
@@ -268,10 +289,19 @@ git reset --soft will undo a commit but will not remove it from the staging area
 
 ```bash
 
+# To add the file to staging area
 git add testfile.txt
+
+# Commit the changes again 
 git commit -m "Add contents to the testfile"
+
+# To check the last commit 
 git log -n1
+
+# To reset the last commit with --soft (This will undo the last commit but will not remove the file from staging area unlike just running git reset)
 git reset --soft HEAD~1
+
+# To verify if the file is still in the staging area
 git status
 
 ```
@@ -285,10 +315,19 @@ git reset --hard will undo a commit by removing all the associated changes made 
 
 ```bash
 
+# To add the file to staging area
 git add testfile.txt
+
+# Commit the changes again
 git commit -m "Add contents to the testfile.txt file"
+
+# To verify the contents before reset
 cat testfile.txt
+
+# To perform a hard reset
 git reset --hard HEAD~1
+
+# To confirm if the hard reset removed the changes as well
 cat testfile.txt
 
 ```
@@ -297,17 +336,33 @@ cat testfile.txt
 
 git revert 
 
-git revert inverts the changes introduced by the original commit by creating a new commit with the underlying inverse content. This is a safe way to revoke a commit because it prevents you from losing your history.
+git revert inverts the changes introduced by the original commit by creating a new commit with the underlying inverse content. 
+This is a safe way to revoke a commit because it prevents you from losing your history.
 
 ```bash
 
+# Create a file
 touch testfile.txt
+
+# To add the file to staging area
 git add testfile.txt
+
+# Commit the file
 git commit -m "Create testfile.txt"
+
+# Add texts to the file
 echo "This is a testfile" > testfile.txt
+
+# Add the file to staging area again
 git add testfile.txt
+
+# Commit the changes made to the file 
 git commit -m "Add some texts to the testfile.txt"
+
+# Check git status
 git status
+
+# Verify the contents of the file 
 cat testfile.txt
 
 ```
@@ -317,9 +372,16 @@ cat testfile.txt
 
 ```bash
 
+# Get hash from the last commit
 git log -n1
+
+# Revert the last commit by specifying it's hash
 git revert 32a84d3709a46b5b167f73f5ae0cb574b261345a
+
+# Check the file contents (git revert works the same way as git reset, but it creates a new commit)
 cat testfile.txt
+
+# Check git log (A new commit will be added for the git revert)
 git log
 
 ```
@@ -333,11 +395,22 @@ git stash command is used to preserve the changes without committing them.
 
 ```bash
 
+# Make some changes
 echo "Add some more contents to be stashed." >> testfile.txt
+
+# Check git status
 git status
+
+# Stash the current changes
 git stash
+
+# Get the stash list
 git stash list
+
+# Display the delaits of a specific stash
 git stash show stash@{0}
+
+# Restore/remove the file from stash list
 git stash pop stash@{0}
 
 ```
@@ -382,28 +455,16 @@ git cherry-pick in git means choosing a commit from one branch and applying it t
 
 ```bash
 
-echo "Adding more contents to the testfile.txt" >> testfile.txt
-git add testfile.txt
-git commit -m "Update testfile.txt in branch-1"
-git branch --show-current
+# Get hash of last commit that we want to copy to another branch
 git log -n1
+
+# Change branch into another branch
+git checkout -b branch-2
+
+# Copy the commit from branch-1 to branch-2
+git cherry-pick dc261cf53a3c2b693da3e60a77c16c73dfc59a43
 
 ```
 
-![img27](images/git-cherry-pick-1.png)
-
-
-```bash
-
-git checkout branch-2
-git log -n1
-git cherry-pick 3ee5827c58a17fb5d28440946cd775e417a12c46
-git log -n1
-git branch --show-current
-ls -l
-cat testfile.txt
-
-```
-
-![img28](images/git-cherry-pic-2.png)
+![img27](images/git-cherry-pick)
 
