@@ -38,21 +38,26 @@ The command used to move file(s) from working area to staging area.
 
 ```bash
 
-$ git add README.md
+git add README.md
 
 ```
 
 ![img3](images/git_add.png)
 
-git commit
-
-## Configure the git user who will be the author of the commit/upcoming commits.
 
 ```bash
 
-$ git config user.email md.u.faisal@gmail.com
-$ git config user.name mdufaisal
-$ git remote -v
+git commit
+
+```
+
+```bash
+
+## Configure the git user who will be the author of the commit/upcoming commits.
+
+git config user.email md.u.faisal@gmail.com
+git config user.name mdufaisal
+git remote -v
 
 ```
 
@@ -61,10 +66,10 @@ $ git remote -v
 ```bash
 
 ## Add the file in the staging area.
-$ git add README.md
+git add README.md
 
 ## Commit the file.
-$ git commit -m "Create README.md file"
+git commit -m "Create README.md file"
 
 ```
 
@@ -72,14 +77,13 @@ $ git commit -m "Create README.md file"
 
 .gitignore
 
-## It is a hidden file where the files that need to be ignored are defined. In the repository, we can ignore files from being tracked by git, so that our working area is clean and with only the necessary files that are needed to be staged and committed. We have to create the file manually. In the following example we will ignore the .gitignore file.
-
+It is a hidden file where the files that need to be ignored are defined. In the repository, we can ignore files from being tracked by git, so that our working area is clean and with only the necessary files that are needed to be staged and committed. We have to create the file manually. In the following example we will ignore the .gitignore file.
 
 ```bash
 
-$ touch .gitignore
-$ git status
-$ echo .gitignore > .gitignore
+touch .gitignore
+git status
+echo .gitignore > .gitignore
 
 ```
 
@@ -91,19 +95,19 @@ git branch
 ```bash
 
 ## Create a new branch
-$ git branch branch-1
+git branch branch-1
 
 ## list branches
-$ git branch -l
+git branch -l
 
 ## Show current branch
 git branch --show-current
 
 ## Delete branch
-$ git branch -d branch-1
+git branch -d branch-1
 
 ## Create and Switch to the new branch 
-$ git checkout -b branch-1
+git checkout -b branch-1
 
 ```
 
@@ -117,12 +121,11 @@ This command is used to merge changes from one branch into another. Till now we 
 
 ```bash
 
-
 ## Switch to the branch we want to merge with
-$ git checkout main
+git checkout main
 
 ## merge branch-1 to the current (main) branch
-$ git merge branch-1
+git merge branch-1
 
 
 ```
@@ -136,7 +139,7 @@ git log
 ```bash
 
 ## Print all commit logs in the current branch
-$ git log
+git log
 
 ```
 
@@ -146,7 +149,7 @@ $ git log
 ```bash
 
 ## Print all commit logs in the current branch with the filenames
-$ git log –name-only
+git log –name-only
 
 ```
 
@@ -157,7 +160,7 @@ $ git log –name-only
 
 ## Print logs with the "short sha" and "short description"
 
-$ git log --oneline
+git log --oneline
 
 ```
 
@@ -170,7 +173,7 @@ It’s an alias for: git log --pretty=oneline --abbrev-commit
 
 ## Print last commit
 
-$ git log -n 1
+git log -n 1
 
 ```
 ![img12](images/git_log_last_commit.png)
@@ -178,14 +181,15 @@ $ git log -n 1
 
 Working with remote Repositories
 
-## git remote
+git remote
+
 Git remote command is used to manage remote repositories. We can clone a remote repository that adds the remote repository automatically within the local repository. However, we can manage remote repositories manually by git remote command.
 
 ```bash
 
-$ git remote add origin git@github.com:mdufaisal/IC-DevOps-Batch-2.git
-$ git remote remove origin
-$ git remote -v
+git remote add origin git@github.com:mdufaisal/IC-DevOps-Batch-2.git
+git remote remove origin
+git remote -v
 
 ```
 ![img13](images/git_remote_add.png)
@@ -195,8 +199,8 @@ Git fetch command is used to fetch any changes made in the main branch of the re
 
 ```bash
 
-$ git fetch origin main
-$ git rebase
+git fetch origin main
+git rebase
 
 ```
 ![img14](images/git_fetch_and_rebase.png)
@@ -205,11 +209,11 @@ git pull
 git pull does what git fetch & git rebase do together.
 
 
-## Pulling remote changes to the Local repo
+Pulling remote changes to the Local repo
 
 ```bash
 
-$ git pull origin main
+git pull origin main
 
 ```
 
@@ -293,14 +297,14 @@ git revert inverts the changes introduced by the original commit by creating a n
 
 ```bash
 
-$ touch testfile.txt
-$ git add testfile.txt
-$ git commit -m "Create testfile.txt"
-$ echo "This is a testfile" > testfile.txt
-$ git add testfile.txt
-$ git commit -m "Add some texts to the testfile.txt"
-$ git status
-$ cat testfile.txt
+touch testfile.txt
+git add testfile.txt
+git commit -m "Create testfile.txt"
+echo "This is a testfile" > testfile.txt
+git add testfile.txt
+git commit -m "Add some texts to the testfile.txt"
+git status
+cat testfile.txt
 
 ```
 
@@ -309,10 +313,10 @@ $ cat testfile.txt
 
 ```bash
 
-$ git log -n1
-$ git revert 32a84d3709a46b5b167f73f5ae0cb574b261345a
-$ cat testfile.txt
-$ git log
+git log -n1
+git revert 32a84d3709a46b5b167f73f5ae0cb574b261345a
+cat testfile.txt
+git log
 
 ```
 
@@ -324,24 +328,24 @@ git stash command is used to preserve the changes without committing them.
 
 ```bash
 
-$ echo "Add some more contents to be stashed." >> testfile.txt
-$ git status
-$ git stash
-$ git stash list
-$ git stash show stash@{0}
-$ git stash pop stash@{0}
+echo "Add some more contents to be stashed." >> testfile.txt
+git status
+git stash
+git stash list
+git stash show stash@{0}
+git stash pop stash@{0}
 
 ```
 ![img23](images/git_stash.png)
 
 
-Reflog
+git reflog
 
 The git reflog command is used for Git to record updates made to the tip of branches. It allows returning commits even to the ones that are not referenced by any branch or any tag. After rewriting history, the reflog includes information about the previous state of branches and makes it possible to go back to that state if needed
 
 ```bash
 
-$ git reflog
+git reflog
 
 ```
 
@@ -349,8 +353,8 @@ $ git reflog
 
 ```bash
 
-$ git reflog show HEAD
-$ git reflog show branch-1
+git reflog show HEAD
+git reflog show branch-1
 
 ```
 
@@ -359,7 +363,7 @@ $ git reflog show branch-1
 
 ```bash
 
-$ git diff main@{0} main@{1.day.ago}
+git diff main@{0} main@{1.day.ago}
 
 ```
 
