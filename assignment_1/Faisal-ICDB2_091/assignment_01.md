@@ -24,6 +24,7 @@ git status
 The git status command is used to show the status of the git repository. This command displays the state of the working area and the staging area. All the tracked and untracked changes can be seen from here.
 
 Working area: This where you work on the local files and the files are not tracked by git yet.
+
 Staging area: This is where all files must go before any commit. In this area, all changes are tracked by git.
 
 ![img2](images/git_status.png)
@@ -116,7 +117,6 @@ git checkout -b branch-1
 
 git merge
 
-
 This command is used to merge changes from one branch into another. Till now we were working on branch-1 and all the changes we made are in branch-1. Let’s merge branch-1 with main branch so that main branch has the work we have done so far.
 
 ```bash
@@ -195,6 +195,7 @@ git remote -v
 ![img13](images/git_remote_add.png)
 
 git fetch & git rebase
+
 Git fetch command is used to fetch any changes made in the main branch of the remote repository; it does not apply the changes to the current branch until git rebase is executed.
 
 ```bash
@@ -206,6 +207,7 @@ git rebase
 ![img14](images/git_fetch_and_rebase.png)
 
 git pull
+
 git pull does what git fetch & git rebase do together.
 
 
@@ -222,6 +224,7 @@ git pull origin main
 git reset and git revert
 
 git reset
+
 git reset command undo the specific commit. git reset without any option will undo a commit and remove it from the staging area and the commit history will be removed as well.
 
 
@@ -256,6 +259,7 @@ git log -n3
 
 
 git reset --soft
+
 git reset --soft will undo a commit but will not remove it from the staging area.
 
 
@@ -323,7 +327,8 @@ git log
 ![img22](images/git_revert_2.png)
 
 
-git stash 
+git stash
+
 git stash command is used to preserve the changes without committing them.
 
 ```bash
