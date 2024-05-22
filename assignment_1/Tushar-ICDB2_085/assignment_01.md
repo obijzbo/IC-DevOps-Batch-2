@@ -19,7 +19,13 @@
    - [Git Push](#git-push)
    - [Git Pull](#git-pull)
 2. [Git Advanced Commands](#git-advanced-commands)
-   - [Git Commit](#gitcommit)
+   - [Git Log](#git-log)
+   - [Git Reset](#git-reset)
+   - [Git Relog](#git-relog)
+   - [Git Diff](#git-reset)
+   - [Git Stash](#git-stash)
+   - [Git Merge](#git-merge)
+   - [Git Revert](#git-revert)
 ---
 
 ## Git Basic Commands
@@ -206,5 +212,119 @@ The `git pull` command is used to fetch and integrate changes from a remote repo
 - It fetches changes from the specified remote repository and integrates them into the current branch.
 - The <remote> argument specifies the remote repository from which - want to pull changes, and <branch> specifies the branch from which you want to pull changes.
 - After fetching the changes, git pull automatically merges them into your current branch.
+
+[Back to Top](#git-basic-commands)
+
+
+## Git Advanced Commands
+
+### Git Log
+The `git log` command is used to view the commit history of a repository. It displays a list of commits in reverse chronological order, showing the commit hash, author, date, and commit message.
+
+**Example**
+```bash
+git log
+```
+**Description :**
+- `git log` is a powerful tool for inspecting the history of a repository.
+- It shows the commit history, including the commit hash (SHA-1 checksum), author name, email, date, and commit message.
+- By default, git log displays the commits starting from the most recent.
+
+
+### Git Reset
+The `git reset` command is used to reset the current HEAD to a specified state. It can be used to undo changes, unstage files, or move the HEAD to a different commit.
+
+
+
+**Example**
+```bash 
+   git reset HEAD~1
+```
+- git reset --hard moves the HEAD to the specified commit and discards all changes after that commit.
+
+**Git Reset Soft and Hard**
+```bash
+   git reset --soft HEAD~1
+
+```
+- `git reset --soft` moves the HEAD to the specified commit, keeping the changes in the index.
+```bash
+   git reset --soft HEAD~1
+```
+- `git reset --hard` moves the HEAD to the specified commit and discards all changes after that commit.
+![Git Pull](./screenshots/git-pull.png)
+**Description :**
+- `git reset` is a versatile command with different options for resetting the repository state.
+- With `git reset HEAD~1`, the HEAD moves back one commit, effectively undoing the last commit and keeping changes in the working directory.
+- Depending on the options used (soft, mixed, or hard), git reset can reset the staging area, working directory, or both.
+
+
+### Git Diff
+The `git diff` command is used to view the difference between the working directory, staging area, and the most recent commit. It shows changes line by line, highlighting additions, deletions, and modifications.
+**Example**
+```bash
+   git diff
+```
+![Git Diff](./screenshots/git-diff.png)
+**Description :**
+- `git diff` is a fundamental command for reviewing changes made to files in a repository.
+- It compares changes between the working directory and the staging area (index) by default.
+- With additional arguments, such as commit hashes or file paths, git diff can compare different versions of files or commits.
+- `git diff` is essential for understanding the current state of the repository and tracking modifications.
+
+
+### Git Stash
+The `git stash` command is used to temporarily store changes that are not ready to be committed. It allows you to switch branches or perform other operations without committing incomplete changes.
+**Example**
+```bash
+   git stash
+```
+![Git Stash](./screenshots/git-stash.png)
+**Description :**
+- `git stash` is a handy tool for managing work in progress without committing changes.
+- It saves the current state of the working directory and staging area, allowing you to revert to it later.
+- Stashed changes can be applied or discarded using git stash apply or git stash drop commands.
+- git stash is useful for switching context quickly or temporarily setting aside unfinished work.
+
+### Git Merge
+The git merge command is used to integrate changes from one branch into another. It combines the commit history of two branches, creating a new merge commit.
+**Example**
+```bash
+   git merge branch-1
+```
+![Git Merge](./screenshots/git-merge.png)
+**Description :**
+- `git merge` is essential for incorporating changes from one branch into another.
+- It creates a new commit that combines the changes of the specified branch into the current branch.
+- Merge conflicts may occur if changes in both branches conflict with each other, requiring manual resolution.
+- git merge is a fundamental tool for collaboration and managing feature development in Git repositories.
+
+
+### Git Revert
+The `git revert` command is used to undo changes made in previous commits. It creates a new commit that reverts the changes made in the specified commit.
+
+**Example**
+```bash
+   git revert 345adgd
+```
+
+**Description :**
+- `git revert` creates a new commit that undoes the changes introduced by the specified commit.
+- It does not modify the commit history but instead creates a new commit with the reversed changes.
+- Multiple commits can be reverted in a single command by specifying their commit hashes.
+- Reverting a merge commit requires specifying the parent commit to revert to.
+
+### Git Fetch
+The `git fetch` command is used to download the latest data from a remote repository without merging it with the data in your local repository.
+**Example**
+```bash
+   git fetch origin
+```
+
+**Description :**
+- `git fetch` retrieves the latest changes from the remote repository specified by its name (e.g., origin).
+- It downloads new branches, tags, and commits from the remote repository without modifying your local branches.
+- After fetching, you can inspect the changes using commands like git log or git diff.
+- `git fetch` is useful for updating your local repository with changes from the remote repository without automatically merging them into your working branch.
 
 [Back to Top](#git-basic-commands)
