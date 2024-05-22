@@ -24,6 +24,7 @@ git status
 The git status command is used to show the status of the git repository. This command displays the state of the working area and the staging area. All the tracked and untracked changes can be seen from here.
 
 Working area: This where you work on the local files and the files are not tracked by git yet.
+
 Staging area: This is where all files must go before any commit. In this area, all changes are tracked by git.
 
 ![img2](images/git_status.png)
