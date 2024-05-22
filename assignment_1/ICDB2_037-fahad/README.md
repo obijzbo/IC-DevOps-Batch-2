@@ -54,9 +54,9 @@ This command is used to login to our pc with git bash
 | Description | Command |
 | ------- | ----------- |
 
-|`git log --oneline`|List of all commit with commit id and commit message|
-|`git checkout<commit id>`|Return to previous commit <commit id>|
-|`git revert <commit id>`|Revert commit <commit id> (undo one particular commit)|
-|`git reset --hard <commit id>`|Reset to previous commit <commit id> (remove history of all commit after <commit id> )|
-|`git rm --cached <file/folder>`|Stop a file being tracked|
-|`git checkout <file/to/restore>`|Restore a file to a previous commit|
+| `git log --oneline` | List of all commit with commit id and commit message |
+| `git checkout<commit id>` | Return to previous commit <commit id> |
+| `git revert <commit id>` | Revert commit <commit id> (undo one particular commit) |
+| `git reset --hard <commit id>` | Reset to previous commit <commit id> (remove history of all commit after <commit id> ) |
+| `git rm --cached <file/folder>` |Stop a file being tracked |
+| `git checkout <file/to/restore>` | Restore a file to a previous commit |
