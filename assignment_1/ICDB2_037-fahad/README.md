@@ -2,7 +2,7 @@
 
 ## Name:Md Fahad Hasan
 
-## Student_id: ICDB2_008 - syed kamruzzaman
+## Student_id: ICDB2_0037 - Md Fahad
 
 List all the git commands learned in the course
 
@@ -45,9 +45,6 @@ This command is used to login to our pc with git bash
  | `git log` |View changes |
 | `git log --summary` | View changes (detailed) |
 | `git log --oneline` or  `git log --pretty=oneline` or `git log --pretty=short` | View changes in one line (briefly) |
-|`git checkout -b "<branch-name>"`|For create a new branch`|
-|`git branch `|For check all branch|
-|`git checkout master`| for Switches to master branch|
 
 ### Undo to previous file
 
@@ -59,3 +56,42 @@ This command is used to login to our pc with git bash
 | `git reset --hard <commit id>` | Reset to previous commit <commit id> (remove history of all commit after <commit id> ) |
 | `git rm --cached <file/folder>` |Stop a file being tracked |
 | `git checkout <file/to/restore>` | Restore a file to a previous commit |
+
+
+### Branching & Merging
+
+| Description | Command |
+| ------- | ----------- |
+| `git branch` | List branches (the asterisk denotes the current branch) |
+| `git branch -a` | List all branches (local and remote) |
+| `git branch <branch name>` | Create a new branch |
+| `git checkout -b <branch name>` | Create a new branch and switch to it |
+| `git checkout -b <branch name> origin/<branch name>` | Clone a remote branch and switch to it |
+|`git branch -m <old branch name> <new branch name>` | Rename a local branch | 
+|`git checkout master`| for Switches to master branch|
+|`git checkout <branch name>` | Switch to a branch | 
+|`git checkout -` | Switch to the branch last checked out | 
+|`git checkout -- <file-name.txt>` | Discard changes to a file | 
+|`git branch -d <branch name>` | Delete a branch | 
+|`git push origin --delete <branch name>` | Delete a remote branch | 
+|`git diff <source branch>  <target branch>` | Preview changes before merging | 
+| `git merge <branch name>` | Merge a branch into the active branch |
+|`git merge <source branch> <target branch>` | Merge a branch into a target branch | 
+|`git stash` | Stash changes in a dirty working directory | 
+|`git stash clear` | Remove all stashed entries | 
+
+### Sharing & Updating Projects
+
+| Description | Command |
+| ------- | ----------- |
+| Push a branch to your remote repository | `git push origin <branch name>` |
+| Push changes to remote repository (and remember the branch) | `git push -u origin <branch name>` |
+| Push changes to remote repository (remembered branch) | `git push` |
+| Push changes to remote repository all branch | `git push --all` |
+| Push changes to remote repository (Force) | `git push -f` |
+| Delete a remote branch | `git push origin --delete <branch name>` |
+| Update local repository to the newest commit | `git pull` |
+| Pull changes from remote repository | `git pull origin <branch name>` |
+| Add a remote repository | `git remote add origin ssh://git@github.com/<username>/<repository-name>.git` |
+| Set a repository's origin branch to SSH | `git remote set-url origin ssh://git@github.com/<username>/<repository-name>.git` |
+
