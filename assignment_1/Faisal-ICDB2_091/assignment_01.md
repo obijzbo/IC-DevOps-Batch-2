@@ -59,7 +59,7 @@ git config user.name
 
 ```
 
-![img4](images/git_config.png)
+![img4](images/global_configs.png)
 
 ```bash
 
