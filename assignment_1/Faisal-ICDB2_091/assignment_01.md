@@ -194,6 +194,7 @@ git remote -v
 ![img13](images/git_remote_add.png)
 
 git fetch & git rebase
+
 Git fetch command is used to fetch any changes made in the main branch of the remote repository; it does not apply the changes to the current branch until git rebase is executed.
 
 ```bash
@@ -205,6 +206,7 @@ git rebase
 ![img14](images/git_fetch_and_rebase.png)
 
 git pull
+
 git pull does what git fetch & git rebase do together.
 
 
@@ -221,6 +223,7 @@ git pull origin main
 git reset and git revert
 
 git reset
+
 git reset command undo the specific commit. git reset without any option will undo a commit and remove it from the staging area and the commit history will be removed as well.
 
 
@@ -275,6 +278,7 @@ git status
 ![img19](images/git_reset-4.png)
 
 git reset --hard
+
 git reset --hard will undo a commit by removing all the associated changes made by the commit.
 
 
