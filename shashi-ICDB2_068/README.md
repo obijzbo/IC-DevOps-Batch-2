@@ -24,6 +24,7 @@ Commit changes with a message
 ```bash
 git commit -m "<message>" 
 ```
+![Git Commit](screenshots/git-commit.png)
 Push changes to remote repository
 
 ```bash
