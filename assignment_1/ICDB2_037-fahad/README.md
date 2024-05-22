@@ -21,9 +21,9 @@ This command is used to login to our pc with git bash
 | Create a local copy of a remote repository | `git clone ssh://git@github.com/<username>/<repository-name>.git` |
 
 ### Basic git commands
-`mkdir candy-bucket` (For create new folder) 
+`mkdir <>folder-name>` (For create new folder) 
 
- `cd candy-bucket`  (For Open new folder) 
+ `cd <Folder name>`  (For Open new folder) 
 
  `touch office-candy.txt` (For create text file ) 
 
@@ -35,5 +35,28 @@ This command is used to login to our pc with git bash
 
 `git status` (For check all committed)
 
-`git commit -m" add office candy to candy bucket"`(For commit pattern) 
+`git commit -m" add office <file-name>"`(For commit pattern) 
 `git rm -r <file-name.txt>`(For remove a file or folder) 
+
+### Inspection & Comparison
+
+| Description | Command |
+| ------- | ----------- |
+ | `git log` |View changes |
+| `git log --summary` | View changes (detailed) |
+| `git log --oneline` or  `git log --pretty=oneline` or `git log --pretty=short` | View changes in one line (briefly) |
+|`git checkout -b "<branch-name>"`|For create a new branch`|
+|`git branch `|For check all branch|
+|`git checkout master`| for Switches to master branch|
+
+### Undo to previous file
+
+| Description | Command |
+| ------- | ----------- |
+
+|`git log --oneline`|List of all commit with commit id and commit message|
+|`git checkout<commit id>`|Return to previous commit <commit id>|
+|`git revert <commit id>`|Revert commit <commit id> (undo one particular commit)|
+|`git reset --hard <commit id>`|Reset to previous commit <commit id> (remove history of all commit after <commit id> )|
+|`git rm --cached <file/folder>`|Stop a file being tracked|
+|`git checkout <file/to/restore>`|Restore a file to a previous commit|
