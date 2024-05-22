@@ -53,7 +53,6 @@ This command is used to login to our pc with git bash
 
 | Description | Command |
 | ------- | ----------- |
-
 | `git log --oneline` | List of all commit with commit id and commit message |
 | `git checkout<commit id>` | Return to previous commit <commit id> |
 | `git revert <commit id>` | Revert commit <commit id> (undo one particular commit) |
