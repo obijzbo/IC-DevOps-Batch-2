@@ -50,7 +50,11 @@ Date:   Wed May 22 00:02:27 2024 +0600
 6) git diff
 
 # Commit the Changes
-7) git commit -m "Editing some text file"
+git commit -m "Adding some git command that was discuused on classes"
+++++
+[branch-1 6a99b23] Adding some git command that was discuused on classes
+ 1 file changed, 77 insertions(+), 24 deletions(-)
+ rewrite assignment_1/Nafija-ICDB2_075/README.md (97%)
 
 # Creating new branch 
 
@@ -61,7 +65,16 @@ git checkout -b "branch-1"
   
   
  #Push Changes to Remote Repository :
-  git push origin main
+  git push origin branch-1
+
++++=+++Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.29 KiB | 439.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Nafija-pinky/IC-DevOps-Batch-2.git
+   f0fc593..6a99b23  branch-1 -> branch-1
 
 #Pull Changes from Remote Repository 
   git pull origin master
