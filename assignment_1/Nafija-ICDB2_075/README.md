@@ -1,24 +1,77 @@
-1)git init # for initialize git repository
+#Name : Nafija 
+# Student_ID : ICDB2_075 - 'nafija'
+
+# Set global user email
+git config --global user.email "nafijaakhter001@gmail.com"
+
+# Set credential helper to cache
+git config --global credential.helper cache
+
+# Verify global Git configuration
+git config --global --list
+
+ #Initialized git repository
+1)  git init 
+
+ ++ Initialized existing Git repository in /home/nafija/.git/
+
  
-2)git clone git@github.com:Nafija-pinky/IC-DevOps-Batch-2.git # pulling from github repository to my local machine
-
-3)cd IC-DevOps-Batch-2/ # changing directory 
-
-4) cd assignment_1/ # chaning directory
-
-5) mkdir Nafija-ICDB2_075 # making directory under assignment directory
-
-6) cd Nafija-ICDB2_075 # chaning directory
+ #Set up a remote repository : git remote add <repository_URL>
+  2) git remote add origin git@github.com:Nafija-pinky/IC-DevOps-Batch-2.git 
+    
+ # Check the status
  
-7) touch README.md # creating a textfile
+ 3) git status
  
-8) vi README.md  # creading a textfile and editing with vi editor
+ +++ On branch branch-1
+nothing to commit, working tree clean
+
+# check commit history 
+ 4) git log
  
- 9) mkdir screenshots # creating a directory
+ ++++ commit f0fc593508ecc0bd5adb2f249ec2f9fd26afdd13 (HEAD -> branch-1, origin/branch-1)
+Author: nafija <you@example.com>
+Date:   Wed May 22 00:15:23 2024 +0600
 
-10) git add . # This is the Git command used to add changes to the staging area, which is the intermediate area where Git collects changes before committing them.
+    Editing Readme file
 
-  11) git commit -m "Add Assignment 1 with Git commands and descriptions" #Commit Your Changes with a Meaningful Message 
+commit 13c5a4c4adf2efe973d4ccef90fa1d627484cc8f
+Author: nafija <you@example.com>
+Date:   Wed May 22 00:02:27 2024 +0600
+
+    Add Assignment 1 with Git commands and descriptions
+
+
+# Adding a file 
+5) git add . 
+
+
+# check the difference commit 
+6) git diff
+
+# Commit the Changes
+7) git commit -m "Editing some text file"
+
+# Creating new branch 
+
+git checkout -b "branch-1"
+
+# Switiching a new branch 
+   git checkout branch 
   
-12) git push origin branch-1 #Push the Changes to Your Forked Repository  
+  
+ #Push Changes to Remote Repository :
+  git push origin main
+
+#Pull Changes from Remote Repository 
+  git pull origin master
+
+# The git fetch command downloads commits, files, and refs from a remote repository into your local repo. 
+
+ git fetch --all
+ 
+ 
+ #  Gitrebase changes the base of the developer's branch from one commit to another
+  git rebase
+   
 
