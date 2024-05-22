@@ -255,6 +255,7 @@ git log -n3
 
 
 git reset --soft
+
 git reset --soft will undo a commit but will not remove it from the staging area.
 
 
@@ -290,6 +291,7 @@ cat testfile.txt
 ![img20](images/git_reset-5.png)
 
 git revert 
+
 git revert inverts the changes introduced by the original commit by creating a new commit with the underlying inverse content. This is a safe way to revoke a commit because it prevents you from losing your history.
 
 ```bash
@@ -321,6 +323,7 @@ git log
 
 
 git stash
+
 git stash command is used to preserve the changes without committing them.
 
 ```bash
