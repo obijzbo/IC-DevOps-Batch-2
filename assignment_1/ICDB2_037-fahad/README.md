@@ -21,19 +21,19 @@ This command is used to login to our pc with git bash
 | Create a local copy of a remote repository | `git clone ssh://git@github.com/<username>/<repository-name>.git` |
 
 ### Basic git commands
-|mkdir candy-bucket (For create new folder)|
+| mkdir candy-bucket (For create new folder) |
 
-|cd candy-bucket (For Open new folder)|
+| cd candy-bucket (For Open new folder) |
 
-|touch office-candy.txt (For create text file )|
+| touch office-candy.txt (For create text file ) |
 
-|git add office-candy.txt (For uploead Only text file) |
+| git add office-candy.txt (For uploead Only text file) |
 
-|git add . (For upload all files)|
+| git add . (For upload all files) |
 
-|git reset (For remove all uploaded files)|
+| git reset (For remove all uploaded files) |
 
-|git status (For check all committed)|
+| git status (For check all committed) |
 
-|git commit -m" add office candy to candy bucket"(For commit pattern)|
-|git rm -r <file-name.txt>(For remove a file or folder)|
+| git commit -m" add office candy to candy bucket"(For commit pattern) |
+| git rm -r <file-name.txt>(For remove a file or folder) |
