@@ -59,7 +59,7 @@ This command is used to login to our pc with git bash
 | `git checkout <file/to/restore>` | Restore a file to a previous commit |
 
 ![This is a alt text.](/assignment_1/ICDB2_037-fahad/Store%20Images/git%20log%20--oneline.png)
-![This is a alt text.](/assignment_1/ICDB2_037-fahad/Store%20Images/git%20log%20--oneline.png)
+![This is a alt text.](/assignment_1/ICDB2_037-fahad/Store%20Images/git%20log%20--summary.png)
 ### Branching & Merging
 
 | Description | Command |
@@ -97,4 +97,4 @@ This command is used to login to our pc with git bash
 |`git pull origin <branch name>` | Pull changes from remote repository | 
 |`git remote add origin ssh://git@github.com/<username>/<repository-name>.git` | Add a remote repository | 
 |`git remote set-url origin ssh://git@github.com/<username>/<repository-name>.git` | Set a repository's origin branch to SSH | 
-
+![This is a alt text.](/assignment_1/ICDB2_037-fahad/Store%20Images/git%20push.png)
