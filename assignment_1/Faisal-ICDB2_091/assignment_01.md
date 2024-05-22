@@ -45,7 +45,7 @@ git add README.md
 
 ![img3](images/git_add.png)
 
-## Git config command allows to set preferences such as your name and email for commit attribution, default text editor for commit messages, and other operational parameters.
+Git config command allows to set preferences such as your name and email for commit attribution, default text editor for commit messages, and other operational parameters.
 
 ```bash
 
@@ -59,7 +59,7 @@ git config user.name
 
 ```
 
-![img4](images/global_settings.png)
+![img4](images/git_config.png)
 
 ```bash
 
