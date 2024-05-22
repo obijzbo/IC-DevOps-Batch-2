@@ -466,5 +466,5 @@ git cherry-pick dc261cf53a3c2b693da3e60a77c16c73dfc59a43
 
 ```
 
-![img27](images/git-cherry-pick)
+![img27](images/git-cherry-pick.png)
 
