@@ -46,6 +46,7 @@ This command is used to login to our pc with git bash
 | `git log --summary` | View changes (detailed) |
 | `git log --oneline` or  `git log --pretty=oneline` or `git log --pretty=short` | View changes in one line (briefly) |
 
+![This is a alt text.](/assignment_1/ICDB2_037-fahad/Store%20Images/git%20log.png)
 ### Undo to previous file
 
 | Description | Command |
@@ -57,7 +58,8 @@ This command is used to login to our pc with git bash
 | `git rm --cached <file/folder>` |Stop a file being tracked |
 | `git checkout <file/to/restore>` | Restore a file to a previous commit |
 
-
+![This is a alt text.](/assignment_1/ICDB2_037-fahad/Store%20Images/git%20log%20--oneline.png)
+![This is a alt text.](/assignment_1/ICDB2_037-fahad/Store%20Images/git%20log%20--oneline.png)
 ### Branching & Merging
 
 | Description | Command |
@@ -80,6 +82,7 @@ This command is used to login to our pc with git bash
 |`git stash` | Stash changes in a dirty working directory | 
 |`git stash clear` | Remove all stashed entries | 
 
+![This is a alt text.](/assignment_1/ICDB2_037-fahad/Store%20Images/Branching%20&%20Merging.png)
 ### Sharing & Updating Projects
 
 | Description | Command |
