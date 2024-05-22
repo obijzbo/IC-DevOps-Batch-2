@@ -116,7 +116,6 @@ git checkout -b branch-1
 
 git merge
 
-
 This command is used to merge changes from one branch into another. Till now we were working on branch-1 and all the changes we made are in branch-1. Let’s merge branch-1 with main branch so that main branch has the work we have done so far.
 
 ```bash
@@ -275,7 +274,6 @@ git status
 ![img19](images/git_reset-4.png)
 
 git reset --hard
-
 git reset --hard will undo a commit by removing all the associated changes made by the commit.
 
 
@@ -292,7 +290,6 @@ cat testfile.txt
 ![img20](images/git_reset-5.png)
 
 git revert 
-
 git revert inverts the changes introduced by the original commit by creating a new commit with the underlying inverse content. This is a safe way to revoke a commit because it prevents you from losing your history.
 
 ```bash
@@ -323,7 +320,7 @@ git log
 ![img22](images/git_revert_2.png)
 
 
-git stash 
+git stash
 git stash command is used to preserve the changes without committing them.
 
 ```bash
