@@ -1,7 +1,9 @@
 # Git Command Scribe Sheet
 
 ## Setup and Configuration
+
 - **git config**
+
   - Description: Set configuration values for your user name, email, and other preferences.
   - Example:
     ```bash
@@ -10,6 +12,7 @@
     ```
 
 - **git config -l**
+
   - Description: List all the current configuration settings.
   - Example:
     ```bash
@@ -25,7 +28,9 @@
     ```
 
 ## Basic Commands
+
 - **ls**
+
   - Description: List directory contents.
   - Example:
     ```bash
@@ -33,6 +38,7 @@
     ```
 
 - **ls -a**
+
   - Description: List all files, including hidden files.
   - Example:
     ```bash
@@ -40,6 +46,7 @@
     ```
 
 - **git init**
+
   - Description: Initialize a new Git repository.
   - Example:
     ```bash
@@ -47,6 +54,7 @@
     ```
 
 - **git clone**
+
   - Description: Clone a repository into a new directory from remote to local.
   - Example:
     ```bash
@@ -54,6 +62,7 @@
     ```
 
 - **git add filename**
+
   - Description: Add a specific file to the staging area.
   - Example:
     ```bash
@@ -61,6 +70,7 @@
     ```
 
 - **git add .**
+
   - Description: Add all changes in the current directory to the staging area.
   - Example:
     ```bash
@@ -68,6 +78,7 @@
     ```
 
 - **git reset**
+
   - Description: Unstage a file or set of files.
   - Example:
     ```bash
@@ -75,6 +86,7 @@
     ```
 
 - **git status**
+
   - Description: Show the working tree status.
   - Example:
     ```bash
@@ -82,6 +94,7 @@
     ```
 
 - **git commit -m "message"**
+
   - Description: Commit the staged snapshot with a message.
   - Example:
     ```bash
@@ -89,14 +102,27 @@
     ```
 
 - **git log**
+
   - Description: Show commit logs.
   - Example:
+
     ```bash
     git log
     ```
 
+    - **git cherry-pick commitId**
+
+  - Description: Apply changes from a specific commit.
+  - Example:
+    ```bash
+    git cherry-pick commitId
+    ```
+  - Screenshot: ![git cherry-pick](screenshots/git_cherry_pick.png)
+
 ## Branching and Merging
+
 - **git checkout -b "branchName"**
+
   - Description: Create a new branch and switch to it.
   - Example:
     ```bash
@@ -104,6 +130,7 @@
     ```
 
 - **git branch**
+
   - Description: List all branches.
   - Example:
     ```bash
@@ -111,6 +138,7 @@
     ```
 
 - **git checkout "branchName"**
+
   - Description: Switch to the specified branch.
   - Example:
     ```bash
@@ -118,6 +146,7 @@
     ```
 
 - **git merge "branchName"**
+
   - Description: Merge the specified branch into the current branch.
   - Example:
     ```bash
@@ -132,7 +161,9 @@
     ```
 
 ## Advanced Commands
+
 - **vim filename**
+
   - Description: Open a file in Vim editor.
   - Example:
     ```bash
@@ -140,6 +171,7 @@
     ```
 
 - **cat filename**
+
   - Description: Concatenate and display file contents.
   - Example:
     ```bash
@@ -147,6 +179,7 @@
     ```
 
 - **git config --global alias.variable "command"**
+
   - Description: Create a global alias for a Git command.
   - Example:
     ```bash
@@ -154,6 +187,7 @@
     ```
 
 - **git remote**
+
   - Description: Manage set of tracked repositories.
   - Example:
     ```bash
@@ -161,6 +195,7 @@
     ```
 
 - **git remote -v**
+
   - Description: Show URLs of remote repositories.
   - Example:
     ```bash
@@ -168,6 +203,7 @@
     ```
 
 - **git remote add origin link**
+
   - Description: Add a new remote repository.
   - Example:
     ```bash
@@ -175,6 +211,7 @@
     ```
 
 - **git remote remove origin**
+
   - Description: Remove a remote repository.
   - Example:
     ```bash
@@ -182,6 +219,7 @@
     ```
 
 - **git fetch origin main**
+
   - Description: Fetch changes from the remote main branch.
   - Example:
     ```bash
@@ -189,6 +227,7 @@
     ```
 
 - **git pull origin main**
+
   - Description: Fetch and merge changes from the remote main branch.
   - Example:
     ```bash
@@ -196,6 +235,7 @@
     ```
 
 - **git rebase origin/main**
+
   - Description: Rebase your current branch onto the remote main branch.
   - Example:
     ```bash
@@ -203,6 +243,7 @@
     ```
 
 - **git reset HEAD~1/2/3...**
+
   - Description: Reset the current branch to a previous commit.
   - Example:
     ```bash
@@ -210,6 +251,7 @@
     ```
 
 - **mv oldFilename newFilename**
+
   - Description: Rename a file.
   - Example:
     ```bash
@@ -217,6 +259,7 @@
     ```
 
 - **git reset --hard origin/featureName**
+
   - Description: Reset the current branch to the state of a remote branch.
   - Example:
     ```bash
@@ -224,6 +267,7 @@
     ```
 
 - **git reflog**
+
   - Description: Show a log of changes to the local repository.
   - Example:
     ```bash
@@ -231,6 +275,7 @@
     ```
 
 - **git reflog HEAD@{int}**
+
   - Description: Show the reflog for a specific HEAD reference.
   - Example:
     ```bash
@@ -238,6 +283,7 @@
     ```
 
 - **git stash**
+
   - Description: Stash the changes in a dirty working directory.
   - Example:
     ```bash
@@ -245,6 +291,7 @@
     ```
 
 - **git stash pop**
+
   - Description: Apply the most recent stash and remove it from the stash list.
   - Example:
     ```bash
@@ -252,6 +299,7 @@
     ```
 
 - **git stash list**
+
   - Description: List all stashed changes.
   - Example:
     ```bash
@@ -259,6 +307,7 @@
     ```
 
 - **git stash apply stash@{int}**
+
   - Description: Apply a specific stash without removing it from the stash list.
   - Example:
     ```bash
@@ -266,6 +315,7 @@
     ```
 
 - **git rebase --continue**
+
   - Description: Continue the rebase process after resolving conflicts.
   - Example:
     ```bash
@@ -273,6 +323,7 @@
     ```
 
 - **git reset HEAD~[int-any without bracket]**
+
   - Description: Reset the current branch to a specified number of commits back file back in untrack status.
   - Example:
     ```bash
@@ -280,6 +331,7 @@
     ```
 
 - **git reset --soft HEAD~[int]**
+
   - Description: Soft reset the current branch to a specified number of commits back file have staged status.
   - Example:
     ```bash
@@ -287,6 +339,7 @@
     ```
 
 - **git reset --hard HEAD~[int]**
+
   - Description: Hard reset the current branch to a specified number of commits back.
   - Example:
     ```bash
@@ -294,6 +347,7 @@
     ```
 
 - **git reset --hard origin/main**
+
   - Description: Hard reset the current branch to match the remote main branch.
   - Example:
     ```bash
@@ -301,6 +355,7 @@
     ```
 
 - **git rebase -i HEAD~[int]**
+
   - Description: Interactive rebase for a specified number of commits back.
   - Example:
     ```bash
@@ -317,6 +372,7 @@
 ## Additional Commands
 
 - **git remote set-url origin [new_url]**
+
   - Description: Change the URL of the remote repository.
   - Example:
     ```bash
@@ -324,6 +380,7 @@
     ```
 
 - **git log --oneline**
+
   - Description: Display the commit logs in a compact form with each commit on one line.
   - Example:
     ```bash
@@ -336,8 +393,8 @@
     ```bash
     git clean -f
     ```
-   
 - **git shortlog**
+
   - Description: Summarize git log output.
   - Example:
     ```bash
