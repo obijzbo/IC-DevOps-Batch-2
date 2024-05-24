@@ -10,6 +10,7 @@ To-do:
 ● In the readme file make a scribe sheet of all the git commands in the course and more
 ● Make sure to add a description for each of the commands and what it does with
 example
+
 ● Create a folder to create store screenshots
 ● You must run all the commands on your local machine take SS of them and add them
 with the commands and description
