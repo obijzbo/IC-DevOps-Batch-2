@@ -1,36 +1,97 @@
-<h1 align="center"> Git Commands Scribe Sheet </h1>
-<p align="center"><i>by @GausAlMunirTushar - ICDB2_085</i></p>
-
+<h1 align="center"> Git Commands Scribe Sheet </h1> 
 
 ![GIT Agssignment](./screenshots/git-assignment.jpg)
+<p align="center"><i>by <a href="https://github.com/GausAlMunirTushar">GausAlMunirTushar </a> - ICDB2_085</i></p>
+
 <p align="center">Below is a comprehensive scribe sheet for Git commands. This includes descriptions, examples and screenshots. </p>
 
-### Table of Contents : 
 
-1. [Git Basic Commands](#git-basic-commands)
+### Table of Contents : 
+1. [Git Setup and Configuration](#git-setup-and-configuration)
+   - [Git Setup](#git-setup)
    - [Git Version](#git-version)
    - [Git Config](#git-config)
+   - [Git Alias](#git-alias)
+   - [Git SSH Keys Setup](#git-ssh-keys-setup)
+
+2. [Staging & Committing](#staging-&-committing)
    - [Git Init](#git-init)
+   - [Git Clone](#git-clone)
    - [Git Status](#git-status)
    - [Git Add](#git-add)
    - [Git Commit](#git-commit)
-   - [Git Branch](#git-branch)
-   - [Git Remote](#git-remote)
-   - [Git Push](#git-push)
-   - [Git Pull](#git-pull)
-2. [Git Advanced Commands](#git-advanced-commands)
+   - [Git Stash](#git-stash)
+
+3. [Inspection and Comparison](#inspection-and-comparison)
    - [Git Log](#git-log)
-   - [Git Reset](#git-reset)
    - [Git Relog](#git-relog)
    - [Git Diff](#git-reset)
-   - [Git Stash](#git-stash)
-   - [Git Merge](#git-merge)
-   - [Git Revert](#git-revert)
----
+   - [Git Show](#git-show)
 
-## Git Basic Commands
+4. [Branching and Merging](#branching-and-merging)
+   - [Git Branch](#git-branch)
+   - [Git Checkout](#git-checkout)
+   - [Git Merge](#git-merge)
+   - [Git Rebase](#git-rebase)
+
+5. [Collaboration](#collaboration)
+   - [Git Remote](#git-remote)
+   - [Git Fetch](#git-fetch)
+   - [Git Push](#git-push)
+   - [Git Pull](#git-pull)
+
+5. [Git Undoing changes](#git-undoing-changes)
+   - [Git Reset](#git-reset)
+   - [Git Revert](#git-revert)
+   - [Git Rm](#git-rm)
+   - [Git Amend](#git-amend)
+   - [Git Cherry Pick](#git-cherry-pick)
+
+6. [Git Tagging](#git-tagging)
+
+7. [Git Cleanup](#git-cleanup)
+
+8. [Git Ignore Files](#git-ignore-files)
+
+9. [Git Hooks](#git-hooks)
+
+10. [Git Tips and Tricks](#git-tips-and-tricks)
+
+11. [Git References](#git-references)
+
+
+# Git Setup and Configuration : 
+---
+### Git Setup: 
+Install Git on your system.
+
+##### 1. Windows:
+- Download Git from the [official Git website](https://git-scm.com/download/win).
+- Run the installer and follow the instructions. Use the recommended settings.
+##### 2. Linux:
+**For Debian-based distributions (e.g., Ubuntu):**
+Git is likely already installed in Linux distributions. You can confirm this is the case on your server with the following command: 
+`git --version`
+1. Update the package list:
+```bash
+   sudo apt update
+```
+2. Install Git:
+
+```bash
+   sudo apt install git
+```
+
+##### 3. macOS:
+Install Homebrew if you haven't already:
+```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+
 ### Git Version
 Displays the currently installed version of Git.
+- This command checks if Git is installed on your system. If Git is not installed, it will install it for you.
 **Example**
 ```bash
    git --version
@@ -38,7 +99,6 @@ Displays the currently installed version of Git.
 ![Git Version](./screenshots/git-version.png)
 **Description :** 
 Displays the current version of Git installed on your system. This command is useful for verifying that Git is installed and for checking the installed version to ensure compatibility with other tools or repositories.
-
 
 ### Git Config
 Git config command is a convenience function that is used to set Git configuration values on a global or local project level
@@ -55,7 +115,7 @@ The git config command allows you to get and set configuration options that cont
    Sets the name that will be attached to your commits and tags. 
    **Example**
 ```bash
-   // global config name
+   // global config for name
    git config --global user.name "Gaus Al Munir Tushar"
 ```
 2. **Set User Email**
@@ -71,6 +131,73 @@ Sets the default text editor that will be used by commands like git commit for e
    git config --global core.editor "code"
 ```
 
+### Git Alias
+Git aliases are a powerful workflow tool that create shortcuts to frequently used Git commands.
+
+**Notes:** *If you don't know git basic this section is not for you. After you know basics of git commands  then come to this section and read and set the alias.*
+
+**Example**
+```bash
+   git config --global alias.co checkout
+   git config --global alias.br branch
+   git config --global alias.ci commit
+   git config --global alias.st status
+```
+
+**Description :**
+- Git alias is a mechanism for defining commands that are more accessible and easier to remember than the original command.
+These aliases make common Git commands shorter and easier to remember. For example:
+These aliases make common Git commands shorter and easier to remember. For example:
+
+- `git co` instead of `git checkout`
+- `git br` instead of `git branch`
+- `git ci` instead of `git commit`
+- `git st` instead of `git status`
+
+---
+### Git SSH Keys Setup
+---
+*This Section Optional for GitHub Users Who Want to setup SSH Keys*
+
+Setting up SSH for GitHub involves generating a new SSH key, adding it to your SSH agent, and then adding the public key to your GitHub account
+
+1. Generate a New SSH Key
+
+**Example:**
+```bash
+   ssh-keygen -t rsa -b 4096 -C "gausalmunirtushar@gmail.com"
+
+```
+2. Add Your SSH Key to the SSH Agent
+
+**Example:**
+```bash
+   eval "$(ssh-agent -s)"
+   ssh-add ~/.ssh/id_rsa
+```
+3. Add the Public Key to Your GitHub Account
+**Example**
+
+```bash
+   cat ~/.ssh/id_rsa.pub
+```
+4. Test Your SSH Connection
+You can test your SSH connection to GitHub to ensure everything is set up correctly:
+**Example**
+```bash
+   ssh -T git@github.com
+```
+
+<!-- ![Git SSH Keys Setup](./screenshots/git-ssh-keys-setup.png) -->
+**Description :** 
+- SSH keys allow you to securely authenticate Git commands to your repositories. These keys are used to authenticate Git commands when you push changes to your repositories.
+
+[Back to Top](#git-setup-and-configuration)
+
+---
+## Staging & Committing
+---
+
 ### Git Init
 Initializes a new Git repository.
 **Example**
@@ -80,6 +207,7 @@ Initializes a new Git repository.
 ![Git Init](./screenshots/git-init.png)
 **Description :** 
 Initializes a new Git repository. This command creates a new subdirectory named .git that contains all the necessary repository files.
+
 ### Git Status
 To view the current status of the repository:
 **Example**
@@ -130,6 +258,23 @@ The `git commit` command is used to record changes to the repository.
 - The commit message should be a brief description of the changes you are committing.
 - After running git commit, Git creates a new commit with the changes staged in the index and records it permanently in the repository's history.
 
+### Git Stash
+The `git stash` command is used to temporarily store changes that are not ready to be committed. It allows you to switch branches or perform other operations without committing incomplete changes.
+**Example**
+```bash
+   git stash
+```
+![Git Stash](./screenshots/git-stash.png)
+**Description :**
+- `git stash` is a handy tool for managing work in progress without committing changes.
+- It saves the current state of the working directory and staging area, allowing you to revert to it later.
+- Stashed changes can be applied or discarded using git stash apply or git stash drop commands.
+- git stash is useful for switching context quickly or temporarily setting aside unfinished work.
+[Back to Top](#git-setup-and-configuration)
+
+---
+## Branching and Merging
+---
 ### Git Branch 
 The  `git branch` command is used to list, create, or delete branches in a Git repository
 
@@ -163,6 +308,46 @@ The current branch is indicated with an asterisk (*).
 - Can create a new branch by providing a name after the git branch command.
 - To delete a branch, use the -d option followed by the name of the branch you want to delete.
 
+### Git Checkout
+The `git checkout` command is used to switch branches in a Git repository. It allows you to view, create, or delete branches in a Git repository.
+**Example**
+```bash
+   git checkout branch-1
+```
+**Description :**
+- `git checkout`: This is the command to switch branches in a Git repository.
+- `branch-1`: This is the name of the branch you want to switch to.
+
+[Back to Top](#git-advanced-commands)
+
+### Git Merge
+The `git merge` command is used to merge changes from one branch into another branch in a Git repository.
+
+**Example**
+```bash
+   git merge branch-1
+```
+**Description :**
+- `git merge`: This is the command to merge changes from one branch into another branch in a Git repository.
+- `branch-1`: This is the name of the branch you want to merge into the current branch.
+
+### Git Rebase
+The `git rebase` command is used to rebase the changes in the current branch onto the specified branch.
+
+**Example**
+```bash
+   git rebase master
+```
+
+**Description :**
+- `git rebase` creates a new commit that reverts the changes introduced by the specified branch.
+- It modifies the commit history and creates a new commit with the same changes as the last commit.
+- `git rebase` is useful for creating a new commit with the same changes as the last commit without modifying the commit history.
+
+
+[Back to Top](#git-setup)
+
+## Collaboration
 ### Git Remote
 The `git remote` command allows you to manage the remote repositories associated with your local repository. You can add, rename, remove, and view information about remotes.
 **Example**
@@ -213,8 +398,7 @@ The `git pull` command is used to fetch and integrate changes from a remote repo
 - The <remote> argument specifies the remote repository from which - want to pull changes, and <branch> specifies the branch from which you want to pull changes.
 - After fetching the changes, git pull automatically merges them into your current branch.
 
-[Back to Top](#git-basic-commands)
-
+[Back to Top](#git-setup)
 
 ## Git Advanced Commands
 
@@ -231,6 +415,38 @@ git log
 - By default, git log displays the commits starting from the most recent.
 
 
+### Git Diff
+The `git diff` command is used to view the difference between the working directory, staging area, and the most recent commit. It shows changes line by line, highlighting additions, deletions, and modifications.
+**Example**
+```bash
+   git diff
+```
+![Git Diff](./screenshots/git-diff.png)
+**Description :**
+- `git diff` is a fundamental command for reviewing changes made to files in a repository.
+- It compares changes between the working directory and the staging area (index) by default.
+- With additional arguments, such as commit hashes or file paths, git diff can compare different versions of files or commits.
+- `git diff` is essential for understanding the current state of the repository and tracking modifications.
+
+
+### Git Fetch
+The `git fetch` command is used to download the latest data from a remote repository without merging it with the data in your local repository.
+**Example**
+```bash
+   git fetch origin
+```
+
+**Description :**
+- `git fetch` retrieves the latest changes from the remote repository specified by its name (e.g., origin).
+- It downloads new branches, tags, and commits from the remote repository without modifying your local branches.
+- After fetching, you can inspect the changes using commands like git log or git diff.
+- `git fetch` is useful for updating your local repository with changes from the remote repository without automatically merging them into your working branch.
+
+[Back to Top](#git-setup)
+
+---
+## Git Undoing changes
+---
 ### Git Reset
 The `git reset` command is used to reset the current HEAD to a specified state. It can be used to undo changes, unstage files, or move the HEAD to a different commit.
 
@@ -259,47 +475,6 @@ The `git reset` command is used to reset the current HEAD to a specified state. 
 - Depending on the options used (soft, mixed, or hard), git reset can reset the staging area, working directory, or both.
 
 
-### Git Diff
-The `git diff` command is used to view the difference between the working directory, staging area, and the most recent commit. It shows changes line by line, highlighting additions, deletions, and modifications.
-**Example**
-```bash
-   git diff
-```
-![Git Diff](./screenshots/git-diff.png)
-**Description :**
-- `git diff` is a fundamental command for reviewing changes made to files in a repository.
-- It compares changes between the working directory and the staging area (index) by default.
-- With additional arguments, such as commit hashes or file paths, git diff can compare different versions of files or commits.
-- `git diff` is essential for understanding the current state of the repository and tracking modifications.
-
-
-### Git Stash
-The `git stash` command is used to temporarily store changes that are not ready to be committed. It allows you to switch branches or perform other operations without committing incomplete changes.
-**Example**
-```bash
-   git stash
-```
-![Git Stash](./screenshots/git-stash.png)
-**Description :**
-- `git stash` is a handy tool for managing work in progress without committing changes.
-- It saves the current state of the working directory and staging area, allowing you to revert to it later.
-- Stashed changes can be applied or discarded using git stash apply or git stash drop commands.
-- git stash is useful for switching context quickly or temporarily setting aside unfinished work.
-
-### Git Merge
-The git merge command is used to integrate changes from one branch into another. It combines the commit history of two branches, creating a new merge commit.
-**Example**
-```bash
-   git merge branch-1
-```
-![Git Merge](./screenshots/git-merge.png)
-**Description :**
-- `git merge` is essential for incorporating changes from one branch into another.
-- It creates a new commit that combines the changes of the specified branch into the current branch.
-- Merge conflicts may occur if changes in both branches conflict with each other, requiring manual resolution.
-- git merge is a fundamental tool for collaboration and managing feature development in Git repositories.
-
-
 ### Git Revert
 The `git revert` command is used to undo changes made in previous commits. It creates a new commit that reverts the changes made in the specified commit.
 
@@ -307,24 +482,138 @@ The `git revert` command is used to undo changes made in previous commits. It cr
 ```bash
    git revert 345adgd
 ```
+### Git Rm 
+The `git rm` command is used to remove files from the working directory and the staging area. It removes the specified files from the working directory and the staging area.
+
+**Example**
+```bash
+   git rm file1.txt
+```
+**Description :**
+- `git rm` removes files from the working directory and the staging area.
+- It removes the specified files from the working directory and the staging area.
+- `git rm` is useful for undoing changes made to files in the working directory or staging area.
+
+[Back to Top](#git-setup)
 
 **Description :**
 - `git revert` creates a new commit that undoes the changes introduced by the specified commit.
 - It does not modify the commit history but instead creates a new commit with the reversed changes.
 - Multiple commits can be reverted in a single command by specifying their commit hashes.
 - Reverting a merge commit requires specifying the parent commit to revert to.
+Git Amend
+### Git Amend
+The `git amend` command is used to amend the last commit with the changes made in the current commit. It creates a new commit with the same changes as the last commit.
 
-### Git Fetch
-The `git fetch` command is used to download the latest data from a remote repository without merging it with the data in your local repository.
 **Example**
 ```bash
-   git fetch origin
+   git amend
 ```
 
 **Description :**
-- `git fetch` retrieves the latest changes from the remote repository specified by its name (e.g., origin).
-- It downloads new branches, tags, and commits from the remote repository without modifying your local branches.
-- After fetching, you can inspect the changes using commands like git log or git diff.
-- `git fetch` is useful for updating your local repository with changes from the remote repository without automatically merging them into your working branch.
+- `git amend` creates a new commit with the same changes as the last commit.
+- It does not modify the commit history but instead creates a new commit with the same changes as the last commit.
+- `git amend` is useful for creating a new commit with the same changes as the last commit without modifying the commit history.
 
-[Back to Top](#git-basic-commands)
+
+
+### Git Cherry Pick
+The `git cherry-pick` command is used to rebase the changes in the current branch onto the specified branch.
+
+**Example**
+```bash
+   git cherry-pick 345adgd
+```
+**Description :**
+- `git cherry-pick` creates a new commit that reverts the changes introduced by the specified commit.
+- It does not modify the commit history but instead creates a new commit with the reversed changes.
+- Multiple commits can be cherry-picked in a single command by specifying their commit hashes.
+- Cherry-picking a merge commit requires specifying the parent commit to cherry-pick from.
+
+[Back to Top](#git-setup)
+
+## Git Tagging
+
+The `git tag` command is used to create, list, and delete tags in a Git repository. It is a lightweight version of the `git push` command.
+**Example**
+```bash
+   git tag -a v1.0.0 -m "Release 1.0.0"
+```
+**Description :**
+- `git tag` is a powerful command that allows you to create, list, and delete tags in a Git repository.
+- It is a lightweight version of the `git push` command.
+- `git tag` is useful for creating, listing, and deleting tags in a Git repository.
+
+[Back to Top](#git-setup)
+
+## Git Cleanup
+The `git clean` command is used to remove untracked files from the working directory. It deletes all files that are not tracked by Git, including files that are ignored or excluded by Git's ignore rules.
+
+**Example**
+```bash
+   git clean
+```
+![Git Clean](./screenshots/git-clean.png)
+**Description :**
+- `git clean` removes all untracked files from the working directory.
+- It deletes all files that are not tracked by Git, including files that are ignored or excluded by Git's ignore rules.
+
+[Back to Top](#git-setup)
+
+
+
+## Git Ignore Files
+The `.gitignore` file tells Git which files (or patterns) it should ignore. This is useful for excluding temporary files, build artifacts, and other files that you do not want to commit to your repository.
+
+1. Navigate to your Git repository's root directory.
+2. Create a `.gitignore` file if it does not already exist:
+```bash
+   touch .gitignore
+```
+**Examples**
+```bash
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore build outputs
+/dist
+
+# Ignore environment files
+.env
+```
+
+##### Common .gitignore Patterns
+- *.log – Ignores all .log files.
+- *.tmp – Ignores all .tmp files.
+- node_modules/ – Ignores the node_modules - directory.
+- dist/ – Ignores the dist directory.
+- .DS_Store – Ignores macOS specific file.
+- Thumbs.db – Ignores Windows specific file.
+
+**Description :**
+By properly configuring your .gitignore file, you can ensure that unnecessary files are not included in your Git repository, keeping your project clean and organized.
+
+[Back to Top](#git-setup)
+
+## Git Hooks
+ - Soon to be release in this doc
+
+## Git Tips and Tricks
+ - Soon to be release in this doc
+
+## Git References
+- [Git Official Documentation](https://git-scm.com/doc)
+- [Git Cheat Sheet](https://www.git-scm.com/cheat-sheet/)
+- [Git Guide Book](https://git-scm.com/book/en/v2)
+- [Git Tutorial](https://www.tutorialspoint.com/git/index.htm)
+- [Git Glossary](https://git-scm.com/docs/glossary)
+
+
+[Back to Top](#git-setup)
