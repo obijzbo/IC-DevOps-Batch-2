@@ -6,9 +6,9 @@ This document contains all the Git commands covered in the course along with the
 
 Below are the screenshots of running the commands on my local machine.
 
-### Git Init
+### Git Add
 
-![Git Init](git_init.png)
+![Git Init](git_add.png)
 
 ### Git Clone
 
