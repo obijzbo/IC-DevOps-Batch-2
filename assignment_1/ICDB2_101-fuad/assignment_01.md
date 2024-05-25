@@ -240,3 +240,6 @@ Happy coding! If you have any questions or suggestions, feel free to reach out. 
 Inspired by:
 - [SAIO-Ubuntu18 by rizwan192](https://github.com/rizwan192/SAIO-Ubuntu18)
 - [Awesome GitHub Profile README by abhisheknaiidu](https://github.com/abhisheknaiidu/awesome-github-profile-readme?tab=readme-ov-file#github-actions)
+
+Assignment by:
+- [Mubtasim Fuad](https://github.com/mubtasimfuad)
