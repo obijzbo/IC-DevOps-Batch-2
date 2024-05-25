@@ -208,7 +208,6 @@ We'll walk you through the most commonly used Git commands with examples and scr
 - **When to use:** Use `git remote remove` to disconnect your local repository from a remote
 
  repository.
-- **Screenshot:** ![git remote remove screenshot](screenshots/git_remote_remove.png)
 
 ## Tagging 
 
