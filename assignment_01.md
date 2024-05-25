@@ -1,10 +1,7 @@
-<p align="center">
+1.Git init:
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 3f99071 (all the file)
+
+
   <h3 align="center">Git Command</h3>
 
   <p align="center">
@@ -28,20 +25,14 @@
 - [Git Delete Branch](#git-delete-branch)
 - [Git Pull](#git-pull)
 - [Git Fetch](#git-fetch)
-<<<<<<< HEAD
 - [Git Push](#git-push)
-=======
->>>>>>> 3f99071 (all the file)
+- [Git Pull Request](#git-pullrequest)
 - [Git Merge Conflict](#git-mergeconflict)
 - [Git Fork](#git-fork)
 - [Git Reset](#git-reset)
 - [Git Reflog](#git-reflog)
 - [Git Revert](#git-revert)
-<<<<<<< HEAD
-- [Git Pull Request](#git-pullrequest)
 - [Git Cherry Pic](#git-cherrypic)
-=======
->>>>>>> 3f99071 (all the file)
 - [Git Log](#git-log)
 - [Git Stash](#git-stash)
 - [Git StashApply](#git-stashapply)
@@ -235,23 +226,14 @@ In review, git fetch is a primary command used to download contents from a remot
 
 ```text
 $ cat merge.txt
-<<<<<<< HEAD
-this is some content to mess with
-content to append
-=======
 totally different content to merge later
->>>>>>> new_branch_to_merge_later
 ```
 
 ```
 Conflicts generally arise when two people have changed the same lines in a file, or if one developer deleted a file while another developer was modifying it. In these cases, Git cannot automatically determine what is correct. Conflicts only affect the developer conducting the merge, the rest of the team is unaware of the conflict. Git will mark the file as being conflicted and halt the merging process. It is then the developers' responsibility to resolve the conflict.
 ```
 
-<<<<<<< HEAD
-![git_mergeconflict](screenshot/git_mergeconflict.png)
-=======
 ![git_mergeconflict](screenshot/git_merge_conflictf.png)
->>>>>>> 3f99071 (all the file)
 
 
 
@@ -307,60 +289,21 @@ Reference logs, or "reflogs", record when the tips of branches and other referen
 
 ![git_reflog](screenshot/git_reflog.png)
 
-
-<<<<<<< HEAD
-### Git Pull Request
+### Git Git Cherry Pic
 
 
 
 
 ```text
-git pull request
+git cherry-pick A..B
 ```
 
 ```
-A pull request is a proposal to merge a set of changes from one branch into another. In a pull request, collaborators can review and discuss the proposed set of changes before they integrate the changes into the main codebase. Pull requests display the differences, or diffs, between the content in the source branch and the content in the target branch.
-
+git cherry-pick is a powerful command that enables arbitrary Git commits to be picked by reference and appended to the current working HEAD. Cherry picking is the act of picking a commit from a branch and applying it to another. git cherry-pick can be useful for undoing changes.
 ```
 
-![git_pullrequest](screenshot/git_pullrequest.png)
+![git_log](screenshot/git_log.png)
 
-
-## Git Revert
-
-
-
-
-```text
-git revert Head --no-edit
-```
-
-```
-revert is the command we use when we want to take a previous commit and add it as a new commit, keeping the log intact.
-
-```
-
-![git_revert](screenshot/git_revert.png)
-
-
-## Git Cherry Pick
-
-
-
-
-```text
-git cherry-pick
-```
-
-```
-git cherry-pick is a powerful command that enables arbitrary Git commits to be picked by reference and appended to the current working HEAD. Cherry picking is the act of picking a commit from a branch and applying it to another. git cherry-pick can be useful for undoing changes. For example, say a commit is accidently made to the wrong branch. You can switch to the correct branch and cherry-pick the commit to where it should belong.
-```
-
-![git_revert](screenshot/git_revert.png)
-
-
-=======
->>>>>>> 3f99071 (all the file)
 
 ### Git Stash
 
@@ -445,3 +388,5 @@ git diff is a multi-use Git command that when executed runs a diff function on G
 >>>>>>> b1e6d9f (save file before going to branch-1)
 =======
 >>>>>>> 3f99071 (all the file)
+=======
+>>>>>>> 551db48 (Revert "update for  revert command")
