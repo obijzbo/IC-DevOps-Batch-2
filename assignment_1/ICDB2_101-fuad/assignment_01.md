@@ -67,13 +67,12 @@ We'll walk you through the most commonly used Git commands with examples and scr
   ```bash
   git add .
   ```
-- **Screenshot:** ![git add screenshot](screenshots/git_add.png)
 
 ### `git commit`
 - **Description:** Record changes to the repository.
 - **Example:**
   ```bash
-  git commit -m "Initial commit"
+  git commit -m "Add screenshot of git merge"
   ```
 - **Screenshot:** ![git commit screenshot](screenshots/git_commit.png)
 
@@ -81,7 +80,7 @@ We'll walk you through the most commonly used Git commands with examples and scr
 - **Description:** Amend the most recent commit.
 - **Example:**
   ```bash
-  git commit --amend -m "Updated commit message"
+  git commit --amend -m "Add screenshot of git merge with git commit"
   ```
 - **Screenshot:** ![git commit amend screenshot](screenshots/git_commit_amend.png)
 
