@@ -1,7 +1,10 @@
-1.Git init:
+<p align="center">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3f99071 (all the file)
   <h3 align="center">Git Command</h3>
 
   <p align="center">
@@ -25,14 +28,20 @@
 - [Git Delete Branch](#git-delete-branch)
 - [Git Pull](#git-pull)
 - [Git Fetch](#git-fetch)
+<<<<<<< HEAD
 - [Git Push](#git-push)
+=======
+>>>>>>> 3f99071 (all the file)
 - [Git Merge Conflict](#git-mergeconflict)
 - [Git Fork](#git-fork)
 - [Git Reset](#git-reset)
 - [Git Reflog](#git-reflog)
 - [Git Revert](#git-revert)
+<<<<<<< HEAD
 - [Git Pull Request](#git-pullrequest)
 - [Git Cherry Pic](#git-cherrypic)
+=======
+>>>>>>> 3f99071 (all the file)
 - [Git Log](#git-log)
 - [Git Stash](#git-stash)
 - [Git StashApply](#git-stashapply)
@@ -238,7 +247,11 @@ totally different content to merge later
 Conflicts generally arise when two people have changed the same lines in a file, or if one developer deleted a file while another developer was modifying it. In these cases, Git cannot automatically determine what is correct. Conflicts only affect the developer conducting the merge, the rest of the team is unaware of the conflict. Git will mark the file as being conflicted and halt the merging process. It is then the developers' responsibility to resolve the conflict.
 ```
 
+<<<<<<< HEAD
 ![git_mergeconflict](screenshot/git_mergeconflict.png)
+=======
+![git_mergeconflict](screenshot/git_merge_conflictf.png)
+>>>>>>> 3f99071 (all the file)
 
 
 
@@ -295,6 +308,7 @@ Reference logs, or "reflogs", record when the tips of branches and other referen
 ![git_reflog](screenshot/git_reflog.png)
 
 
+<<<<<<< HEAD
 ### Git Pull Request
 
 
@@ -345,6 +359,8 @@ git cherry-pick is a powerful command that enables arbitrary Git commits to be p
 ![git_revert](screenshot/git_revert.png)
 
 
+=======
+>>>>>>> 3f99071 (all the file)
 
 ### Git Stash
 
@@ -425,4 +441,7 @@ git diff is a multi-use Git command that when executed runs a diff function on G
 ```
 
 ![log_summery](screenshot/log_summery.png)
+<<<<<<< HEAD
 >>>>>>> b1e6d9f (save file before going to branch-1)
+=======
+>>>>>>> 3f99071 (all the file)
