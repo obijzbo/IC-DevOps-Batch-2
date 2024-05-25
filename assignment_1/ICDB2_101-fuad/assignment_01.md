@@ -38,7 +38,7 @@ We'll walk you through the most commonly used Git commands with examples and scr
 - **Description:** List, create, or delete branches.
 - **Example:**
   ```bash
-  git branch new-feature
+  git branch branch-1
   git branch
   ```
 - **Screenshot:** ![git branch screenshot](screenshots/git_branch.png)
@@ -107,7 +107,6 @@ We'll walk you through the most commonly used Git commands with examples and scr
   git fetch origin
   ```
 - **When to use:** Use `git fetch` to see what changes are available in the remote repository without merging them into your current branch. This is useful for reviewing changes before integrating them.
-- **Screenshot:** ![git fetch screenshot](screenshots/git_fetch.png)
 
 ### `git fetch + rebase`
 - **Description:** Fetch changes from the remote repository and reapply your changes on top of the fetched changes.
