@@ -155,14 +155,7 @@ We'll walk you through the most commonly used Git commands with examples and scr
 - **When to use:** Use `git revert` to undo changes by creating a new commit that reverses a previous commit. This is safer than `git reset` because it preserves the history.
 - **Screenshot:** ![git revert screenshot](screenshots/git_revert.png)
 
-### `git rebase`
-- **Description:** Reapply commits on top of another base tip.
-- **Example:**
-  ```bash
-  git rebase master
-  ```
-- **When to use:** Use `git rebase` to integrate changes from another branch by replaying your commits on top of it. This keeps your history clean and linear.
-- **Screenshot:** ![git rebase screenshot](screenshots/git_rebase.png)
+
 
 ### `git cherry-pick`
 - **Description:** Apply the changes introduced by some existing commits.
