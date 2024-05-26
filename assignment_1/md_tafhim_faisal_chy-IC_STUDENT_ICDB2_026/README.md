@@ -44,17 +44,17 @@ description with attached screenshots are given below.
 11. [Checkout to branch:](#checkout-to-branch)  
     - [git checkout < branch-name >](#checkout-branch)
     - [git checkout -b < branch-name >](#checkout-and-create-branch)
-12. View Commit History:
-    - git log
-    - git log --oneline
-13. Pull Updates:
-    - git pull < remote-name > < branch-name >
-14. fetch updates:
-    - git fetch < remote-name > < branch-name >
-15. Chanage Base:
-    - git rebase < branch-name >
-    - git rebase --continue
-    - git rebase --abort
+12. [View Commit History:](#view-commit-history)
+    - [git log](#show-log)
+    - [git log --oneline](#show-compacked-log)
+13. [Pull Updates:](#pull-updates)
+    - [git pull < remote-name > < branch-name >](#pull-updates)
+14. [fetch updates:](#fetch-updates)
+    - [git fetch < remote-name > < branch-name >](#fetch-updates)
+15. [Chanage Base:](#chanage-base)
+    - [git rebase < branch-name >](#rebase)
+    - [git rebase --continue](#continue-rebase)
+    - [git rebase --abort](#abort-rebase)
 16. Remove Untracked Files:
     - git clean -n
     - git clean -f
@@ -424,3 +424,77 @@ git checkout -b < branch-name >
 ```
 ### screenshot
 ![git checkout -b < branch-name >](screenshots/git_checkout_b.png)
+
+
+# View Commit History:
+*git log* will show and let user interact with log
+## show log
+below command will show commit history
+### command
+```bash
+git log
+```
+### screenshot
+![git log](screenshots/git_log.png)
+
+## show compacked log
+below command show commit history in compacked way
+### command
+```bash
+git log --oneline
+```
+### screenshot
+![git log --oneline](screenshots/git_log_one_line.png)
+
+
+# Pull Updates:
+below command will pull updates from given branch and remote and appy it to present branch
+### command
+```bash
+git pull < remote-name > < branch-name >
+```
+### screenshot
+![git pull < remote-name > < branch-name >](screenshots/git_pull_remote_branch.png)
+
+
+# Fetch updates:
+below command will fetch updates from given branch and remote but will not appy it to present branch
+### command
+```bash
+git fetch < remote-name > < branch-name >
+```
+### screenshot
+![git fetch < remote-name > < branch-name >](screenshots/git_fetch.png)
+
+
+# Chanage Base:
+*git rebase* command change base and merge code from enother branch.
+
+## Rebase
+below command will change base of current branch to provided branch
+### command
+```bash
+git rebase < branch-name >
+```
+### screenshot
+![git rebase < branch-name >](screenshots/git_rebase.png)
+
+## Continue Rebase
+when changing base, conflict can be happend, on that case *git rebase* let user resolv the conflict one by one. 
+after resolving conflict we need to user below command to continue the rebasing. 
+### command
+```bash
+git rebase --continue
+```
+### screenshot
+![git rebase --continue](screenshots/git_rebase_continue.png)
+
+## Abort rebase
+when changing base, conflict can be happend, on that case *git rebase* let user resolv the conflict one by one. 
+if we dont want to rebase on that case, we can abort the rebasing by using below command
+### command
+```bash
+git rebase --abort
+```
+### screenshot
+![git rebase --abort](screenshots/git_rebase_abort.png)
