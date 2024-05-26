@@ -32,3 +32,18 @@ Set your email: git config --global user.email "your.email@example.com".
 ### View Commit History:
 
 ```git log``` **_: Displays the commit history for the repository._**
+
+
+## Branching and Merging
+
+### Create a New Branch:
+```git branch <branch_name>``` **_: Creates a new branch._**
+
+### Switch Branches:
+```git checkout <branch_name>``` **_: Switches to the specified branch._**
+
+### Merge Branches:
+```git merge <branch_name>```**_: Merges the specified branch into the current branch._**
+
+### Rebase Branch:
+```git rebase <branch_name>``` **_: Reapplies commits on top of another base branch._**
