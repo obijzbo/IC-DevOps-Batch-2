@@ -146,3 +146,7 @@ git rebase --continue
 - **git stash:** Temporarily saves changes.
 - **git stash pop:** Applies the last stash.
 - **git stash list:** Shows all stashes.
+
+
+## Conclusion
+This cheat sheet covers essential Git commands and concepts. For more information, refer to the official Git documentation.
