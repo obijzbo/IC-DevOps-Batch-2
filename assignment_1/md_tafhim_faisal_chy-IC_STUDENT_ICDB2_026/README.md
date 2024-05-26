@@ -28,36 +28,33 @@ description with attached screenshots are given below.
     - [git stash drop stash@{int}](#stash-drop)
     - [git stash apply stash@{int}](#stash-apply)
     - [git stash clear](#stash-clear)
-8. Push Updates:
-    - git push
-    - git push < remote-name > < branch-name >
-    - git push < remote-name > --all
+8. [Push Updates:](#push)
+    - [git push](#update)
+    - [git push < remote-name > < branch-name >](#update-remote-branch)
+    - [git push < remote-name > --all](#update-all)
 9. Check the Status: 
     - git status
 10. Manage branch:
     - git branch < branch-name >
+    - git branch -a
     - git branch -d
     - git branch -D
-    - git branch -f
     - git branch -m < old-branch-name > < new-branch-name >
 11. Checkout to branch:
-    - git checkout 
     - git checkout < branch-name >
     - git checkout -b < branch-name >
 12. View Commit History:
     - git log
     - git log --oneline
-    - git log < branch-name >
 13. Pull Updates:
     - git pull < remote-name > < branch-name >
-14. fatch updates:
-    - git fatch < remote-name > < branch-name >
+14. fetch updates:
+    - git fetch < remote-name > < branch-name >
 15. Chanage Base:
     - git rebase < branch-name >
     - git rebase --continue
     - git rebase --abort
 16. Remove Untracked Files:
-    - git clean
     - git clean -n
     - git clean -f
     - git clean -f -e < pattern >
@@ -66,9 +63,9 @@ description with attached screenshots are given below.
 17. Manage the reference logs:
     - git reflog
 18. Reset commits:
-    - git reset --hard <  commit  >
-    - git reset --soft <  commit  >
-    - git reset --mixed <  commit  >
+    - git reset --hard < commit-hash >
+    - git reset --soft < commit-hash >
+    - git reset --mixed < commit-hash >
     - git reset < file >
     - git reset HEAD~[int]
     - git reset HEAD@{int}
@@ -306,3 +303,36 @@ git stash clear
 ```
 ### screenshot
 ![git stash clear](screenshots/git_stash_clear.png)
+
+# Push:
+*git push* will push the updated commits to the present repository
+
+## update:
+command below will update the present branch with commited changes
+
+### command
+```bash
+git push
+```
+### screenshot
+![git stash clear](screenshots/git_push.png)
+
+## Update remote branch:
+command below will update the given branch with given remote
+
+### command
+```bash
+git push < remote-name > < branch-name >
+```
+### screenshot
+![git stash clear](screenshots/git_push_remote_branch.png)
+
+## Update all:
+command below will update the all branch with given remote
+
+### command
+```bash
+git push < remote-name > --all
+```
+### screenshot
+![git stash clear](screenshots/git_push_remote_all.png)
