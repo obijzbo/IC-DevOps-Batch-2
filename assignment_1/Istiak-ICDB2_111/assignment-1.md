@@ -87,3 +87,20 @@ Set your email: git config --global user.email "your.email@example.com".
 
 ### Checkout File:
 ```git checkout <file>``` **_: Discards changes in the working directory for a specific file._**
+
+## Working with Tags
+
+### Create a Tag:
+```git tag <tag_name>``` **_: Creates a new tag._** <br>
+```git tag -a <tag_name> -m "Tag message"``` **_: Creates an annotated tag with a message._**
+
+### List Tags:
+```git tag``` **_: Lists all tags._**
+
+### Push Tags:
+```git push <remote> <tag_name>``` **_: Pushes a specific tag to the remote repository._**<br>
+```git push <remote> --tags``` **_: Pushes all tags to the remote repository._**
+
+### Delete a Tag:
+```git tag -d <tag_name>``` **_: Deletes a local tag._**<br>
+```git push <remote>``` **_ :refs/tags/<tag_name>: Deletes a remote tag_**
