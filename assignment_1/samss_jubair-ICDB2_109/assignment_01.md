@@ -15,6 +15,7 @@
 1. Use present tense.
 2. Capitalize the first word.
 3. Keep PRs concise and avoid including too many files.
+![GitHub CLI](images/add.jpg)
 
 ### Branch Management:
 - For large teams, using forks can be more efficient than managing multiple branches.
@@ -22,6 +23,7 @@
 ### Pull Request (PR) Guidelines:
 - Provide a detailed description for every PR.
 - If a PR breaks, both the reviewer and developer share responsibility (50-50).
+![GitHub PR](images/pr.jpg)
 
 ### Authentication:
 - SSH is used for secure authentication.
@@ -60,6 +62,7 @@ Git Alias Configuration:
 ```
 git config --global alias.co 'checkout'
 ```
+![Git Alias](images/alias.jpg)
 
 ### Fetch vs. Pull:
 - **Pull:** Combines fetch and merge/rebase.
@@ -75,41 +78,32 @@ git reset HEAD~1
 git reset --hard origin/branch-name  # Undoes reset from remote
 git reflog
 ```
+![Git Reset](images/reset.jpg)
 
 ### Git Reflog:
 - **git log:** Shows commits.
 - **reflog:** Shows git activities.
+
+![Git Reflog](images/reflog.jpg)
 
 ### Git Cherry-pick:
 - Pick a commit from another branch.
 ```bash
 git cherry-pick commit-hash
 ```
+![Git Cherry-pick](images/cherry.jpg)
 
-### Git Reflog:
+### Git Reflog vs Log:
 - **git log:** Shows commits.
 - **reflog:** Shows git activities.
 
-### Git Cherry-pick:
-- Pick a commit from another branch.
-```bash
-git cherry-pick commit-hash
-```
-
-### Stash:
-Temporarily save changes, useful for switching branches.
-
-```
-git stash
-git stash pop
-git stash list
-```
 
 ### GitHub CLI Tool:
 Check out a PR using:
 ```
 gh pr checkout 5
 ```
+
 
 ### Reset Options:
 - soft: Resets the commit, keeps changes staged.
@@ -120,6 +114,7 @@ To remove all local changes and fetch code from remote:
 ```
 git reset --hard origin/main
 ```
+![Git Reset](images/reset.jpg)
 
 ### Modify Previous Commit:
 ```
@@ -147,4 +142,12 @@ git rebase --continue
 - **git stash:** Temporarily saves changes.
 - **git stash pop:** Applies the last stash.
 - **git stash list:** Shows all stashes.
+
+![Git stash](images/stash.jpg)
+
+
+## Conclusion
+This cheat sheet covers essential Git commands and GitHub concepts. It is a handy reference for developers working with Git and GitHub. For more detailed information, refer to the official Git documentation.
+
+
 
