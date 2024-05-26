@@ -116,3 +116,14 @@ git config --global alias.co 'checkout'
 
 ### screenshot
 ![git config --global alias.co 'checkout'](screenshots/git_config_global_alias.png)
+
+# Initialize Repository:
+command below will Initialize git an empty repository.
+
+### command
+```
+git init
+```
+
+### screenshot
+![git config --global -l](screenshots/git_init.png)
