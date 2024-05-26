@@ -252,23 +252,6 @@ The git push command is used to upload local repository content to a remote repo
 ![git_fetch](screenshot/git_push.png)
 
 
-### Git Push
-
-
-
-
-```text
-git push origin <branchname>
-```
-
-```
-The git push command is used to upload local repository content to a remote repository. Pushing is how you transfer commits from your local repository to a remote repo. It's the counterpart to git fetch, but whereas fetching imports commits to local branches, pushing exports commits to remote branches.
-```
-
-![git_fetch](screenshot/git_fetch.png)
-
-
-
 
 ### Git Pull Request
 
