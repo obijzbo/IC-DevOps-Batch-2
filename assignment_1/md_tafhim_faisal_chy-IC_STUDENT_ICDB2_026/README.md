@@ -21,13 +21,13 @@ description with attached screenshots are given below.
 6. [Unstage Changes:](#unstage-changes)
     - [git restore --staged < file-name >](#unstage)
     - [git restore < file-name >](#discard)
-7. Stash check:
-    - git stash
-    - git stash list
-    - git stash pop stash@{int}
-    - git stash drop stash@{int}
-    - git stash apply stash@{int}
-    - git stash clear
+7. [Stash changes:](#stage-changes)
+    - [git stash](#stash)
+    - [git stash list](#stash-list)
+    - [git stash pop stash@{int}](#stash-pop)
+    - [git stash drop stash@{int}](#stash-drop)
+    - [git stash apply stash@{int}](#stash-apply)
+    - [git stash clear](#stash-clear)
 8. Push Updates:
     - git push
     - git push < remote-name > < branch-name >
@@ -243,3 +243,66 @@ git restore < file-name >
 ### screenshot
 ![git restore < file-name >](screenshots/git_restore_1.png)
 ![git restore < file-name >](screenshots/git_restore_2.png)
+
+# Stash changes:
+*git stash* command will save staged files changes in to temporary localtion.
+
+## Stash:
+command below will save staged file in to temporary location.
+
+### command
+```bash
+git stash
+```
+### screenshot
+![git stash](screenshots/git_stash_list.png)
+
+## Stash list:
+command below will show the list of stashed changes.
+
+### command
+```bash
+git stash list
+```
+### screenshot
+![git stash list](screenshots/git_stash_list.png)
+
+## Stash pop:
+command below will delete given stash number and apply it on the files.
+
+### command
+```bash
+git stash pop stash@{int}
+```
+### screenshot
+![git stash pop stash@{int}](screenshots/git_stash_pop.png)
+
+## Stash drop:
+command below will delete given stash.
+
+### command
+```bash
+git stash drop stash@{int}
+```
+### screenshot
+![git stash drop stash@{int}](screenshots/git_stash_drop.png)
+
+## Stash apply:
+command below will apply stashed changes on the file but not delete it from the stash.
+
+### command
+```bash
+git stash apply stash@{int}
+```
+### screenshot
+![git stash apply stash@{int}](screenshots/git_stash_apply.png)
+
+## Stash clear:
+command below will clear stash.
+
+### command
+```bash
+git stash clear
+```
+### screenshot
+![git stash clear](screenshots/git_stash_clear.png)
