@@ -59,6 +59,9 @@ Set your email: git config --global user.email "your.email@example.com".
 ### Add Remote Repository:
 ```git remote add <name> <url>``` **_: Adds a remote repository._**
 
+### List Remote Repositories:
+```git remote -v``` **_: Lists the URLs of remote repositories._**
+
 ### Push Changes:
 ```git push <remote> <branch>``` **_: Pushes commits to a remote repository branch._**
 
