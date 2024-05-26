@@ -20,23 +20,23 @@
 - [Git Add](#git-add)
 - [Git Commit](#git-commit)
 - [Git Branch](#git-branch)
-- [Git Create New Branch](#git-new-branch)
+- [Git New Branch](#git-new-branch)
 - [Git Merge Branch](#git-merge-branch)
 - [Git Delete Branch](#git-delete-branch)
 - [Git Pull](#git-pull)
 - [Git Fetch](#git-fetch)
 - [Git Push](#git-push)
-- [Git Pull Request](#git-pullrequest)
-- [Git Merge Conflict](#git-mergeconflict)
+- [Git Pull Request](#git-pull-request)
+- [Git Merge Conflict](#git-merge-conflict)
 - [Git Fork](#git-fork)
 - [Git Reset](#git-reset)
 - [Git Reflog](#git-reflog)
 - [Git Revert](#git-revert)
-- [Git Cherry Pic](#git-cherrypic)
+- [Git Cherry Pick](#git-cherry-pick)
 - [Git Log](#git-log)
 - [Git Stash](#git-stash)
-- [Git StashApply](#git-stashapply)
-- [Git LogSummary](#git-logsummary)
+- [Git Stash Apply](#git-stash-apply)
+- [Git Log Summary](#git-log-summary)
 - [Git Diff](#git-diff)
 
 ## Git Commands
@@ -126,20 +126,38 @@ The git commit command captures a snapshot of the project's currently staged cha
 
 
 ```text
-git commit -m "[commit message]"
+git branch
 ```
 
 ```
-The git commit command captures a snapshot of the project's currently staged changes. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicitly ask it to.
+In Git, a branch is essentially a lightweight, movable pointer to one of these commits. The default branch name in Git is main, but you can create, delete, and work with branches to manage different versions or features of your project.
 
 ```
 
 ![git_all_branch](screenshot/git_all_branch.png)
 
 
-
-
 ### Git Create New Branch
+
+
+
+
+```text
+git checkout -b [branch name]
+```
+
+```
+The git branch command can be used to create a new branch. When you want to start a new feature, you create a new branch off main using git branch new_branch . Once created you can then use git checkout new_branch to switch to that branch.
+
+```
+
+![git_all_branch](screenshot/git_create_new_branch.png)
+
+
+
+
+
+### Git New Branch
 
 
 
@@ -218,6 +236,57 @@ In review, git fetch is a primary command used to download contents from a remot
 
 ![git_fetch](screenshot/git_fetch.png)
 
+### Git Push
+
+
+
+
+```text
+git push origin <branchname>
+```
+
+```
+The git push command is used to upload local repository content to a remote repository. Pushing is how you transfer commits from your local repository to a remote repo. It's the counterpart to git fetch, but whereas fetching imports commits to local branches, pushing exports commits to remote branches.
+```
+
+![git_fetch](screenshot/git_fetch.png)
+
+
+### Git Push
+
+
+
+
+```text
+git push origin <branchname>
+```
+
+```
+The git push command is used to upload local repository content to a remote repository. Pushing is how you transfer commits from your local repository to a remote repo. It's the counterpart to git fetch, but whereas fetching imports commits to local branches, pushing exports commits to remote branches.
+```
+
+![git_fetch](screenshot/git_fetch.png)
+
+
+
+
+### Git Pull Request
+
+
+
+
+```text
+git pull request
+```
+
+```
+A pull request is a proposal to merge a set of changes from one branch into another. In a pull request, collaborators can review and discuss the proposed set of changes before they integrate the changes into the main codebase. Pull requests display the differences, or diffs, between the content in the source branch and the content in the target branch.
+
+```
+
+![git_pullrequest](screenshot/git_pullrequest.png)
+
+
 
 ### Git Merge Conflict
 
@@ -233,7 +302,7 @@ totally different content to merge later
 Conflicts generally arise when two people have changed the same lines in a file, or if one developer deleted a file while another developer was modifying it. In these cases, Git cannot automatically determine what is correct. Conflicts only affect the developer conducting the merge, the rest of the team is unaware of the conflict. Git will mark the file as being conflicted and halt the merging process. It is then the developers' responsibility to resolve the conflict.
 ```
 
-![git_mergeconflict](screenshot/git_merge_conflictf.png)
+![git_mergeconflict](screenshot/git_merge_conflict.png)
 
 
 
@@ -289,20 +358,38 @@ Reference logs, or "reflogs", record when the tips of branches and other referen
 
 ![git_reflog](screenshot/git_reflog.png)
 
-### Git Git Cherry Pic
+
+## Git Revert
 
 
 
 
 ```text
-git cherry-pick A..B
+git revert Head --no-edit
 ```
 
 ```
-git cherry-pick is a powerful command that enables arbitrary Git commits to be picked by reference and appended to the current working HEAD. Cherry picking is the act of picking a commit from a branch and applying it to another. git cherry-pick can be useful for undoing changes.
+revert is the command we use when we want to take a previous commit and add it as a new commit, keeping the log intact.
+
 ```
 
-![git_log](screenshot/git_log.png)
+![git_revert](screenshot/git_revert.png)
+
+
+## Git Cherry  Pick
+
+
+
+
+```text
+git cherry-pick
+```
+
+```
+git cherry-pick is a powerful command that enables arbitrary Git commits to be picked by reference and appended to the current working HEAD. Cherry picking is the act of picking a commit from a branch and applying it to another. git cherry-pick can be useful for undoing changes. For example, say a commit is accidently made to the wrong branch. You can switch to the correct branch and cherry-pick the commit to where it should belong.
+```
+
+![git_cherry_pick](screenshot/git_cherry-pick.png)
 
 
 ### Git Stash
@@ -315,12 +402,13 @@ git stash
 ```
 
 ```
-git stash temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on.```
+git stash temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on.
+```
 
 ![git_stash](screenshot/git_stash.png)
 
 
-### Git StashApply
+### Git Stash Apply
 
 
 
@@ -330,7 +418,8 @@ git stash apply
 ```
 
 ```
-git stash apply takes the files in a stash and places them back into the development workspace but doesn't delete the stash from history.```
+git stash apply takes the files in a stash and places them back into the development workspace but doesn't delete the stash from history.
+```
 
 ![git_stashapply](screenshot/git_stash_apply.png)
 
@@ -353,7 +442,7 @@ The git log command displays all of the commits in a repository's history. By de
 
 
 
-### Git LogSummary
+### Git Log Summary
 
 
 
@@ -363,10 +452,10 @@ The git log command displays all of the commits in a repository's history. By de
 ```
 
 ```
-The git pull command is used to get updates from the remote repo. This command is a combination of git fetch and git merge which means that, when we use git pull, it gets the updates from remote repository (git fetch) and immediately applies the latest changes in your local (git merge).
+To get a detailed summary description of your Git log, you can use various git log options to include information like commit hash, author, date, and message. Here are some commands and their descriptions to help you achieve a comprehensive summary
 ```
 
-![git_diff](screenshot/git_diff.png)
+![git_diff](screenshot/git_log_summery.png)
 
 
 
@@ -383,10 +472,5 @@ The git pull command is used to get updates from the remote repo. This command i
 git diff is a multi-use Git command that when executed runs a diff function on Git data sources. These data sources can be commits, branches, files and more. This document will discuss common invocations of git diff and diffing work flow patterns.
 ```
 
-![log_summery](screenshot/log_summery.png)
-<<<<<<< HEAD
->>>>>>> b1e6d9f (save file before going to branch-1)
-=======
->>>>>>> 3f99071 (all the file)
-=======
->>>>>>> 551db48 (Revert "update for  revert command")
+![log_summery](screenshot/gitt_diff.png)
+
