@@ -1,12 +1,9 @@
-# git assignment 1
-
-# list of all basic command:
+# list of all basic git command:
 description with attached screenshots are given below.
 
 1. Config git:
     - git config --global user.name "github-user-name"
-    - git config --global user.email "github-email"
-    - git config -l
+    - git config --global -l
     - git config --global alias.co 'checkout'
 2. Initialize Repository:
     - git init
@@ -84,3 +81,38 @@ description with attached screenshots are given below.
     - git clone -b < branch-name > < repository-url >
     - git clone --depth 1 < repository-url >
 
+# Config git:
+*git config --global* used to set global environment variable for git.
+
+## Description
+Below command will set global environment variable of user name for git.
+
+## command
+```
+git config --global user.name "github-user-name"
+```
+
+## screenshot
+![git config --global user.name "github-user-name"](screenshots/git_config_global_user_name.png)
+
+## Description
+Below command will show all the global environment set for git.
+
+## command
+```
+git config --global -l
+```
+
+## screenshot
+![git config --global -l](screenshots/git_config_global_l.png)
+
+## Description
+Below command will set alias for checkout, this will enable us to right co instead of checkout in git command.
+
+## command
+```
+git config --global alias.co 'checkout'
+```
+
+## screenshot
+![git config --global alias.co 'checkout'](screenshots/git_config_global_alias.png)
