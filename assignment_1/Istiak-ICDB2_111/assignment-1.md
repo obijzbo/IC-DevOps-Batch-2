@@ -47,3 +47,18 @@ Set your email: git config --global user.email "your.email@example.com".
 
 ### Rebase Branch:
 ```git rebase <branch_name>``` **_: Reapplies commits on top of another base branch._**
+
+
+## Remote Repositories
+
+### Add Remote Repository:
+```git remote add <name> <url>``` **_: Adds a remote repository._**
+
+### Push Changes:
+```git push <remote> <branch>``` **_: Pushes commits to a remote repository branch._**
+
+### Pull Changes:
+```git pull <remote> <branch>``` **_: Fetches and merges changes from a remote repository branch._**
+
+### Fetch Changes:
+```git fetch <remote>``` **_: Fetches changes from a remote repository but does not merge them._**
