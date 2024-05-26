@@ -137,21 +137,6 @@ In Git, a branch is essentially a lightweight, movable pointer to one of these c
 ![git_all_branch](screenshot/git_all_branch.png)
 
 
-### Git Create New Branch
-
-
-
-
-```text
-git checkout -b [branch name]
-```
-
-```
-The git branch command can be used to create a new branch. When you want to start a new feature, you create a new branch off main using git branch new_branch . Once created you can then use git checkout new_branch to switch to that branch.
-
-```
-
-![git_all_branch](screenshot/git_create_new_branch.png)
 
 
 
