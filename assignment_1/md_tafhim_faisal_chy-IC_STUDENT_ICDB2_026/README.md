@@ -18,9 +18,9 @@ description with attached screenshots are given below.
 5. [Create a Commit](#create-a-commit): 
     - [git commit -m "commit message"](#add-commit-message) 
     - [git commit](#add-commit-description)
-6. Unstage Changes:
-    - git restore --staged < file-name >
-    - git restore < file-name >
+6. [Unstage Changes:](#unstage-changes)
+    - [git restore --staged < file-name >](#unstage)
+    - [git restore < file-name >](#discard)
 7. Stash check:
     - git stash
     - git stash list
@@ -219,3 +219,27 @@ git commit
 ### screenshot
 ![git commit ](screenshots/git_commit_1.png)
 ![git commit ](screenshots/git_commit_2.png)
+
+# Unstage Changes:
+*git restore* command will enable to add message and description on staged changes.
+
+## Unstage:
+command below will unstage staged files.
+
+### command
+```bash
+git restore --staged < file-name >
+```
+### screenshot
+![git restore --staged < file-name >](screenshots/git_restore_staged.png)
+
+## Discard:
+command below will descard unstaged files changes.
+
+### command
+```bash
+git restore < file-name >
+```
+### screenshot
+![git restore < file-name >](screenshots/git_restore_1.png)
+![git restore < file-name >](screenshots/git_restore_2.png)
