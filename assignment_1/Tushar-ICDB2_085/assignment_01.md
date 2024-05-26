@@ -604,19 +604,26 @@ The `git reset` command is used to reset the current HEAD to a specified state. 
 ```bash 
    git reset HEAD~1
 ```
+![Git Reset](./screenshots/git-reset.png)
+
 - git reset --hard moves the HEAD to the specified commit and discards all changes after that commit.
 
 **Git Reset Soft and Hard**
+- `git reset --soft` moves the HEAD to the specified commit, keeping the changes in the index.
+
 ```bash
    git reset --soft HEAD~1
 
 ```
-- `git reset --soft` moves the HEAD to the specified commit, keeping the changes in the index.
-```bash
-   git reset --soft HEAD~1
-```
+![Git Reset](./screenshots/git-reset-soft.png)
+
 - `git reset --hard` moves the HEAD to the specified commit and discards all changes after that commit.
-![Git Reset](./screenshots/git-reset.png)
+
+```bash
+   git reset --hard HEAD~1
+```
+
+![Git Reset](./screenshots/git-reset-hard.png)
 
 **Description :**
 - `git reset` is a versatile command with different options for resetting the repository state.
@@ -675,6 +682,8 @@ The `git cherry-pick` command is used to rebase the changes in the current branc
 - It does not modify the commit history but instead creates a new commit with the reversed changes.
 - Multiple commits can be cherry-picked in a single command by specifying their commit hashes.
 - Cherry-picking a merge commit requires specifying the parent commit to cherry-pick from.
+
+![Git Cherry Pick](./screenshots/git-cherry-pick.png)
 
 [Back to Top](#git-setup)
 
