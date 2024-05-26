@@ -315,7 +315,7 @@ command below will update the present branch with commited changes
 git push
 ```
 ### screenshot
-![git stash clear](screenshots/git_push.png)
+![git push](screenshots/git_push.png)
 
 ## Update remote branch:
 command below will update the given branch with given remote
@@ -325,7 +325,7 @@ command below will update the given branch with given remote
 git push < remote-name > < branch-name >
 ```
 ### screenshot
-![git stash clear](screenshots/git_push_remote_branch.png)
+![git push < remote-name > < branch-name >](screenshots/git_push_remote_branch.png)
 
 ## Update all:
 command below will update the all branch with given remote
@@ -335,4 +335,13 @@ command below will update the all branch with given remote
 git push < remote-name > --all
 ```
 ### screenshot
-![git stash clear](screenshots/git_push_remote_all.png)
+![git push < remote-name > --all](screenshots/git_push_remote_all.png)
+
+# Check the Status:
+
+### command
+```bash
+git status
+```
+### screenshot
+![git status](screenshots/git_status.png)
