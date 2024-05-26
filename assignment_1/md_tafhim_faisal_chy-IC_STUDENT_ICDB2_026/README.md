@@ -194,3 +194,28 @@ git add -A
 ```
 ### screenshot
 ![git add -A ](screenshots/git_add_a.png)
+
+# Create a Commit:
+*git commit* command will enable to add message and description on staged changes.
+
+## Add Commit message:
+command below will add message to staged changes.
+
+### command
+```bash
+git commit -m "commit message"
+```
+### screenshot
+![git commit -m "commit message"](screenshots/git_commit_m.png)
+
+## Add commit description:
+command below will add message and description.
+
+### command
+```bash
+git commit
+```
+
+### screenshot
+![git commit ](screenshots/git_commit_1.png)
+![git commit ](screenshots/git_commit_2.png)
