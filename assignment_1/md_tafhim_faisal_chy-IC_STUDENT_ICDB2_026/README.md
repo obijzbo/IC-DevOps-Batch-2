@@ -41,9 +41,9 @@ description with attached screenshots are given below.
     - [git branch -d](#delete-branch)
     - [git branch -D](#force-delete-branch)
     - [git branch -m < old-branch-name > < new-branch-name >](#rename-branch)
-11. Checkout to branch:
-    - git checkout < branch-name >
-    - git checkout -b < branch-name >
+11. [Checkout to branch:](#checkout-to-branch)  
+    - [git checkout < branch-name >](#checkout-branch)
+    - [git checkout -b < branch-name >](#checkout-and-create-branch)
 12. View Commit History:
     - git log
     - git log --oneline
@@ -404,3 +404,23 @@ git branch -m < old-branch-name > < new-branch-name >
 ### screenshot
 ![git branch -m < old-branch-name > < new-branch-name >](screenshots/git_branch_rename.png)
 
+# Checkout to branch:
+*checkout* command will enable user to change branch and create branch
+
+## checkout Branch
+below command with rename branch
+### command
+```bash
+git checkout < branch-name >
+```
+### screenshot
+![git checkout < branch-name >](screenshots/git_checkout.png)
+
+## checkout and create branch
+below command with rename branch
+### command
+```bash
+git checkout -b < branch-name >
+```
+### screenshot
+![git checkout -b < branch-name >](screenshots/git_checkout_b.png)
