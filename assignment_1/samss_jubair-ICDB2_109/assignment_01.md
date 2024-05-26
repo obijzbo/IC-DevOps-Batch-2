@@ -135,3 +135,14 @@ git rebase --continue
 
 ### Git Diff:
 - **git diff:** Shows changes in the working directory.
+
+### Git Show:
+- **git show:** Shows changes in the last commit.
+
+### Git Blame:
+- **git blame:** Shows who made changes to a file.
+
+### Git stash:
+- **git stash:** Temporarily saves changes.
+- **git stash pop:** Applies the last stash.
+- **git stash list:** Shows all stashes.
