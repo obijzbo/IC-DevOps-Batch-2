@@ -150,3 +150,5 @@ git rebase --continue
 
 ## Conclusion
 This cheat sheet covers essential Git commands and concepts. For more information, refer to the official Git documentation.
+
+# Git and GitHub Cheat Sheet
