@@ -32,14 +32,15 @@ description with attached screenshots are given below.
     - [git push](#update)
     - [git push < remote-name > < branch-name >](#update-remote-branch)
     - [git push < remote-name > --all](#update-all)
-9. Check the Status: 
-    - git status
-10. Manage branch:
-    - git branch < branch-name >
-    - git branch -a
-    - git branch -d
-    - git branch -D
-    - git branch -m < old-branch-name > < new-branch-name >
+9. [Check the Status:](#check-the-status) 
+    - [git status](#check-the-status)
+10. [Manage branch:](#manage-branch)
+    - [git branch](#branch-list)
+    - [git branch -a](#all-branch-list)
+    - [git branch < branch-name >](#create-branch)
+    - [git branch -d](#delete-branch)
+    - [git branch -D](#force-delete-branch)
+    - [git branch -m < old-branch-name > < new-branch-name >](#rename-branch)
 11. Checkout to branch:
     - git checkout < branch-name >
     - git checkout -b < branch-name >
@@ -345,3 +346,61 @@ git status
 ```
 ### screenshot
 ![git status](screenshots/git_status.png)
+
+# Manage branch:
+*git branch* command will let user manage branch
+
+## Branch list
+below command will show the list of localy fetched branches 
+### command
+```bash
+git branch
+```
+### screenshot
+![git branch](screenshots/git_branch.png)
+
+## All branch list:
+below command will show a list of all branch local and remote
+### command
+```bash
+git branch -a
+```
+### screenshot
+![git branch -a](screenshots/git_branch_a.png)
+
+## Create Branch
+below command will create new branch
+### command
+```bash
+git branch < branch-name >
+```
+### screenshot
+![git branch < branch-name >](screenshots/git_branch_create.png)
+
+## Delete branch:
+below command will delete branch
+### command
+```bash
+git branch -d
+```
+### screenshot
+![git branch -d](screenshots/git_branch_delete.png)
+
+## Force Delete Branch:
+below command will force delete a branch even if it has unstaged files.
+### command
+```bash
+git branch -D
+```
+### screenshot
+![git branch -D](screenshots/git_branch_force_delete.png)
+
+## Rename Branch
+below command with rename branch
+### command
+```bash
+git branch -m < old-branch-name > < new-branch-name >
+```
+### screenshot
+![git branch -m < old-branch-name > < new-branch-name >](screenshots/git_branch_rename.png)
+
