@@ -127,3 +127,11 @@ git rebase -i HEAD~3  # Opens vim for modification
 # After editing, continue rebase
 git rebase --continue
 ```
+
+### Git Log:
+- **git log:** Shows commit history.
+- **git log --oneline:** Shows commit history in one line.
+- **git log --oneline --graph:** Shows commit history in graph format.
+
+### Git Diff:
+- **git diff:** Shows changes in the working directory.
