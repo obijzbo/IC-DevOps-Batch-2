@@ -104,3 +104,8 @@ Set your email: git config --global user.email "your.email@example.com".
 ### Delete a Tag:
 ```git tag -d <tag_name>``` **_: Deletes a local tag._**<br>
 ```git push <remote>``` **_ :refs/tags/<tag_name>: Deletes a remote tag_**
+
+## Additional Commands
+
+### Show Commit Details:
+```git show <commit>``` **_: Shows details about a specific commit._**
