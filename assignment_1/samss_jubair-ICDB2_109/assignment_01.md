@@ -127,5 +127,3 @@ git rebase -i HEAD~3  # Opens vim for modification
 # After editing, continue rebase
 git rebase --continue
 ```
-
-
