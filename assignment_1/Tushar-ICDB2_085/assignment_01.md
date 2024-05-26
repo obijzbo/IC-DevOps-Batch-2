@@ -505,6 +505,8 @@ The `git merge` command is used to merge changes from one branch into another br
 ```bash
    git merge branch-1
 ```
+![Git Merge](./screenshots/git-merge.png)
+
 **Description :**
 - `git merge`: This is the command to merge changes from one branch into another branch in a Git repository.
 - `branch-1`: This is the name of the branch you want to merge into the current branch.
@@ -514,8 +516,9 @@ The `git rebase` command is used to rebase the changes in the current branch ont
 
 **Example**
 ```bash
-   git rebase master
+   git rebase testbranch
 ```
+![Git Rebase](./screenshots/git-rebase.png)
 
 **Description :**
 - `git rebase` creates a new commit that reverts the changes introduced by the specified branch.
