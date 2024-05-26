@@ -105,6 +105,14 @@ Set your email: git config --global user.email "your.email@example.com".
 ```git tag -d <tag_name>``` **_: Deletes a local tag._**<br>
 ```git push <remote>``` **_ :refs/tags/<tag_name>: Deletes a remote tag_**
 
+
+## Git Aliases
+
+### Create Aliases for Commands:
+```git config --global alias.<alias_name> '<command>'``` **_: Creates an alias for a command._** <br>
+Example: git config --global alias.co 'checkout': Creates an alias git co for git checkout.
+
+
 ## Additional Commands
 
 ### Show Commit Details:
