@@ -84,29 +84,29 @@ description with attached screenshots are given below.
 # Config git:
 *git config --global* used to set global environment variable for git.
 
-## Description
+## Set global env
 Below command will set global environment variable of user name for git.
 
-## command
+### command
 ```
 git config --global user.name "github-user-name"
 ```
 
-## screenshot
+### screenshot
 ![git config --global user.name "github-user-name"](screenshots/git_config_global_user_name.png)
 
-## Description
+## Show all global env
 Below command will show all the global environment set for git.
 
-## command
+### command
 ```
 git config --global -l
 ```
 
-## screenshot
+### screenshot
 ![git config --global -l](screenshots/git_config_global_l.png)
 
-## Description
+## Set alias
 Below command will set alias for checkout, this will enable us to right co instead of checkout in git command.
 
 ## command
