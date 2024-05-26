@@ -393,6 +393,58 @@ Discards changes in the worktree for the specified file(s). This command reverts
 [Back to Top](#git-setup)
 
 
+# Inspection and Comparison
+
+## Git Log
+The `git log` command is used to view the commit history of a repository. It displays a list of commits in reverse chronological order, showing the commit hash, author, date, and commit message.
+
+**Example**
+```bash
+git log
+```
+![Git Log](./screenshots/git-log.png)
+![Git Log](./screenshots/git-log-output.png)
+
+```bash
+   git log --oneline
+```
+![Git Log](./screenshots/git-log-oneline.png)
+
+**Description :**
+- `git log` is a powerful tool for inspecting the history of a repository.
+- It shows the commit history, including the commit hash (SHA-1 checksum), author name, email, date, and commit message.
+- By default, git log displays the commits starting from the most recent.
+
+
+## Git Diff
+The `git diff` command is used to view the difference between the working directory, staging area, and the most recent commit. It shows changes line by line, highlighting additions, deletions, and modifications.
+**Example**
+```bash
+   git diff
+```
+![Git Diff](./screenshots/git-diff.png)
+**Description :**
+- `git diff` is a fundamental command for reviewing changes made to files in a repository.
+- It compares changes between the working directory and the staging area (index) by default.
+- With additional arguments, such as commit hashes or file paths, git diff can compare different versions of files or commits.
+- `git diff` is essential for understanding the current state of the repository and tracking modifications.
+
+## Git Show
+The `git show` command is used to view the contents of a commit in the repository. It displays the commit hash, author, date, and commit message.
+
+**Example**
+```bash
+   git show
+```
+![Git Show](./screenshots/git-show.png)
+**Description :**
+- `git show` is a powerful command for viewing the contents of a commit in the repository.
+- It displays the commit hash, author, date, and commit message.
+- `git show` is useful for viewing the changes made in a particular commit.
+
+[Back to Top](#git-setup)
+
+
 # Branching and Merging
 
 ## Git Branch 
@@ -404,23 +456,27 @@ The  `git branch` command is used to list, create, or delete branches in a Git r
 ```bash 
    git branch
 ```
-![Git Branch](./screenshots/git-branch.png)
+![Git Branch](./screenshots/git-branch-list.png)
 - Creating a Branch
 To create a new branch in Git, you use the git branch command followed by the name of the new branch you want to create.
 ```bash
    git branch branch-1
 ```
+![Git Branch](./screenshots/git-branch-1.png)
+
 - Deleting a Branch
 To delete a branch in Git, you use the `git branch -d` command followed by the name of the branch you want to delete.
 ```bash
    git branch -d branch-1
 ```
+![Git Branch](./screenshots/git-branch-delete.png)
 
 - Checking Out a Branch
 To switch to a different branch in Git, you use the `git checkout command` followed by the name of the branch you want to switch to.
 ```bash
-   git checkout branch-1
+   git checkout testbranch
 ```
+![Git Branch](./screenshots/git-branch-checkout.png)
 
 **Description :**
 - When used without options, git branch lists all the local branches in the repository.
@@ -512,6 +568,7 @@ The `git fetch` command is used to download the latest data from a remote reposi
 ```bash
    git fetch origin
 ```
+![Git Pull](./screenshots/git-pull.png)
 
 **Description :**
 - `git fetch` retrieves the latest changes from the remote repository specified by its name (e.g., origin).
@@ -531,57 +588,6 @@ The `git pull` command is used to fetch and integrate changes from a remote repo
 - It fetches changes from the specified remote repository and integrates them into the current branch.
 - The <remote> argument specifies the remote repository from which - want to pull changes, and <branch> specifies the branch from which you want to pull changes.
 - After fetching the changes, git pull automatically merges them into your current branch.
-
-[Back to Top](#git-setup)
-
-# Inspection and Comparison
-
-## Git Log
-The `git log` command is used to view the commit history of a repository. It displays a list of commits in reverse chronological order, showing the commit hash, author, date, and commit message.
-
-**Example**
-```bash
-git log
-```
-![Git Log](./screenshots/git-log.png)
-![Git Log](./screenshots/git-log-output.png)
-
-```bash
-   git log --oneline
-```
-![Git Log](./screenshots/git-log-oneline.png)
-
-**Description :**
-- `git log` is a powerful tool for inspecting the history of a repository.
-- It shows the commit history, including the commit hash (SHA-1 checksum), author name, email, date, and commit message.
-- By default, git log displays the commits starting from the most recent.
-
-
-## Git Diff
-The `git diff` command is used to view the difference between the working directory, staging area, and the most recent commit. It shows changes line by line, highlighting additions, deletions, and modifications.
-**Example**
-```bash
-   git diff
-```
-![Git Diff](./screenshots/git-diff.png)
-**Description :**
-- `git diff` is a fundamental command for reviewing changes made to files in a repository.
-- It compares changes between the working directory and the staging area (index) by default.
-- With additional arguments, such as commit hashes or file paths, git diff can compare different versions of files or commits.
-- `git diff` is essential for understanding the current state of the repository and tracking modifications.
-
-## Git Show
-The `git show` command is used to view the contents of a commit in the repository. It displays the commit hash, author, date, and commit message.
-
-**Example**
-```bash
-   git show
-```
-![Git Show](./screenshots/git-show.png)
-**Description :**
-- `git show` is a powerful command for viewing the contents of a commit in the repository.
-- It displays the commit hash, author, date, and commit message.
-- `git show` is useful for viewing the changes made in a particular commit.
 
 [Back to Top](#git-setup)
 
@@ -676,6 +682,8 @@ The `git tag` command is used to create, list, and delete tags in a Git reposito
 ```bash
    git tag -a v1.0.0 -m "Release 1.0.0"
 ```
+![Git Tag](./screenshots/git-clean.png)
+
 **Description :**
 - `git tag` is a powerful command that allows you to create, list, and delete tags in a Git repository.
 - It is a lightweight version of the `git push` command.
@@ -691,6 +699,7 @@ The `git clean` command is used to remove untracked files from the working direc
    git clean
 ```
 ![Git Clean](./screenshots/git-clean.png)
+
 **Description :**
 - `git clean` removes all untracked files from the working directory.
 - It deletes all files that are not tracked by Git, including files that are ignored or excluded by Git's ignore rules.
