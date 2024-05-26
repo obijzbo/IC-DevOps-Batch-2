@@ -109,10 +109,10 @@ git config --global -l
 ## Set alias
 Below command will set alias for checkout, this will enable us to right co instead of checkout in git command.
 
-## command
+### command
 ```
 git config --global alias.co 'checkout'
 ```
 
-## screenshot
+### screenshot
 ![git config --global alias.co 'checkout'](screenshots/git_config_global_alias.png)
