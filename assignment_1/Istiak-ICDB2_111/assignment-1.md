@@ -72,6 +72,9 @@ Set your email: git config --global user.email "your.email@example.com".
 ### Fetch Changes:
 ```git fetch <remote>``` **_: Fetches changes from a remote repository but does not merge them._**
 
+### Remove Remote Repository:
+```git remote remove <name>``` **_: Removes a remote repository._**
+
 
 ## Undoing Changes
 
