@@ -64,6 +64,7 @@ Set your email: git config --global user.email "your.email@example.com".
 
 ### Push Changes:
 ```git push <remote> <branch>``` **_: Pushes commits to a remote repository branch._**
+```git push -u <remote> <branch>``` **_: Sets the upstream branch for tracking and pushes commits._**
 
 ### Pull Changes:
 ```git pull <remote> <branch>``` **_: Fetches and merges changes from a remote repository branch._**
