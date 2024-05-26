@@ -37,7 +37,6 @@
   ```bash
   git checkout branch-1
   ```
-- **Screenshot:** ![git checkout screenshot](screenshot/checkout branch.png)
 
 
 ### `git add`
@@ -80,7 +79,7 @@
   git rebase origin/main
   ```
 - **use case:** Use `git fetch and rebase` to add changes from the remote repository into your current branch by replaying your local commits without extra merge commit.
-- **Screenshot:** ![git fetch rebase screenshot](screenshot/git rebase.png)
+- **Screenshot:** ![git rebase screenshot](screenshot/"git rebase.png")
 
 ### `git reset`
 - **Description:** Reset current HEAD to the last specific commit.
@@ -89,7 +88,7 @@
   git reset --soft HEAD~1
   ```
 - **use case:** Use `git reset` to discard changes in your working directory and move back to a previous commit. There are flag `--soft` and `--hard` . Hard  will delete uncommitted changes from file history. But soft will only remove commit but will stay chages in file.For 1 step  HEAD~1 for last 2 step use HEAD~2 .
-- **Screenshot:** ![git reset screenshot](screenshot/git soft reset.png)
+- **Screenshot:** ![git reset screenshot](screenshot/"git soft reset.png")
 
 
 ### `git log`
@@ -100,7 +99,7 @@
   git log --oneline
   ```
 - **use case:** Use `git log` or `git log --oneline` to view the history of commits. This is helpful for tracking changes and understanding the project history.
-- **Screenshot:** ![git log screenshot](screenshot/git log --oneline.png)
+- **Screenshot:** ![git log screenshot](screenshot/"git log --oneline.png")
  
 
 ### `git remote`
