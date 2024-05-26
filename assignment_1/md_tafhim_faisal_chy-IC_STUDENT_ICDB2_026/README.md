@@ -1,23 +1,23 @@
 # list of all basic git command:
 description with attached screenshots are given below.
 
-1. Config git:
-    - git config --global user.name "github-user-name"
-    - git config --global -l
-    - git config --global alias.co 'checkout'
-2. Initialize Repository:
-    - git init
-3. Initialize Remote Repositories:
-    - git remote add < remote-name > < clone-url > / < ssh-url >
-    - git remote -v
-    - git remote remove < remote-name >
-4. Stage Changes:
-    - git add . 
-    - git add -A 
-    - git add < file1 > < file2 > 
-5. Create a Commit: 
-    - git commit -m "commit message" 
-    - git commit
+1. [Config git](#Config-git):
+    - [git config --global user.name "github-user-name"](#config-git)
+    - [git config --global -l](#show-all-global-env)
+    - [git config --global alias.co 'checkout'](#set-alias)
+2. [Initialize Repository](#Initialize-Repository):
+    - [git init](#initialize-repository)
+3. [Initialize Remote Repositories](#Initialize-Remote-Repositories):
+    - [git remote add < remote-name > < clone-url > / < ssh-url >](#add-remote)
+    - [git remote -v](#remote-list)
+    - [git remote remove < remote-name >](#remove-remote)
+4. [Stage Changes](#stage-changes):
+    - [git add .](#stage-all-changed-file) 
+    - [git add -A](#stage-the-deleted-files) 
+    - [git add < file1 > < file2 >](#stage-changed-file) 
+5. [Create a Commit](#create-a-commit): 
+    - [git commit -m "commit message"](#add-commit-message) 
+    - [git commit](#add-commit-description)
 6. Unstage Changes:
     - git restore --staged < file-name >
     - git restore < file-name >
