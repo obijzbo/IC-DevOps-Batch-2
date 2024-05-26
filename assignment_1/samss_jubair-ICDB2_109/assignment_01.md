@@ -136,6 +136,7 @@ git rebase --continue
 ### Git Diff:
 - **git diff:** Shows changes in the working directory.
 
+
 ### Git Show:
 - **git show:** Shows changes in the last commit.
 
@@ -147,8 +148,3 @@ git rebase --continue
 - **git stash pop:** Applies the last stash.
 - **git stash list:** Shows all stashes.
 
-
-## Conclusion
-This cheat sheet covers essential Git commands and concepts. For more information, refer to the official Git documentation.
-
-# Git and GitHub Cheat Sheet
