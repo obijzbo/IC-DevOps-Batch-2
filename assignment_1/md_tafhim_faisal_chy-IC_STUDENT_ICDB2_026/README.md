@@ -127,3 +127,38 @@ git init
 
 ### screenshot
 ![git config --global -l](screenshots/git_init.png)
+
+# Initialize Remote Repositories::
+*git remote* command will enable us to add or remove the remote repository to our local repository.
+
+## Add remote
+command below will add remote repository to our local repository
+
+### command
+```
+git remote add < remote-name > < clone-url > / < ssh-url >
+```
+
+### screenshot
+![git config --global -l](screenshots/git_remote_add.png)
+
+## Remote list
+command below with show the added list of repository.
+
+### command
+```
+git remote -v
+```
+
+### screenshot
+![git config --global -l](screenshots/git_remote_v.png)
+
+## Remove remote
+command below will remove remote
+### command
+```
+git remote remove < remote-name >
+```
+
+### screenshot
+![git config --global -l](screenshots/git_remote_remove.png)
