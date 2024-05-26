@@ -88,7 +88,7 @@ description with attached screenshots are given below.
 Below command will set global environment variable of user name for git.
 
 ### command
-```
+```bash
 git config --global user.name "github-user-name"
 ```
 
@@ -99,7 +99,7 @@ git config --global user.name "github-user-name"
 Below command will show all the global environment set for git.
 
 ### command
-```
+```bash
 git config --global -l
 ```
 
@@ -110,7 +110,7 @@ git config --global -l
 Below command will set alias for checkout, this will enable us to right co instead of checkout in git command.
 
 ### command
-```
+```bash
 git config --global alias.co 'checkout'
 ```
 
@@ -121,44 +121,76 @@ git config --global alias.co 'checkout'
 command below will Initialize git an empty repository.
 
 ### command
-```
+```bash
 git init
 ```
 
 ### screenshot
-![git config --global -l](screenshots/git_init.png)
+![git init](screenshots/git_init.png)
 
-# Initialize Remote Repositories::
+# Initialize Remote Repositories:
 *git remote* command will enable us to add or remove the remote repository to our local repository.
 
 ## Add remote
 command below will add remote repository to our local repository
 
 ### command
-```
+```bash
 git remote add < remote-name > < clone-url > / < ssh-url >
 ```
 
 ### screenshot
-![git config --global -l](screenshots/git_remote_add.png)
+![git remote add < remote-name > < clone-url > / < ssh-url >](screenshots/git_remote_add.png)
 
 ## Remote list
 command below with show the added list of repository.
 
 ### command
-```
+```bash
 git remote -v
 ```
 
 ### screenshot
-![git config --global -l](screenshots/git_remote_v.png)
+![git remote -v](screenshots/git_remote_v.png)
 
 ## Remove remote
 command below will remove remote
 ### command
-```
+```bash
 git remote remove < remote-name >
 ```
-
 ### screenshot
-![git config --global -l](screenshots/git_remote_remove.png)
+![git remote remove < remote-name >](screenshots/git_remote_remove.png)
+
+# Stage Changes:
+*git add* command will enable us to stage changed file, it will track this file to create commit.
+
+## Stage Changed file:
+command below will stage the given files.
+
+### command
+```bash
+git add < file1 > < file2 > 
+```
+### screenshot
+![git add < file1 > < file2 > ](screenshots/git_add.png)
+
+## Stage all Changed file:
+command below will stage all file that have changes 
+
+### command
+```bash
+git add .
+```
+### screenshot
+![git add .](screenshots/git_add_dot.png)
+
+## Stage the deleted files
+command below will stage all file that have changes and deleted files.
+
+### command
+```bash
+git add -A 
+```
+### screenshot
+![git add -A ](screenshots/git_add_a.png)
