@@ -48,6 +48,11 @@ Set your email: git config --global user.email "your.email@example.com".
 ### Rebase Branch:
 ```git rebase <branch_name>``` **_: Reapplies commits on top of another base branch._**
 
+### Delete a Branch:
+
+```git branch -d <branch_name>``` **_: Deletes a local branch._**
+```git branch -D <branch_name>``` **_: Forces deletion of a local branch._**
+
 
 ## Remote Repositories
 
@@ -62,3 +67,16 @@ Set your email: git config --global user.email "your.email@example.com".
 
 ### Fetch Changes:
 ```git fetch <remote>``` **_: Fetches changes from a remote repository but does not merge them._**
+
+
+## Undoing Changes
+
+### Reset Changes:
+```git reset <file>``` **_: Removes a file from the staging area. _** <br>
+```git reset --hard <commit>``` **_: Resets the repository to a specific commit, discarding all changes._**
+
+### Revert Changes:
+```git revert <commit>``` **_: Creates a new commit that undoes the changes from a previous commit._**
+
+### Checkout File:
+```git checkout <file>``` **_: Discards changes in the working directory for a specific file._**
