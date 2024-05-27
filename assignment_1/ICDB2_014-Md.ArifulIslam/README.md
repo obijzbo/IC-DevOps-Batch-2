@@ -41,7 +41,7 @@
 ## delete a branch in Git:
 `git branch -d branch_name`
 ## Add remote to a repository
-`git add remote https://repo_here`
+`git remote add origin https://repo_here`
 ## see remote URLs in Git:
 `git remote -v`
 ## push changes to a remote repo in Git:
