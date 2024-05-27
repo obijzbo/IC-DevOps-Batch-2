@@ -3,10 +3,10 @@
 
 ### Configuring User Information:
 
-```
-Set your username: git config --global user.name "Your Name".
-Set your email: git config --global user.email "your.email@example.com".
-```
+
+Set your username: ```git config --global user.name "Your Name"``` <br>
+Set your email: ```git config --global user.email "your.email@example.com"```
+
 
 ### Initialize a Repository:
 
