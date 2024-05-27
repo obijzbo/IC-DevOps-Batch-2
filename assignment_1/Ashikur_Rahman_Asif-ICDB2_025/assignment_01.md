@@ -60,10 +60,9 @@ git pull origin branch_name
 **Example**:
 ```sh
 git branch
-
-```sh
-git branch branch_name
-
+```
+**Description** : Deletes branches.
+**Example**:
 ```sh
 git branch -d branch_name
 ```
