@@ -44,39 +44,34 @@ Fork the Repository:
 ![Screenshot 2024-05-27 114821](https://github.com/Tanisha184/IC-DevOps-Batch-2/assets/99063828/6d4727ae-9b16-40ba-8e98-66eeede42768)
 *Pull Changes from the Default Remote 
 ![Screenshot 2024-05-27 120125](https://github.com/Tanisha184/IC-DevOps-Batch-2/assets/99063828/9812d651-de25-4ec1-a0e5-a66a57a028d6)
+*to check your List Files and Directories and List Detailed Information
 
+![Screenshot 2024-05-27 115324](https://github.com/Tanisha184/IC-DevOps-Batch-2/assets/99063828/0815d063-eae6-4310-a46c-7e841c166725)
+
+![Screenshot 2024-05-27 115333](https://github.com/Tanisha184/IC-DevOps-Batch-2/assets/99063828/434abc2f-0dd7-46d1-a91c-4b77e1f49dad)
+*to check commit history use git log
+
+![Screenshot 2024-05-23 200920](https://github.com/Tanisha184/IC-DevOps-Batch-2/assets/99063828/90eb77d9-1a05-4340-8605-de34a08cb038)
 
 ## Usage
 
-Explain how to use your project. Provide examples, screenshots, or a quick start guide if applicable.
+This repository serves as a practical exercise platform for learning and practicing fundamental Git commands and concepts in the context of DevOps. To get started, follow these steps:.
 
 ## Contributing
 
 Tell others how they can contribute to your project. Include guidelines for pull requests, code style, and other relevant information.
 
-## License
 
-Specify the license under which your project is distributed. For example:
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
 Provide contact information if someone wants to reach out regarding your project.
 
-- Email: [your-email@example.com](mailto:your-email@example.com)
-- LinkedIn: [Your Name](https://www.linkedin.com/in/yourname/)
-- Twitter: [@yourtwitterhandle](https://twitter.com/yourtwitterhandle)
+- Email: [afrintanisha184@gmail.com](mailto:afrintanisha184@gmail.com)
+- LinkedIn: [Noshina Afrin Tanisha](https://www.linkedin.com/in/yourname/)
+
 
 ## Acknowledgements
 
-Give credit to any resources, tools, or individuals who have helped or inspired your project.
-
-## Appendix: Screenshots
-
-If applicable, include screenshots or visual representations of your project in action.
-
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
-
+Special thanks to Ic-Devops-Batch-2 for their guidance and support.
 
