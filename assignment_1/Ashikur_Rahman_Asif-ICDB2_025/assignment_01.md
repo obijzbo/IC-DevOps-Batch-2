@@ -99,6 +99,45 @@ git log
 **Description** : Shows changes between commits, commit and working tree, etc.
 **Example**:
 ```sh
-git lgit diff
+git  diff
 ```
 
+#### Advanced Command
+
+
+### 1. git rebase
+**Description** : Reapplies commits on top of another base tip.
+**Example**:
+```sh
+git rebase branch_name
+```
+
+### 2. git rebase
+**Description** : Reapplies commits on top of another base tip.
+**Example**:
+```sh
+git rebase branch_name
+```
+
+
+### 3. git cherry-pick
+**Description** : Applies the changes introduced by some existing commits.
+**Example**:
+```sh
+git cherry-pick commit_hash
+
+```
+
+### 4. git revert
+**Description** : Reverts some existing commits.
+**Example**:
+```sh
+git revert commit_hash
+```
+
+### 5. git reset
+**Description** : Resets current HEAD to the specified state.
+**Example**:
+```sh
+git reset --hard commit_hash
+```
