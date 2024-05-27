@@ -9,7 +9,7 @@ This repository is dedicated to the IC DevOps Batch 2 course assignments, focusi
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+
 
 ## Installation
 
