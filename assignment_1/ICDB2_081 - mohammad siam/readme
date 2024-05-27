@@ -1,0 +1,7 @@
+* git init                      = it is use for creating git repo
+* git add < file name> or add.  = ready to add file in repo (staged) or add all file and folder at once
+* git commit -m "commit message"= File added done and tracked
+* git status                    = git repo in formation about adding file ( it will show just added file not commit file)
+* git log                       = you can see commit history of a specific git repo (file)
+* git + TAB Button              = for all command will be showed in git
+* git check out <branch name>   = use for switch between bnanches
