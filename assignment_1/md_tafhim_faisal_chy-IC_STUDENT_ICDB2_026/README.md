@@ -55,29 +55,29 @@ description with attached screenshots are given below.
     - [git rebase < branch-name >](#rebase)
     - [git rebase --continue](#continue-rebase)
     - [git rebase --abort](#abort-rebase)
-16. Remove Untracked Files:
-    - git clean -n
-    - git clean -f
-    - git clean -f -e < pattern >
-    - git clean -f -d
-    - git clean -i
-17. Manage the reference logs:
-    - git reflog
-18. Reset commits:
-    - git reset --hard < commit-hash >
-    - git reset --soft < commit-hash >
-    - git reset --mixed < commit-hash >
-    - git reset < file >
-    - git reset HEAD~[int]
-    - git reset HEAD@{int}
-19. Cherry pick commits:
-    - git cherry-picking < commit-hash >
-    - git cherry-pick --continue
-    - git cherry-pick --abort
-20. Clone repository:
-    - git clone < repository-url > < directory >
-    - git clone -b < branch-name > < repository-url >
-    - git clone --depth 1 < repository-url >
+16. [Remove Untracked Files:](#remove-untracked-files)
+    - [git clean -n](#show-clean-file)
+    - [git clean -f](#fource-clean)
+    - [git clean -f -e < pattern >](#clean-by-pattern)
+    - [git clean -f -d](#clean-file-and-directory)
+    - [git clean -i](#clean-intaractive-mode)
+17. [Manage the reference logs:](#reference-logs)
+    - [git reflog](#reference-logs)
+18. [Reset commits:](#reset-commits)
+    - [git reset --hard < commit-hash >](#hard-reset)
+    - [git reset --soft < commit-hash >](#soft-reset)
+    - [git reset --mixed < commit-hash >](#mixed-reset)
+    - [git reset < file >](#file-reset)
+    - [git reset HEAD~[int]](#move-head)
+    - [git reset HEAD@{int}](#recovering-after-a-hard-reset)
+19. [Cherry pick commits:](#cherry-pick)
+    - [git cherry-picking < commit-hash >](#cherry-pick-by-commit)
+    - [git cherry-pick --continue](#cherry-pick-continue)
+    - [git cherry-pick --abort](#cherry-pick-abort)
+20. [Clone repository:](#clone-repository)
+    - [git clone < repository-url > < directory >](#clone-in-directory)
+    - [git clone -b < branch-name > < repository-url >](#clone-from-branch)
+    - [git clone --depth 1 < repository-url >](#clone-by-depth)
 
 # Config git:
 *git config --global* used to set global environment variable for git.
@@ -498,3 +498,187 @@ git rebase --abort
 ```
 ### screenshot
 ![git rebase --abort](screenshots/git_rebase_abort.png)
+
+# Remove Untracked Files:
+*git clean* will clean unstaged file
+
+## Show clean file
+command below will show the file that will be removed, if cleaned
+### command
+```bash
+git clean -n
+```
+### screenshot
+![git clean -n](screenshots/git_clean_n.png)
+
+## Fource clean
+command below will fource clean unstaged file
+### command
+```bash
+git clean -f
+```
+### screenshot
+![git clean -f](screenshots/git_clean_f.png)
+
+## Clean by pattern
+command below will fource clean file that mache the pattern
+### command
+```bash
+git clean -f -e < pattern >
+```
+### screenshot
+![git clean -f -e < pattern >](screenshots/git_clean_f_e.png)
+
+## Clean file and directory
+command below will delete unstaged file and directory
+### command
+```bash
+git clean -f -d
+```
+### screenshot
+![git clean -f -d](screenshots/git_clean_f_d.png)
+
+## Clean intaractive mode
+command below will open an intaractive mode to remove unstaged file
+### command
+```bash
+git clean -i
+```
+### screenshot
+![git clean -i](screenshots/git_clean_i.png)
+
+
+# Reference logs:
+command below will show the commit history
+### command
+```bash
+git reflog
+```
+### screenshot
+![git reflog](screenshots/git_reflog.png)
+
+
+# Reset commits:
+
+## Hard reset
+This command moves the HEAD to the specified commit and resets both the index and the working directory. 
+All changes after the specified commit are discarded.
+### command
+```bash
+git reset --hard < commit-hash >
+```
+### screenshot
+![git reset --hard < commit-hash >](screenshots/git_reset_hard.png)
+
+## Soft Reset
+This moves HEAD to the specified commit but keeps your changes staged for commit. 
+Useful if you want to amend the last few commits but keep the changes ready to commit.
+### command
+```bash
+git reset --soft < commit-hash >
+```
+### screenshot
+![git reset --soft < commit-hash >](screenshots/git_reset_soft.png)
+
+## Mixed Reset
+This command moves the HEAD to the specified commit and resets the index, but it doesn't change the working directory. 
+Changes remain in your working directory but are no longer staged for commit. This is the default behavior if no option is specified.
+### command
+```bash
+git reset --mixed < commit-hash >
+```
+### screenshot
+![git reset --mixed < commit-hash >](screenshots/git_reset_mixed.png)
+
+## File Reset
+command below will unstage a single file while keeping changes in the working directory
+### command
+```bash
+git reset < file >
+```
+### screenshot
+![git reset < file >](screenshots/git_reset_file.png)
+
+## Move HEAD
+command below will move back the commit as much number as it provided in command
+Here, [int] is an integer specifying how many commits to go back. For example, 
+git reset HEAD~1 moves the current branch back by one commit.
+### command
+```bash
+git reset HEAD~[int]
+```
+### screenshot
+![git reset HEAD~[int]](screenshots/git_reset_head_tilda.png)
+
+## Recovering After a Hard Reset
+if you performed a hard reset and want to undo it. 
+Command below will reset to the Commit Before the Hard Reset
+### command
+```bash
+git reset HEAD@{int}
+```
+### screenshot
+![git reset HEAD@{int}](screenshots/git_reset_head_at.png)
+
+
+# Cherry pick:
+*git cherry-pick* used to apply specific commits from one branch to another.
+
+## Cherry pick by commit
+command below will apply the changes in provided commit.
+### command
+```bash
+git cherry-picking < commit-hash >
+```
+### screenshot
+![git cherry-picking < commit-hash >](screenshots/git_cherry_pick.png)
+
+
+## Cherry pick continue
+incase of merge conflict, after resolving the conflict command below needs to be run to continue the cherry-pick
+### command
+```bash
+git cherry-pick --continue
+```
+### screenshot
+![git cherry-pick --continue](screenshots/git_cherry_pick_continue.png)
+
+## Cherry pick abort
+command below will abort the cherry-pick
+### command
+```bash
+git cherry-pick --abort
+```
+### screenshot
+![git cherry-pick --abort](screenshots/git_cherry_pick_abort.png)
+
+
+# Clone repository:
+*git clone* will clone the remote repository
+
+## Clone in directory
+command below will clone the given repository in the given diractory folder
+### command
+```bash
+git clone < repository-url > < directory >
+```
+### screenshot
+![git clone < repository-url > < directory >](screenshots/git_clone_with_dir.png)
+
+## Clone from branch
+command below will clone from given branch of given repository 
+### command
+```bash
+git clone -b < branch-name > < repository-url >
+```
+### screenshot
+![git clone -b < branch-name > < repository-url >](screenshots/git_clone_with_branch.png)
+
+## Clone by depth
+command below will clone the latest snapshot of given repository
+### command
+```bash
+git clone --depth 1 < repository-url >
+```
+### screenshot
+![git clone --depth 1 < repository-url >](screenshots/git_clone_with_depth.png)
