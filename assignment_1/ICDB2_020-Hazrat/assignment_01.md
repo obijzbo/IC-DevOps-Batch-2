@@ -33,7 +33,7 @@ We can add a specific file by using this
 git add filename/directory
 ```
 
-![Alt text]("./screenShots/git add.png")
+![Alt text](./screenShots/add.png)
 This command basically do stages all modified, newly created or deleted files in the current directory for the action of next commit
 <br/><br/>
 
@@ -47,7 +47,7 @@ Records the staged changes with a descriptive message
 git commit -m 'commit message'
 ```
 
-![Alt text]("./screenShots/git add.png")
+![Alt text](./screenShots/add.png)
 This command creates a new commit with the staged changes. [`Note:` Should have replace the `commit message` with something `eg: My first git commit`]
 <br/> <br/>
 
@@ -61,7 +61,7 @@ Displays the state of the working directory
 git status
 ```
 
-![Alt text]("./screenShots/git status.png")
+![Alt text](./screenShots/status.png)
 This command shows that which changes have been staged, which haven’t, and which files aren’t being tracked by Git
 <br/> <br/>
 
@@ -73,14 +73,14 @@ This command shows that which changes have been staged, which haven’t, and whi
 git branch
 ```
 
-![Alt text]("./screenShots/git branch.png")
+![Alt text](./screenShots/branch.png)
 This command shows manages branches in the repository.
 
 ```sh
 git branch -D [branch-name]
 ```
 
-![Alt text]("./screenShots/git branch-2.png")
+![Alt text](./screenShots/branch-2.png)
 This will delete you branch locally
 <br/> <br/>
 
@@ -94,7 +94,7 @@ Displays a log of commits in the repository.
 git log
 ```
 
-![Alt text]("./screenShots/git log.png")
+![Alt text](./screenShots/log.png)
 This command shows the commit history, including commit hashes, authors, dates, and messages.
 <br/><br/>
 
@@ -134,7 +134,7 @@ This command lists all configured remote repositories
 git remote
 ```
 
-![Alt text]("./screenShots/git remote.png")
+![Alt text](./screenShots/remote.png)
 This command shows a list of remote repositories that the local repository is configured to track.
 <br/><br/>
 
@@ -162,7 +162,7 @@ There are couple. In this section some of reset's usable commands are given.
 git reset --soft <commit>
 ```
 
-![Alt text]("./screenShots/git reset --soft.png")
+![Alt text](./screenShots/resetSoft.png)
 This command moves the HEAD to a specified commit, leaving your changes staged. It does not change the working directory or undo any changes.Use it when you want to undo a commit but keep the changes staged, allowing you to edit the commit message or make additional changes before committing again.
 <br/><br/>
 
@@ -174,7 +174,7 @@ This command moves the HEAD to a specified commit, leaving your changes staged. 
 git reset --hard <commit>
 ```
 
-![Alt text]("./screenShots/git reset --hard.png")
+![Alt text](./screenShots/resetHard.png)
 This command moves the HEAD to a specified commit and discards all changes, both staged and unstaged, back to that commit.Use it with caution as it permanently deletes any changes made after the specified commit. It's essentially like reverting to a previous state.
 <br/><br/>
 
@@ -186,7 +186,7 @@ This command moves the HEAD to a specified commit and discards all changes, both
 git reset HEAD <file(s)>
 ```
 
-![Alt text]("./screenShots/git reflog.png")
+![Alt text](./screenShots/reflog.png)
 This command unstages changes for specified file(s), making them untracked again. It doesn't modify the working directory or the commit history.
 <br/><br/>
 
@@ -200,7 +200,7 @@ This command lists all configured remote repositories
 git rm [file-name]
 ```
 
-![Alt text]("./screenShots/git rm.png")
+![Alt text](./screenShots/rm.png)
 Removes file(s) from the working directory and stages the deletion.
 <br/><br/>
 
@@ -227,6 +227,6 @@ This command lists all configured remote repositories
 git cherry-pick <commit-hash>
 ```
 
-![Alt text]("./screenShots/git cherry-pick.png")
+![Alt text](./screenShots/cherry-pick.png)
 This command will attempt to apply the changes from the commit with the specific hash to the current branch. If successful, it will create a new commit with those changes.
 <br/><br/>
