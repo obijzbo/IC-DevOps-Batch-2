@@ -59,8 +59,19 @@ This repository serves as a practical exercise platform for learning and practic
 
 ## Contributing
 
-Tell others how they can contribute to your project. Include guidelines for pull requests, code style, and other relevant information.
 
+Thank you for considering contributing to our project! Please take a moment to review the guidelines outlined in our [Assignment1.md](CONTRIBUTING.md) file.
+
+These guidelines help ensure a smooth and efficient collaboration for everyone involved in the project. They cover:
+
+- How to report issues
+- How to submit changes (pull requests)
+- Coding standards and best practices
+- Code of conduct
+
+By following these guidelines, you contribute to making our project better for the entire community. We appreciate your effort and welcome your contributions!
+
+For any questions or further assistance, feel free to contact us via [email](mailto:afrintanisha184@gmail.com)
 
 
 ## Contact
@@ -68,8 +79,6 @@ Tell others how they can contribute to your project. Include guidelines for pull
 Provide contact information if someone wants to reach out regarding your project.
 
 - Email: [afrintanisha184@gmail.com](mailto:afrintanisha184@gmail.com)
-- LinkedIn: [Noshina Afrin Tanisha](https://www.linkedin.com/in/yourname/)
-
 
 ## Acknowledgements
 
