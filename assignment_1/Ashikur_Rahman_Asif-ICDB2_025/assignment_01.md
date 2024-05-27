@@ -141,3 +141,7 @@ git revert commit_hash
 ```sh
 git reset --hard commit_hash
 ```
+
+
+## Git Cheat Sheet
+![Github command cheat sheet](/assignment_1/screenshot/gitCheat.png)
