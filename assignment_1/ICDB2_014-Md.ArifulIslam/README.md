@@ -50,7 +50,6 @@
 `git pull`
 ## check remote branches that Git is tracking:
 `git branch -r`
-
 ## fetch remote repo changes in Git:
 - This command will download the changes from a remote repo but will not perform a merge on your local branch (as git pull does that instead).
 `git fetch`
