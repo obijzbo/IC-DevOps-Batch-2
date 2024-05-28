@@ -19,6 +19,8 @@ with the commands and description
 ● Add a description of the PR
 ● In the description explain an interesting git related concept. This can be anything like
 how git pull works under the hood or how git calculated the SHA
+
+
 You will be scored based on:
 ● How meaningful your git commits are
 ● How many commands you are covering
