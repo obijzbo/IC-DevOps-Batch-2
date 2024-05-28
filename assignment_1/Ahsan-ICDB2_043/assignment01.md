@@ -18,6 +18,10 @@
 - [Git Status](#git-status)
 - [Git Rm](#git-rm)
 - [Git Stash](#git-stash)
+- [Git Log](#git-log)
+- [Git Show](#git-show)
+
+
 
 
 
@@ -138,7 +142,53 @@ Commonly used options include:
 
 ![Git Stash](ss/gitStash.png)
 
+## Inspection and Comparison
 
+### Git Log
+The `git log` command is used to display the commit logs.
+**Example**
+```
+git log
+Ex: git log --stat
+```
+**Description :** 
+```
+Displays the commit history of the current branch, listing the most recent commits at the top.Each entry in the log includes the commit ID, author, date, and the commit message.
+Commonly used options include:
+--oneline: Shows each commit on a single line, which is useful for a compact view of the commit history.
+--graph: Displays the commit logs with an ASCII graph of the branch and merge history beside the log output.
+--stat: Shows the number of files altered and the number of lines that were added or deleted.
+```
+
+![Git Log](ss/gitLog.png)
+
+### Git Show
+The `git show` command is used to display various types of objects in Git, including commits, tags, and more.
+**Example**
+```
+git show <commit hash>
+```
+**Description :** 
+```
+Displays detailed information about a specific object, typically a commit.The default option for git show when no specific flags or parameters are provided is to display the commit information for the HEAD commit.
+```
+
+![Git Show](ss/gitShow.png)
+
+
+## Git Diff
+The `git diff` command is used to view the difference between the working directory, staging area, and the most recent commit. It shows changes line by line, highlighting additions, deletions, and modifications.
+**Example**
+```
+   git diff
+```
+**Description :**
+```
+- `git diff` is a command for reviewing changes made to files in a repository.
+- With additional arguments, such as commit hashes or file paths, git diff can compare different versions of files or commits.
+```
+
+![Git Diff](ss/gitDiff.png)
 
 
 ### Git reset
