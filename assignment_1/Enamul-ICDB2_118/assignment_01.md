@@ -42,7 +42,7 @@ Usimg ths command we can check the current status.
 
 Usimg ths command we can clone a remote repository in the local.
 
-![](clone.png)
+![](screenshoots/clone.png)
 
 #### Command 'git checkut -b "branch-1"'
 
@@ -50,4 +50,4 @@ Usimg ths command we can clone a remote repository in the local.
 
 Usimg ths command we can create a branch in local.
 
-![](branch.png)
+![](screenshoots/branch.png)
