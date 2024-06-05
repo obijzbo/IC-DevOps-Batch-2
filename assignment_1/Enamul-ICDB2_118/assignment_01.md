@@ -20,7 +20,7 @@ The git add command adds a change in the working directory to the staging area.
 
 #### Command 'git commit -m " <add the description>" '
 
->_git commit -m " <add teh description>"_
+>_git commit -m " <add the description>"_
 
 Using this command we can add the description of changes we make.
 
@@ -42,7 +42,7 @@ Usimg ths command we can check the current status.
 
 Usimg ths command we can clone a remote repository in the local.
 
-![](screenshoots/clone.png)
+![](screenshots/clone.png)
 
 #### Command 'git checkut -b "branch-1"'
 
@@ -50,4 +50,4 @@ Usimg ths command we can clone a remote repository in the local.
 
 Usimg ths command we can create a branch in local.
 
-![](screenshoots/branch.png)
+![](screenshots/branch.png)
