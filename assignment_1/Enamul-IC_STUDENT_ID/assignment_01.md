@@ -35,3 +35,19 @@ Usimg ths command we can check the log.
 >_git status_
 
 Usimg ths command we can check the current status.
+
+#### Command 'git clone git@github.com:obijzbo/IC-DevOps-Batch-2.git'
+
+>_git clone git@github.com:obijzbo/IC-DevOps-Batch-2.git_
+
+Usimg ths command we can clone a remote repository in the local.
+
+![](clone.png)
+
+#### Command 'git checkut -b "branch-1"'
+
+>_git checkut -b "branch-1"_
+
+Usimg ths command we can create a branch in local.
+
+![](branch.png)
