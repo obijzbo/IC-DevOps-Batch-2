@@ -64,4 +64,4 @@ Verify the permission changes using ls -l:
 
 ls -ltr
 
-Each command should be executed in the terminal. Ensure you have the necessary permissions to create directories and files in the specified locations.
+Each command should be executed in the terminal. Ensure you have the necessary permissions to create directories and files in the specified locations..
