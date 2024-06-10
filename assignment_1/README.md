@@ -1,70 +1,76 @@
-#initialize git repository
+Initialize a Git Repository:
+
 git init
 
-#Clone a Repository
+Clone a Repository:
+
 git clone <repository-url>
 
-#Set Up User Info
+Set Up User Info:
+
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 
-#Check Status
+Check Status:
+
 git status
 
-#Stage Changes
-git add <file>          
-git add .               
-git add -A              
+Stage Changes:
 
-#Commit Changes
+git add <file>          # Stage a specific file
+git add .               # Stage all changes in the current directory
+git add -A              # Stage all changes in the repository
+
+Commit Changes:
+
 git commit -m "Commit message"
 
-#Remove Files
-git rm <file>
+Create and Switch to a New Branch:
 
-#Create a Branch
-git branch <branch-name>
-
-#List Branches
-git branch
-
-#Switch to a Branch
-git checkout <branch-name>
-
-#Create and Switch to a New Branch
 git checkout -b <new-branch-name>
 
-#Merge a Branch
+Merge a Branch:
+
 git checkout <target-branch>
 git merge <source-branch>
 
-#Delete a Branch
-git branch -d <branch-name>
-git branch -D <branch-name>  
+Delete a Branch:
 
-#Add a Remote Repository
+git branch -d <branch-name>  # Delete a branch
+git branch -D <branch-name>  # Force delete a branch
+
+Add a Remote Repository:
+
 git remote add <remote-name> <remote-url>
 
-#View Remote Repositories
+View Remote Repositories:
+
 git remote -v
 
-#Fetch Changes
+Fetch Changes:
+
 git fetch <remote-name>
 
-#Pull Changes
+Pull Changes:
+
 git pull <remote-name> <branch-name>
 
-#Push Changes
+Push Changes:
+
 git push <remote-name> <branch-name>
 
-#Rewriting history
+Rewriting History:
+
 git rebase <base-branch>
 
-#Interactive Rebase
+Interactive Rebase:
+
 git rebase -i <base-branch>
 
-#To See Commit History
+See Commit History:
+
 git log
 
-#Reset to a Previous Commit
+Reset to a Previous Commit:
+
 git reset --hard <commit-hash>
