@@ -1,8 +1,8 @@
 # File System Navigation
 
-This guide provides instructions for basic file system navigation and shell commands in a Unix-like operating system.
+This guide provides instructions for basic file system navigation and shell commands in a Unix operating system (Ubuntu).
 
-### 1. List the contents of the home directory
+#### 1. List the contents of the home directory
 
 **Result 1:**
 ![Alt text](./screenshots/home_contents.png)
@@ -37,7 +37,7 @@ Using this `ls -la` command we will get the following results:
 
 <br/> <br/>
 
-### 2. Change the current directory to /var/log and list its contents
+#### 2. Change the current directory to /var/log and list its contents
 
 **Result 1:**
 ![Alt text](./screenshots/var_log_contents1.png)
@@ -67,7 +67,7 @@ Using this `ls -la` command we will get the following results of the `/var/log` 
 
 - Combining the options `-l` meaning long listing format and `-a` meaning show all files including hidden ones (Long listing format provides detailed information about each file as well directories, such as permissions, number of links, owner, group, size and modification time and more).
 
-### 3. Find and display the path to the bash executable using the which command
+#### 3. Find and display the path to the bash executable using the which command
 
 **Result 1:**
 ![Alt text](./screenshots/which_bash.png)
@@ -80,5 +80,33 @@ Using this `which bash` command we will get the following results:
 ![Alt text](./screenshots/current_shell.png)
 Using this `echo $SHELL` command we will get the following results:
 
-- This command prints the path of the shell, in this case we got`/bin/bash`.
+- This command prints the path of the shell, in this case we got `/bin/bash`.
+  <br/><br/><br/>
+
+# File and Directory Operations
+
+This guide provides instructions for basic file and directory operations in a Unix operating system (Ubuntu).
+
+#### 1. Create a directory named `linux_fundamentals` in your home directory
+
+**Result:**
+![Alt text](./screenshots/linux_fundamentals_dir.png)
+
+Using this `mkdir ~/linux_fundamentals
+` command we will get the following results:
+
+- The `mkdir` command is used to create directories.
+- And finally the command creates a directory named `linux_fundamentals` in the user's home directory, in this case `hasanulhaquebanna@DESKTOP-ELBL87C`.
+  <br/>
+
+#### 2. Inside `linux_fundamentals` create a subdirectory named `scripts`
+
+**Result:**
+![Alt text](./screenshots/linux_fundamentals_subdir.png)
+
+Using this `mkdir ~/linux_fundamentals
+` command we will get the following results:
+
+- The `mkdir` command is used to create directories.
+- And finally the command creates a directory named `linux_fundamentals` in the user's home directory, in this case `hasanulhaquebanna@DESKTOP-ELBL87C`.
   <br/>
