@@ -1,4 +1,4 @@
-Linux Fundamentals Exercises: 
+Linux Fundamentals Exercise: 
 
 This exercise covers basic file system navigation, file and directory operations, and permissions in a Linux environment.
 
