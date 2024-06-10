@@ -122,3 +122,28 @@ Then move the file:
 ![cd Command](./screenshots/mv.png)
 
 **Explanation:** `mv` moves files. This moves `example.txt` to the backup directory.
+
+## Permissions
+
+#### 1. Change the permissions of example.txt to read and write for the owner, and read-only for the group and others:
+
+**_Example :_**
+
+```bash
+    chmod 644 example.txt
+```
+
+![cd Command](./screenshots/chmod.png)
+
+**Explanation:** `chmod 644` changes the file permissions to `rw-r--r--.` This means the owner has read and write permissions (6), and the group and others have read-only permissions (4).
+
+#### 2. Verify the permission changes using `ls -l`:
+
+**_Example :_**
+
+```bash
+    ls -l example.txt
+```
+
+![cd Command](./screenshots/chmod.png)
+**Explanation:** `ls -l` displays detailed information about the file, including its permissions.
