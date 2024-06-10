@@ -1,0 +1,30 @@
+Objective:
+● Git understanding
+● Creating proper markdowns
+● Practice documentation
+To-do:
+● Fork the IC repository
+● Create a new branch named branch-1
+● Under the Assignment 1 folder create a directory with your Name - IC_STUDENT_ID
+● Add a readme file to your folder
+● In the readme file make a scribe sheet of all the git commands in the course and more
+● Make sure to add a description for each of the commands and what it does with
+example
+● Create a folder to create store screenshots
+● You must run all the commands on your local machine take SS of them and add them
+with the commands and description
+● Make sure you name the file assignment_01.md
+● Create a pull request against the master branch from your forked repoed branch-1
+● Add a description of the PR
+● In the description explain an interesting git related concept. This can be anything like
+how git pull works under the hood or how git calculated the SHA
+You will be scored based on:
+● How meaningful your git commits are
+● How many commands you are covering
+● How good your description is for each of those commands
+● How clear is your SS that is attached in the readme
+● How are you explaining the PR description topic
+Feel free to make your markdown interesting. Here are a few examples:
+● https://github.com/rizwan192/SAIO-Ubuntu18
+● https://github.com/abhisheknaiidu/awesome-github-profile-readme?tab=readme-ov-file#g
+ithub-actions-
