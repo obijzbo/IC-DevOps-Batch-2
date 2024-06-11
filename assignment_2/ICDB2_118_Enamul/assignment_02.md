@@ -59,7 +59,7 @@
 
 ![](screenshots/moveexample.png)
 
-### Permissions
+## Permissions
 
 #### Change the permissions of example.txt to read and write for the owner, and `read-only` for the group and others.
 
