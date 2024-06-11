@@ -19,8 +19,7 @@ Using this `ls` command we will get the following results:
 
 - Lists the files and directories in the current directory.
 - By default, it does not show hidden files (those starting with a dot)
-
-<br/>
+  <br/>
 
 **Result 3:**
 ![Alt text](./screenshots/home_contents2.png)
@@ -66,6 +65,7 @@ Using this `ls -a` command we will get the following results:
 Using this `ls -la` command we will get the following results of the `/var/log` directory :
 
 - Combining the options `-l` meaning long listing format and `-a` meaning show all files including hidden ones (Long listing format provides detailed information about each file as well directories, such as permissions, number of links, owner, group, size and modification time and more).
+  <br/>
 
 #### 3. Find and display the path to the bash executable using the which command
 
@@ -110,3 +110,43 @@ Using this `mkdir ~/linux_fundamentals
 - The `mkdir` command is used to create directories.
 - And finally the command creates a directory named `linux_fundamentals` in the user's home directory, in this case `hasanulhaquebanna@DESKTOP-ELBL87C`.
   <br/>
+
+#### 3. Create an empty file named `example.txt` inside the `linux_fundamentals` directory
+
+**Result:**
+![Alt text](./screenshots/example_file_create.png)
+
+Using this `touch ~/linux_fundamentals/example.txt` command we will get the following results:
+
+- In here the `touch` command is used to create an empty file.
+- This command creates an empty file named `example.txt` inside the `linux_fundamentals` directory.
+  <br/>
+
+#### 4. Copy `example.txt` to the `scripts` directory
+
+**Result:**
+![Alt text](./screenshots/example_file_copy.png)
+
+Using this `cp ~/linux_fundamentals/example.txt ~/linux_fundamentals/scripts/
+` command we will get the following results:
+
+- The `cp` command is used to copy files and directories.
+- This command copies the `example.txt` file from `linux_fundamentals` to the `scripts` subdirectory.
+  <br/>
+
+#### 5. Move `example.txt` from `linux_fundamentals` to `linux_fundamentals/backup`
+
+**Result:**
+![Alt text](./screenshots/example_file_move_backup.png)
+
+Using these command we will get the following results:
+
+- The `mkdir` command is used to make directory and that's why first we need to create a dierectory named `backup` under `linux_fundamentlas.`
+- The `mv` command moves the `example.txt` file from `linux_fundamentals` to the `backup` subdirectory.
+  <br/>
+
+# Permissions
+
+This guide provides instructions for changing file permissions in a Unix operating system (Ubuntu).
+
+#### 1.
