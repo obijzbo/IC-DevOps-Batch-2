@@ -33,8 +33,7 @@ Using this `ls -a` command we will get the following results:
 Using this `ls -la` command we will get the following results:
 
 - Combining the options `-l` meaning long listing format and `-a` meaning show all files including hidden ones (Long listing format provides detailed information about each file as well directories, such as permissions, number of links, owner, group, size and modification time and more).
-
-<br/> <br/>
+  <br/> <br/>
 
 #### 2. Change the current directory to /var/log and list its contents
 
@@ -143,10 +142,30 @@ Using these command we will get the following results:
 
 - The `mkdir` command is used to make directory and that's why first we need to create a dierectory named `backup` under `linux_fundamentlas.`
 - The `mv` command moves the `example.txt` file from `linux_fundamentals` to the `backup` subdirectory.
-  <br/>
+  <br/><br/><br/>
 
 # Permissions
 
 This guide provides instructions for changing file permissions in a Unix operating system (Ubuntu).
 
-#### 1.
+#### 1. Change the permissions of `example.txt` to read and write for the owner, and read-only for the group and others
+
+**Result:**
+![Alt text](./screenshots/user_permission.png)
+
+Using these command we will get the following results:
+
+- The `u=rw:` command Sets read and write permissions for the owner (`u` stands for user)
+- `g=r:` Sets read-only permissions for the group (`g` stands for group)
+- `o=r:` Sets read-only permissions for others (`o` stands for others).
+  <br/>
+
+#### 2. Verify the permission changes using `ls -l`
+
+**Result:**
+![Alt text](./screenshots/user_permission2.png)
+
+Using these command we will get the following results:
+
+- The `ls -l` command lists files and directories with detailed information, including permissions.
+- This command verifies the permissions of `example.txt`.
