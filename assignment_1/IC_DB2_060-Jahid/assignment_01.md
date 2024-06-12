@@ -1,6 +1,55 @@
-# Git and github assignment - 1
+<h1 align="center"> Git Commands Cheat Sheet </h1>
 
-#### Intialize git repository
+![git-cover](https://github.com/GausAlMunirTushar/git-commands/assets/32175937/9c25e3c2-3dc5-4ac0-992b-cf57b10d194a)
+
+<p align="center"><i>by <a href="https://github.com/Jahid1499">Jahid Hassan </a></i></p>
+
+<p align="center">Below is a comprehensive scribe sheet for Git commands. This includes descriptions, examples and screenshots. </p>
+
+# Table of Contents
+
+1. [Git Setup and Configuration](#git-setup-and-configuration)
+
+   - [Git Initialize](#git-initialize)
+   - [Clone a Repository](#clone-a-repository)
+   - [Set Up User Info](#set-up-user-info)
+   - [Folder and File operation](#folder-and-file-operation)
+   - [Remove Files](#remove-files)
+
+2. [Git Basic command](#git-basic-command)
+
+   - [Check Status](#check-status)
+   - [Stage Changes](#stage-changes)
+   - [Create Commit](#create-commit)
+
+3. [Branch](#branch)
+   - [Create a Branch](#create-a-branch)
+   - [List Branches](#list-branches)
+   - [Switch to a Branch](#switch-to-a-branch)
+   - [Create and Switch to a New Branch](#create-and-switch-to-a-new-branch)
+   - [Merge a Branch](#merge-a-branch)
+   - [Rename a Branch](#rename-a-branch)
+   - [Delete a Branch](#delete-a-branch)
+
+4. [Aliases](#aliases)
+5. [Remote branch](#remote-branch)
+   - [Add a Remote Repository](#add-a-remote-repository)
+   - [View Remote Repositories](#view-remote-repositories)
+   - [Fetch Changes](#fetch-changes)
+   - [Pull Changes](#pull-changes)
+   - [Push Changes](#push-changes)
+   - [Rewriting history](#rewriting-history)
+   - [Interactive Rebase](#interactive-rebase)
+
+6. [Git reset](#git-reset)
+   - [To See Commit History](#to-see-commit-history)
+   - [Reset to a Previous Commit](#reset-to-a-previous-commit)
+
+7. [Git rebase](#git-rebase)
+
+# Git Setup and Configuration
+
+#### Git Initialize
 
 ```bash
   git init
@@ -28,7 +77,7 @@ git config --global user.email "your.email@example.com"
 git config --global --list      // show global information list
 ```
 
-#### Folder and File operation
+### Folder and File operation
 
 ![Screenshot_3](https://github.com/obijzbo/IC-DevOps-Batch-2/assets/32175937/5d367145-6cbe-4dbb-ae76-afa4a511bb84)
 
@@ -52,13 +101,17 @@ git rm <file>
 
 ![Screenshot_9](https://github.com/obijzbo/IC-DevOps-Batch-2/assets/32175937/da6adf40-af5e-48aa-af92-12a85cfb30b7)
 
-#### Check Status
+### Check Status
+
+_Show the current status_
 
 ```bass
 git status
 ```
 
-#### Stage Changes
+### Stage Changes
+
+_Track the change for git_
 
 ```bash
 git add <file name>
@@ -66,7 +119,9 @@ git add .  // add all file
 git add -A
 ```
 
-#### Create Commit
+### Create Commit
+
+_captures a snapshot of the project's currently staged changes._
 
 ```bash
 git commit -m "Commit message"
@@ -74,47 +129,49 @@ git commit -m "Commit message"
 
 # Branch
 
+_Branches allow you to work on different parts of a project without impacting the main branch_
+
 ![Screenshot_13](https://github.com/obijzbo/IC-DevOps-Batch-2/assets/32175937/297383d5-6daa-46fb-bccb-f5cfa4e557ae)
 
-#### Create a Branch
-
+### Create a Branch
 ```bash
 git branch <branch-name>
 ```
 
-#### List Branches
-
+### List Branches
+_Show all branch list_
 ```bash
 git branch
 ```
 
-#### Switch to a Branch
+### Switch to a Branch
 
 ```bash
 git checkout <branch-name>
 ```
 
-#### Create and Switch to a New Branch
-
+### Create and Switch to a New Branch
+_Using -b flag to create and checkout_
 ```bash
 git checkout -b <new-branch-name>
 ```
 
-#### Merge a Branch
+### Merge a Branch
+_Git merge will combine multiple sequences of commits into one unified history. In the most frequent use cases, git merge is used to combine two branches_
 
 ```bash
 git checkout <target-branch>
 git merge <source-branch>
 ```
 
-#### Rename a Branch
-
+### Rename a Branch
+_If you want to change rename a branch_
 ```bash
 git branch -m old-name new-name
 ```
 
-#### Delete a Branch
-
+### Delete a Branch
+_If you want to remove a branch_
 ```bash
 git branch -d <branch-name>
 git branch -D <branch-name>  # Force delete
@@ -122,7 +179,7 @@ git branch -D <branch-name>  # Force delete
 
 # Aliases
 
-Shorter version for big word
+Aliases enable more efficient workflows by requiring fewer keystrokes to execute a command. For a brief example, consider the **git checkout** command. The checkout command is a frequently used git command, which adds up in cumulative keystrokes over time. An alias can be created that maps **git co** to **git checkout** which saves precious human fingertip power by allowing the shorter keystroke form: git co to be typed instead.
 
 ![Screenshot_14](https://github.com/obijzbo/IC-DevOps-Batch-2/assets/32175937/f1147f82-2c09-433a-89b1-8f8c98cb32ec)
 
@@ -135,48 +192,49 @@ git config --global --list              // show aliases list
 ![Screenshot_15](https://github.com/obijzbo/IC-DevOps-Batch-2/assets/32175937/1aa0a35c-e541-41b4-81a9-12860bf72c1d)
 
 # Remote branch
+_Remote branches are how developers collaborate on the same project simultaneously. A remote branch exists in a remote repository (most commonly referred to as origin by convention) and is hosted on a platform such as GitHub._
 
 ![Screenshot_16](https://github.com/obijzbo/IC-DevOps-Batch-2/assets/32175937/e29b6a9d-b389-4ee1-bd72-e8056ec9b105)
 
 ![Screenshot_17](https://github.com/obijzbo/IC-DevOps-Batch-2/assets/32175937/be142c40-1f75-4f56-9ce5-1ccc9a200cc4)
 
-#### Add a Remote Repository
+### Add a Remote Repository
 
 ```bash
 git remote add <remote-name> <remote-url>
 ```
 
-#### View Remote Repositories
+### View Remote Repositories
 
 ```bash
 git remote -v
 ```
 
-#### Fetch Changes
+### Fetch Changes
 
 ```bash
 git fetch <remote-name>
 ```
 
-#### Pull Changes
+### Pull Changes
 
 ```bash
 git pull <remote-name> <branch-name>
 ```
 
-#### Push Changes
+### Push Changes
 
 ```bash
 git push <remote-name> <branch-name>
 ```
 
-#### Rewriting history
+### Rewriting history
 
 ```bash
 git rebase <base-branch>
 ```
 
-#### Interactive Rebase
+### Interactive Rebase
 
 ```bash
 git rebase -i <base-branch>
@@ -184,14 +242,16 @@ git rebase -i <base-branch>
 
 # Git reset
 
-#### To See Commit History
+_The git reset command is used to undo the changes in your working directory and get back to a specific commit while discarding all the commits made after that one._
+
+### To See Commit History
 
 ```bash
 git log
 git log --oneline // Show commit history in shortly
 ```
 
-#### Reset to a Previous Commit
+### Reset to a Previous Commit
 
 ![Screenshot_20](https://github.com/obijzbo/IC-DevOps-Batch-2/assets/32175937/2d1b3850-10c4-40a4-922b-9aadd0a0e877)
 
@@ -202,6 +262,7 @@ git reset HEAD~[commitNumber]  // Unstage commit
 ```
 
 # Git rebase
+_rebasing is changing the base of your branch from one commit to another making it appear as if you'd created your branch from a different commit. Internally, Git accomplishes this by creating new commits and applying them to the specified base._
 
 ![Screenshot_18](https://github.com/obijzbo/IC-DevOps-Batch-2/assets/32175937/fe636272-2433-4cd0-a58c-f4ad83b0c9ba)
 
