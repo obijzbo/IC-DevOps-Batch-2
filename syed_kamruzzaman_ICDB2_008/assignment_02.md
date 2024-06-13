@@ -5,104 +5,117 @@
 
 
 
-Git Commands
-============
-
-_A list of Git commands_
---
-feel free to star [this](https://gist.github.com/vimalverma558/6fe59f3b7f886d2210bca28634b3a7fe)
+<br><br>
+Linux Fundamentals
+==================
+<br>
 
 ___
-___
 
-### Tell Git who you are
-
-| Description | Command |
-| ------- | ----------- |
-| Configure the author name.|`git config --global user.name "<username>"`|
-| Configure the author email address.|`git config --global user.email <email address>`|
-
-
-
-### Getting & Creating Projects
-
-| Description | Command  |
-| ------- | ----------- |
-| Initialize a local Git repository | `git init` |
-| Create a local copy of a remote repository | `git clone ssh://git@github.com/<username>/<repository-name>.git` |
-
-### Basic Snapshotting
+### File System Navigation
 
 | Description | Command |
 | ------- | ----------- |
-| Check status | `git status` |
-| Add a file to the staging area | `git add <file-name.txt>` |
-| Add all new and changed files to the staging area | `git add -A` or <br> `git add .` |
-| Commit changes | `git commit -m "<commit message>"` |
-| Remove a file (or folder) | `git rm -r <file-name.txt>` |
+| List the contents of the home directory. |`ls ~`|
+| Change the current directory to /var/log and list its contents. |`cd /var/log && ls -al` |
+| Find and display the path to the bash executable using the which command. |`echo $SHELL or which $SHELL ` |
+<br>
 
-
-
-### Inspection & Comparison
+### File and Directory Operations
 
 | Description | Command |
 | ------- | ----------- |
-| View changes | `git log` |
-| View changes (detailed) | `git log --summary` |
-| View changes in one line (briefly) | `git log --oneline` or <br> `git log --pretty=oneline` or<br> `git log --pretty=short` |
+| Create a directory named linux_fundamentals in your home directory. |`mkdir ~/linux_fundamentals`|
+| Inside linux_fundamentals, create a subdirectory named scripts. |`mkdir ~/linux_fundamentals/scripts` |
+| Create an empty file named example.txt inside the linux_fundamentals directory. |`touch ~/linux_fundamentals/example.txt` |
+| Copy example.txt to the scripts directory. |`cp ~/linux_fundamentals/example.txt ~/linux_fundamentals/scripts/` |
+| Move example.txt from linux_fundamentals to linux_fundamentals/backup. |`mkdir ~/linux_fundamentals/backup && mv ~/linux_fundamentals/example.txt ~/linux_fundamentals/backup/` |
+<br>
 
-
-
-
-### Undo to previous file
-
-| Description | Command |
-| ------- | ----------- |
-| List of all commit with commit id and commit message) | `git log --oneline` |
-| Return to previous commit <commit id> | `git checkout<commit id>` |
-| Revert commit <commit id> (undo one particular commit) | `git revert <commit id>` |
-| Reset to previous commit <commit id> (remove history of all commit after <commit id> ) | `git reset --hard <commit id>`|
-| Stop a file being tracked | `git rm --cached <file/folder>` |
-| Restore a file to a previous commit| `git checkout <file/to/restore>` |
-
-
-
-### Branching & Merging
+### Permissions
 
 | Description | Command |
 | ------- | ----------- |
-| List branches (the asterisk denotes the current branch) | `git branch` |
-| List all branches (local and remote) | `git branch -a` |
-| Create a new branch | `git branch <branch name>` |
-| Create a new branch and switch to it | `git checkout -b <branch name>` |
-| Clone a remote branch and switch to it | `git checkout -b <branch name> origin/<branch name>` |
-| Rename a local branch | `git branch -m <old branch name> <new branch name>` |
-| Switch to a branch | `git checkout <branch name>` |
-| Switch to the branch last checked out | `git checkout -` |
-| Discard changes to a file | `git checkout -- <file-name.txt>` |
-| Delete a branch | `git branch -d <branch name>` |
-| Delete a remote branch | `git push origin --delete <branch name>` |
-| Preview changes before merging | `git diff <source branch>  <target branch>` |
-| Merge a branch into the active branch | `git merge <branch name>` |
-| Merge a branch into a target branch | `git merge <source branch> <target branch>` |
-| Stash changes in a dirty working directory | `git stash` |
-| Remove all stashed entries | `git stash clear` |
+| Change the permissions of example.txt to read and write for the owner, and read-only for the group and others. |`chmod 644 ~/linux_fundamentals/backup/example.txt`|
+| Verify the permission changes using ls -l. |`ls -al ~/linux_fundamentals/backup/example.txt` |
+<br>
 
-### Sharing & Updating Projects
+
+### File Modification
 
 | Description | Command |
 | ------- | ----------- |
-| Push a branch to your remote repository | `git push origin <branch name>` |
-| Push changes to remote repository (and remember the branch) | `git push -u origin <branch name>` |
-| Push changes to remote repository (remembered branch) | `git push` |
-| Push changes to remote repository all branch | `git push --all` |
-| Push changes to remote repository (Force) | `git push -f` |
-| Delete a remote branch | `git push origin --delete <branch name>` |
-| Update local repository to the newest commit | `git pull` |
-| Pull changes from remote repository | `git pull origin <branch name>` |
-| Add a remote repository | `git remote add origin ssh://git@github.com/<username>/<repository-name>.git` |
-| Set a repository's origin branch to SSH | `git remote set-url origin ssh://git@github.com/<username>/<repository-name>.git` |
+| Create a file named example.txt in your home directory. |`touch ~/example.txt`|
+| Change the owner of example.txt to a user named student. |`sudo chown student ~/example.txt` |
+| Change the group of example.txt to a group named students. |`sudo chgrp students ~/example.txt` |
+| Verify the changes using appropriate commands. |`ls -al ~/example.txt` |
+<br>
 
 
-### Git Cheat Sheet
-![This is a alt text.](/assignment_1/images/git_cheat_sheet.png)
+### Ownership
+
+| Description | Command |
+| ------- | ----------- |
+| Create a directory named project in your home directory. |`mkdir ~/project`|
+| Create a file named report.txt inside the project directory. |`touch ~/project/report.txt` |
+| Set the permissions of report.txt to read and write for the owner, and read-only for the group and others. |`chmod 644 ~/project/report.txt` |
+| Set the permissions of the project directory to read, write, and execute for the owner, and read and execute for the group and others. |`chmod 755 ~/project` |
+| Verify the changes using appropriate commands. |`ls -al ~/project/report.txt` |
+<br>
+
+
+### User add/modify
+
+| Description | Command |
+| ------- | ----------- |
+| Create a new user named developer. |`sudo useradd -m -d /home/developer_home -s /bin/bash developer`|
+| Verify the new user's information. |`cat /etc/passwd` |
+| Change the username of the user developer to devuser. |`sudo usermod -l devuser developer` |
+| Add devuser to a group named devgroup. |`sudo groupadd devgroup && sudo usermod -aG devgroup devuser` |
+| Verify the changes made to the user. |`cat /etc/passwd && cat /etc/passwd OR getend passwd devuser && getent group devgroup` |
+|  Verify the shell and other user information. |`grep "^devuser" /etc/passwd` |
+<br>
+
+
+
+### Hard/Soft Link
+
+| Description | Command |
+| ------- | ----------- |
+| Create a file named original.txt in your home directory. |`touch ~/original.txt`|
+| Create a symbolic link named softlink.txt pointing to original.txt. |`ln -s ~/original.txt ~/softlink.txt` |
+| Verify the symbolic link and ensure it points to the correct file. |`ls -l ~/softlink.txt OR ls -ali ~` |
+| Delete the original file original.txt and observe the status of the symbolic link. |`rm ~/original.txt && ls -l ~/softlink.txt` |
+| Create a file named datafile.txt in your home directory. |`touch ~/datafile.txt` |
+| Create a hard link named hardlink.txt pointing to datafile.txt. |`ln ~/datafile.txt ~/hardlink.txt` |
+| Verify the hard link and ensure it correctly points to the file. |`ls -l ~/datafile.txt ~/hardlink.txt` |
+| Check the inode of both datafile.txt and hardlink.txt. |`ls -i ~/datafile.txt ~/hardlink.txt` |
+| Delete the original file datafile.txt and observe the status of the hard link. |`rm ~/datafile.txt && ls -l ~/hardlink.txt` |
+| Find all .txt files in your home directory. |`find ~ -name "*.txt"` |
+<br>
+
+
+
+### Package installation
+
+| Description | Command |
+| ------- | ----------- |
+| Update repository cache using apt or apt-get. |`udo apt update`|
+| Install a package named tree. |`sudo apt install tree` |
+| Install gcloud CLI tool using apt ( Follow instructions from here: https://cloud.google.com/sdk/docs/install#deb ). | 
+
+`echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main"` 
+<br> 
+ `sudo apt-get install apt-transport-https ca-certificates gnupg`
+ <br> 
+ `curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -`
+ <br> 
+ `sudo apt-get update && sudo apt-get install google-cloud-sdk`
+ <br> 
+ `tree --version && gcloud --version`
+ 
+ |
+
+<br>
+
+
