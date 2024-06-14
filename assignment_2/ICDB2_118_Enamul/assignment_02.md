@@ -1,4 +1,4 @@
-## File System Navigation
+## #File System Navigation
 
 #### List the contents of the home directory
 
@@ -27,7 +27,7 @@
 ![](screenshots/currentshell.png)
 
 
-## File and Directory Operations
+## #File and Directory Operations
 
 #### Create a directory named `linux_fundamentals` in your home directory.
 
@@ -59,7 +59,7 @@
 
 ![](screenshots/moveexample.png)
 
-## Permissions
+## #Permissions
 
 #### Change the permissions of example.txt to read and write for the owner, and `read-only` for the group and others.
 
@@ -72,7 +72,7 @@
 >_ls -la_
 ![](screenshots/verify.png)
 
-## File Modification
+## #File Modification
 
 #### Create a file named example.txt in your home directory.
 
@@ -96,7 +96,7 @@
 >_ls -l example.txt_
 ![](screenshots/verify-owner-group.png)
 
-## Ownership
+## #Ownership
 
 #### Create a directory named project in your home directory.
 >_sudo mkdir project_
@@ -122,7 +122,7 @@
 >_sudo ls -ll_ 
 ![](screenshots/directorypermission.png)
 
-## User add/modify
+## #User add/modify
 
 #### Create a new user named developer.
 
@@ -163,14 +163,14 @@
 >_su - devuser_
 ![](screenshots/verifydevpass.png)
 
-## Hard/Soft Link
+## #Hard/Soft Link
 
 #### Create a file named original.txt in your home directory.
 
 >_sudo touch original.txt_
 #### Create a symbolic link named softlink.txt pointing to original.txt.
 
->sudo ln -s original.txt softlink.txt_
+>_sudo ln -s original.txt softlink.txt_
 
 ![](screenshots/softlink.png)
 
@@ -220,7 +220,7 @@
 
 ![](screenshots/find.png)
 
-## Package installation
+## #Package installation
 
 #### Update repo cache using apt/apt-get
 
@@ -235,3 +235,5 @@
 
 
 #### Install gcloud CLI tool using apt ( Follow instructions from here: https://cloud.google.com/sdk/docs/install#deb )
+
+![](screenshots/CLI.png)
