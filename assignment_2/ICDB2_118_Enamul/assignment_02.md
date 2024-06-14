@@ -64,12 +64,14 @@
 #### Change the permissions of example.txt to read and write for the owner, and `read-only` for the group and others.
 
 >_sudo chmod 644 example.txt_
+
 ![](screenshots/permission.png)
 
 
 #### Verify the permission changes using ls -l
 
 >_ls -la_
+
 ![](screenshots/verify.png)
 
 ## #File Modification
@@ -89,37 +91,44 @@
 #### Change the group of example.txt to a group named students.
 
 >_sudo chown student:estudent example.txt_
+
 ![](screenshots/changegroup.png)
 
 #### Verify the changes using appropriate commands.
 
 >_ls -l example.txt_
+
 ![](screenshots/verify-owner-group.png)
 
 ## #Ownership
 
 #### Create a directory named project in your home directory.
 >_sudo mkdir project_
+
 ![](screenshots/project.png)
 
 #### Create a file named report.txt inside the project directory.
 
 >_sudo touch report_
+
 ![](screenshots/report-txt.png)
 
 #### Set the permissions of report.txt to read and write for the owner, and read-only for the group and others.
 
 >_sudo chmod 644 report.txt_
+
 ![](screenshots/reportpermission.png)
 
 #### Set the permissions of the project directory to read, write, and execute for the owner, and read and execute for the group and others
 
 >_sudo chmod 755 project/_
+
 ![](screenshots/directorypermission.png)
 
 #### Verify the changes using appropriate commands.
 
 >_sudo ls -ll_ 
+
 ![](screenshots/directorypermission.png)
 
 ## #User add/modify
@@ -127,40 +136,49 @@
 #### Create a new user named developer.
 
 >_sudo useradd developer_
+
 ![](screenshots/developeruser.png)
 
 #### Set the home directory of the user developer to /home/developer_home.
 
 >_sudo usermod -d /home/developer_home developer_
+
 ![](screenshots/developerhomedirectory.png)
 
 #### Assign the shell /bin/sh to the user developer.
 
 >_sudo chsh -s /bin/sh developer_
+
 ![](screenshots/shelldeveloper.png)
+
 #### Verify the new user's information.
 
->_which $SHELL
+>_which $SHELL_
+
 ![](screenshots/shelldeveloper.png)
 
 #### Change the username of the user developer to devuser.
 
 >_sudo usermod -l devuser developer_
+
 ![](screenshots/devuser.png)
 
 #### Add devuser to a group named devgroup.
 
 >_sudo usermod -aG devgroup devuser_
+
 ![](screenshots/devgroup.png)
 
 #### Set the password of devuser to devpass. ( hint: use passwd command. Run passwd --help to see available options)
 
 >_sudo passwd devuser_
+
 ![](screenshots/devpass.png)
 
 #### Verify the changes made to the user.
 
 >_su - devuser_
+
 ![](screenshots/verifydevpass.png)
 
 ## #Hard/Soft Link
