@@ -37,3 +37,16 @@ cp linux_fundamentals/example.txt linux_fundamentals/scripts/
 mkdir linux_fundamentals/backup && mv ~/linux_fundamentals/example.txt ~/linux_fundamentals/backup
 ```
 <img src="screenshots/file_directory_operations.png">
+
+# Permissions
+
+Change the permissions of example.txt to read and write for the owner, and read-only for the group and others. Verify the permission changes using ls -l
+
+```
+ls -l linux_fundamentals/scripts/example.txt
+chmod 644 linux_fundamentals/scripts/example.txt
+ls -l linux_fundamentals/scripts/example.txt
+```
+<img src="screenshots/permissions.png">
+
+
