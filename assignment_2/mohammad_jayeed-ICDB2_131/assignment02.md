@@ -1,21 +1,39 @@
 # File System Navigation
 
-- List the contents of the home directory.
+List the contents of the home directory.
 ```
 ls -a ~
 ```
 <img src="screenshots/contents_of_home.png">
 
-- Change the current directory to /var/log and list its contents.
+Change the current directory to /var/log and list its contents.
 ```
 cd /var/log \
 ls -a
 ```
 <img src="screenshots/var_log.png">
 
-- Find and display the path to the bash executable using the which command. Find current shell
+Find and display the path to the bash executable using the which command. Find current shell
 ```
 which bash
 echo $SHELL
 ```
 <img src="screenshots/bash_dir_and_current_shell.png">
+
+# File and Directory Operations
+
+Create a directory named linux_fundamentals in your home directory.
+Inside linux_fundamentals, create a subdirectory named scripts.
+Create an empty file named example.txt inside the linux_fundamentals directory.
+Copy example.txt to the scripts directory.
+Move example.txt from linux_fundamentals to linux_fundamentals/backup.
+
+```
+cd ~
+mkdir linux_fundamentals
+mkdir linux_fundamentals/scripts
+touch linux_fundamentals/example.txt
+cp linux_fundamentals/example.txt linux_fundamentals/scripts/
+mkdir linux_fundamentals/backup && mv ~/linux_fundamentals/example.txt ~/linux_fundamentals/backup
+```
+<img src="screenshots/file_directory_operations.png">
