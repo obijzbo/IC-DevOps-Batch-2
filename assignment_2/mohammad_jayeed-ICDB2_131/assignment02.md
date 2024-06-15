@@ -70,3 +70,30 @@ ls -l example.txt
 
 <img src="screenshots/file_mod.png">
 
+# Ownership
+
+Create a directory named project in your home directory.
+Create a file named report.txt inside the project directory.
+Set the permissions of report.txt to read and write for the owner, and read-only for the group and others.
+
+```
+cd ~
+mkdir project
+touch project/report.txt
+cd project
+chmod u=rw,g=r,o=r report.txt
+ls -l report.txt
+```
+<img src="screenshots/ownership_1.png">
+
+Set the permissions of the project directory to read, write, and execute for the owner, and read and execute for the group and others. Verify the changes using appropriate commands.
+
+```
+ls -ld ~/project
+chmod u=rwx,g=rx,o=rx ~/project
+ls -ld ~/project
+```
+<img src="screenshots/ownership_2.png">
+
+
+
