@@ -49,4 +49,24 @@ ls -l linux_fundamentals/scripts/example.txt
 ```
 <img src="screenshots/permissions.png">
 
+# File Modification
+
+Create a file named example.txt in your home directory.
+Change the owner of example.txt to a user named student
+Change the group of example.txt to a group named students.
+Verify the changes using appropriate commands.
+
+```
+cd ~
+touch example.txt
+ls -l example.txt
+sudo useradd student
+sudo chown student ~/example.txt
+ls -l example.txt
+sudo groupadd students
+sudo chgrp students ~/example.txt
+ls -l example.txt
+```
+
+<img src="screenshots/file_mod.png">
 
