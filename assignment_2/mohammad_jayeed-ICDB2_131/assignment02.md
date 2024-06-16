@@ -95,5 +95,36 @@ ls -ld ~/project
 ```
 <img src="screenshots/ownership_2.png">
 
+# User Add/Modify
+
+Create a new user named developer. Set the home directory of the user developer to /home/developer_home. Assign the shell /bin/sh to the user developer. Verify the new user's information.
+
+```
+sudo useradd -m -d /home/developer_home -s /bin/sh developer
+id developer
+grep developer /etc/passwd
+```
+<img src="screenshots/useraddmod1.png">
 
 
+Change the username of the user developer to devuser. Add devuser to a group named devgroup.
+```
+id developer
+sudo usermod -l devuser developer
+id developer # user will not be found
+id devuser
+sudo groupadd devgroup
+sudo usermod -aG devgroup devuser
+groups devuser
+```
+<img src="screenshots/useraddmod2.png">
+
+Set the password of devuser to devpass. Verify the changes made to the user.
+```
+sudo grep devuser /etc/shadow
+su devuser # will not require pass
+sudo passwd devuser
+sudo grep devuser /etc/shadow # will show encrypted password
+su devuser # will require password now
+```
+<img src="screenshots/useraddmod3.png">
