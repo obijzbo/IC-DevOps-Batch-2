@@ -128,3 +128,40 @@ sudo grep devuser /etc/shadow # will show encrypted password
 su devuser # will require password now
 ```
 <img src="screenshots/useraddmod3.png">
+
+# Hard/Soft link
+
+Create a file named original.txt in your home directory. Create a symbolic link named softlink.txt pointing to original.txt. Verify the symbolic link and ensure it points to the correct file. Delete the original file original.txt and observe the status of the symbolic link.
+```
+cd ~
+touch original.txt
+ls -l original.txt
+ln -s original.txt softlink.txt
+ls -l softlink.txt # checking the link
+rm original.txt
+ls -l softlink.txt
+```
+<img src="screenshots/hardsoft1.png">
+
+
+Create a file named datafile.txt in your home directory. Create a hard link named hardlink.txt pointing to datafile.txt. Verify the hard link and ensure it correctly points to the file. Check the inode of both datafile.txt and hardlink.txt. Delete the original file datafile.txt and observe the status of the hard link.
+```
+cd ~
+touch datafile.txt
+ls -li datafile.txt
+ln datafile.txt hardlink.txt
+ls -li hardlink.txt
+echo "this is a verification" >> datafile.txt
+cat hardlink.txt # same text as orignal datafile
+rm datafile.txt
+ls -li hardlink.txt # link exists with inode number and number of links as 1
+```
+<img src="screenshots/hardsoft2.png">
+
+Find all .txt files in your home directory.
+```
+pwd
+find . -type f -name "*.txt"
+```
+<img src="screenshots/hardsoft3.png">
+
