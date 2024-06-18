@@ -165,3 +165,27 @@ find . -type f -name "*.txt"
 ```
 <img src="screenshots/hardsoft3.png">
 
+# Package installation
+Update repo cache using apt/apt-get
+```
+sudo apt update
+```
+<img src="screenshots/apt_update.png">
+
+Install a package named tree
+
+```
+sudo apt install tree
+```
+<img src="screenshots/tree.png">
+
+Install gcloud CLI tool using apt 
+```
+sudo apt update
+sudo apt install apt-transport-https ca-certificates gnupg curl
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt update && sudo apt install google-cloud-cli
+```
+<img src="screenshots/package_installation.png">
+<img src="screenshots/package_installation2.png">
