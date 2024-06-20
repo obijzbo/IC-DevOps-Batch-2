@@ -159,3 +159,192 @@ Then move the file:
 
 ![cd Command](./screenshots/permission.png)
 **Explanation:** `ls -l` presents detailed file information, inclusive of its permissions.
+
+## Managing Users in Linux
+
+### 1. Create a new user named developer:
+
+```bash
+sudo adduser developer
+```
+
+![cd Command](./screenshots/u-add.png)
+
+**Explanation:** `adduser` command is used to create a new user in Linux.
+
+### 2. Set the home directory of the user developer to /home/developer_home:
+
+```bash
+sudo usermod -d /home/developer_home developer
+```
+
+![cd Command](./screenshots/u-home-dir.png)
+
+**Explanation:** `usermod -d` command changes the home directory of the specified user.
+
+### 3. Assign the shell /bin/sh to the user developer:
+
+```bash
+sudo usermod -s /bin/sh developer
+```
+
+![cd Command](./screenshots/user-shell.png)
+
+**Explanation:** `usermod -s` command sets the login shell for the specified user.
+
+### 4. Verify the new user's information:
+
+```bash
+id developer
+```
+
+![cd Command](./screenshots/user-details.png)
+
+**Explanation:** `id` command displays user and group information for the specified user.
+
+### 5. Change the username of the user developer to devuser:
+
+```bash
+sudo usermod -l devuser developer
+```
+
+![cd Command](./screenshots/user-change-name.png)
+
+**Explanation:** `usermod -l` command changes the username of an existing user.
+
+### 6. Add devuser to a group named devgroup:
+
+```bash
+sudo usermod -aG devgroup devuser
+```
+
+![cd Command](./screenshots/user-group.png)
+
+**Explanation:** `usermod -aG` command adds a user to a supplementary group.
+
+### 7. Set the password of devuser to devpass:
+
+```bash
+sudo passwd devuser
+```
+
+![cd Command](./screenshots/user-pass-update.png)
+
+(Enter `devpass` when prompted)
+
+**Explanation:** `passwd` command sets or changes a user's password.
+
+### 8. Verify the changes made to the user:
+
+```bash
+id devuser
+```
+
+![cd Command](./screenshots/user-verify.png)
+
+**Explanation:** Verify the user information to ensure all modifications are correctly applied.
+
+## Symbolic and Hard Links in Linux
+
+### 1. Create a file named original.txt in your home directory:
+
+```bash
+touch ~/original.txt
+```
+
+![cd Command](./screenshots/l-touch.png)
+
+**Explanation:** `touch` command is used to create an empty file.
+
+### 2. Create a symbolic link named softlink.txt pointing to original.txt:
+
+```bash
+ln -s ~/original.txt ~/softlink.txt
+```
+
+![cd Command](./screenshots/l-soft.png)
+
+**Explanation:** `ln -s` command creates a symbolic link (`-s` flag) named `softlink.txt` pointing to `original.txt`.
+
+### 3. Verify the symbolic link and ensure it points to the correct file:
+
+```bash
+ls -l ~/softlink.txt
+```
+
+![cd Command](./screenshots/l-soft-verify.png)
+
+**Explanation:** `ls -l` lists detailed information about `softlink.txt`, confirming it points to `original.txt`.
+
+### 4. Delete the original file original.txt and observe the status of the symbolic link:
+
+```bash
+rm ~/original.txt
+ls -l ~/softlink.txt
+```
+
+![cd Command](./screenshots/l-soft-delete.png)
+
+**Explanation:** Removing `original.txt` and checking `softlink.txt` confirms symbolic links are dependent on the original file.
+
+### 5. Create a file named datafile.txt in your home directory:
+
+```bash
+touch ~/datafile.txt
+```
+
+![cd Command](./screenshots/l-hard-create.png)
+
+**Explanation:** Creating a new file `datafile.txt` for hard linking.
+
+### 6. Create a hard link named hardlink.txt pointing to datafile.txt:
+
+```bash
+ln ~/datafile.txt ~/hardlink.txt
+```
+
+![cd Command](./screenshots/l-hard-create.png)
+
+**Explanation:** `ln` command creates a hard link by default (without `-s` flag), linking `hardlink.txt` to `datafile.txt`.
+
+### 7. Verify the hard link and ensure it correctly points to the file:
+
+```bash
+ls -l ~/hardlink.txt
+```
+
+![cd Command](./screenshots/l-hard-verify.png)
+
+**Explanation:** `ls -l` confirms `hardlink.txt` is linked to `datafile.txt`.
+
+### 8. Check the inode of both datafile.txt and hardlink.txt:
+
+```bash
+ls -i ~/datafile.txt
+ls -i ~/hardlink.txt
+```
+
+![cd Command](./screenshots/l-hard-inode.png)
+
+**Explanation:** `ls -i` displays the inode number of each file. Inodes for hard links point to the same data blocks.
+
+### 9. Delete the original file datafile.txt and observe the status of the hard link:
+
+```bash
+rm ~/datafile.txt
+ls -l ~/hardlink.txt
+```
+
+![cd Command](./screenshots/l-hard-delete.png)
+
+**Explanation:** Removing `datafile.txt` and verifying `hardlink.txt` demonstrates that hard links maintain access to file data as long as one link remains.
+
+### 10. Find all .txt files in your home directory:
+
+```bash
+find ~ -type f -name "*.txt"
+```
+
+![cd Command](./screenshots/find.png)
+
+**Explanation:** `find` command searches for files (`-type f`) with names ending in `.txt` in the home directory (`~`).
