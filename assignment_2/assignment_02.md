@@ -3,6 +3,9 @@
 - [File System Navigation](#file-system-navigation)
 - [File and Directory Operations](#file-and-directory-operations)
 - [Permissions](#permissions)
+- [Ownership](#managing-users-in-linux)
+- [Symbolic and Hard Links](#symbolic-and-hard-links-in-linux)
+- [Package Installation](#package-installation)
 
 ## File System Navigation
 
