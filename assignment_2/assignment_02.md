@@ -348,3 +348,60 @@ find ~ -type f -name "*.txt"
 ![cd Command](./screenshots/find.png)
 
 **Explanation:** `find` command searches for files (`-type f`) with names ending in `.txt` in the home directory (`~`).
+
+## Package Installation
+
+### 1. Update Repo Cache Using apt/apt-get
+
+**Example:**
+
+```bash
+sudo apt update
+```
+
+![cd Command](./screenshots/p-update.png)
+
+**Explanation:**  
+The `apt update` command refreshes the local package index. It retrieves the latest package information from the repositories specified in `/etc/apt/sources.list`, ensuring that your system has the latest version information for available packages.
+
+### 2. Install a Package Named tree
+
+**Example:**
+
+```bash
+sudo apt install tree
+```
+
+![cd Command](./screenshots/p-tree.png)
+
+**Explanation:**  
+`apt install tree` installs the `tree` package, which provides a command-line utility that displays directory structures in a tree-like format. This command fetches the `tree` package from the configured repositories and installs it on your system.
+
+### 3. Install gcloud CLI Tool Using apt
+
+**Example:**
+
+```bash
+# Add the Cloud SDK distribution URI as a package source
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+
+# Import the Google Cloud public key
+sudo apt-get install apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo tee /usr/share/keyrings/cloud.google.gpg > /dev/null
+
+# Update and install the Cloud SDK
+sudo apt-get update && sudo apt-get install google-cloud-sdk
+```
+
+![cd Command](./screenshots/p-c-1.png)
+![cd Command](./screenshots/p-c-2.png)
+![cd Command](./screenshots/p-c-3.png)
+![cd Command](./screenshots/p-c-4.png)
+![cd Command](./screenshots/p-c-5.png)
+
+**Explanation:**  
+To install the Google Cloud SDK CLI tool (`gcloud`), these steps are followed:
+
+1. Add the Cloud SDK distribution URI to `google-cloud-sdk.list` so that `apt` knows where to fetch the package.
+2. Import the Google Cloud public key to verify package integrity.
+3. Update the package list (`apt-get update`) and then install the `google-cloud-sdk` package (`apt-get install google-cloud-sdk`) using `apt-get`.
