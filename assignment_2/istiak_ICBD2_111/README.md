@@ -1,14 +1,24 @@
-# File System Navigation
+## Table of Contents:
+
+- [File System Navigation](#navigation)
+- [File and Directory Operations](#fileDirection)
+- [Permissions](#permissions)
+
+
+
+
+# File System Navigation {#navigation}
 
 ## 1. For contents of the home directory
 ```
 ls ~
 ```
+![Home Directory](/home-contents.png)
 ### Common Directories in the Home Directory:
-**Desktop:** Contains files and shortcuts on your desktop.
-**Documents:** Default directory for storing documents.
-**Downloads:** Default directory for downloaded files.
-**Music:** Default directory for music files.
+**Desktop:** Contains files and shortcuts on your desktop. <br>
+**Documents:** Default directory for storing documents. <br>
+**Downloads:** Default directory for downloaded files. <br>
+**Music:** Default directory for music files. <br>
 **Pictures:** Default directory for image files.
 **Videos:** Default directory for video files. <br>
 **.config:** Stores configuration files for various applications. <br>
@@ -16,13 +26,14 @@ ls ~
 **.cache:** Stores cached data for various applications.
 
 
-## 2. Change the current directory to `/var/log` and list its contents
+## 2. Change the current directory to `/var/log` and list its contents 
 
 ```
 cd /var/log
 #then
 ls
 ```
+![Home Directory](/var-log-contents.png)
 ### Common Files and Directories in /var/log:
 **auth.log:** Authentication logs. <br>
 **boot.log:** Boot process logs.<br>
@@ -35,23 +46,22 @@ ls
 **ufw.log:** Uncomplicated Firewall logs.<br>
 **wtmp:** Login records.<br>
 
-## 3. Find and display the path to the `bash` executable using the `which` command.
-
+## 3. Find and display the path to the `bash` executable using the `which` command. 
 ```
 which bash
 ```
+![Home Directory](/which-bash.png)
 
-## 4. Find current shell.
-
+## 4. Find current shell. 
 ```
 echo $SHELL
 ```
+![Home Directory](/current-shell.png)
+
+# File and Directory Operations 
 
 
-# File and Directory Operations
-
-
-### 1. Create a directory named `linux_fundamentals` in your home directory.
+### 1. Create a directory named `linux_fundamentals` in your home directory. 
 ### 2. Inside `linux_fundamentals`, create a subdirectory named `scripts`.
 ### 3. Create an empty file named `example.txt` inside the `linux_fundamentals` directory.
 
@@ -62,13 +72,14 @@ cd Linux_fundamentals   #inside Linux_fundamentals
 mkdir scripts  #create subdirectory (2)
 touch example.txt   # create an empty file (3)
 ```
-
+![Home Directory](/create-directory-file.png)
 ### 4. Copy `example.txt` to the `scripts` directory.
 
 ```
 # while at Linux_fundamentals directory
 cp example.txt scripts
 ```
+![Home Directory](/copy.png)
 
 ### 5. Move `example.txt` from linux_fundamentals to `linux_fundamentals/backup`.
 ```
@@ -76,8 +87,9 @@ cd ..  #back to Linux_fundamentals directory
 mkdir backup  # create backup directory
 mv example.txt backup  # move to backup
 ```
+![Home Directory](/move.png)
 
-## Permissions.
+## Permissions {#permissions}
 
 ### 1. Change the permissions of example.txt to read and write for the owner, and `read-only` for the group and others.
 
@@ -99,3 +111,4 @@ ls -l example.txt
 * `rw-r--r--` indicates the permissions set for example.txt.
 * The first `rw-` specifies read and write permissions for the owner (user).
 * The `r--` specifies read-only permissions for the group and others.
+![Home Directory](/permission.png)
