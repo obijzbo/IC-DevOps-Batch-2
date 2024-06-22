@@ -7,13 +7,13 @@
 
 
 
-# File System Navigation {#navigation} 
+# # <a name="navigation"></a>File System Navigation
 
 ## 1. For contents of the home directory
 ```
 ls ~
 ```
-![Home Directory](/home-contents.png)
+![Home Directory](home-contents.png)
 ### Common Directories in the Home Directory:
 **Desktop:** Contains files and shortcuts on your desktop. <br>
 **Documents:** Default directory for storing documents. <br>
@@ -33,7 +33,7 @@ cd /var/log
 #then
 ls
 ```
-![Home Directory](/var-log-contents.png)
+![Home Directory](var-log-contents.png)
 ### Common Files and Directories in /var/log:
 **auth.log:** Authentication logs. <br>
 **boot.log:** Boot process logs.<br>
@@ -50,15 +50,16 @@ ls
 ```
 which bash
 ```
-![Home Directory](/which-bash.png)
+![Home Directory](which-bash.png)
 
 ## 4. Find current shell. 
 ```
 echo $SHELL
 ```
-![Home Directory](/current-shell.png)
+![Home Directory](current-shell.png)
 
-# File and Directory Operations {#fileDirection}
+
+# <a name="fileDirection"></a>File and Directory Operations
 
 
 ### 1. Create a directory named `linux_fundamentals` in your home directory. 
@@ -72,14 +73,14 @@ cd Linux_fundamentals   #inside Linux_fundamentals
 mkdir scripts  #create subdirectory (2)
 touch example.txt   # create an empty file (3)
 ```
-![Home Directory](/create-directory-file.png)
+![Home Directory](create-directory-file.png)
 ### 4. Copy `example.txt` to the `scripts` directory.
 
 ```
 # while at Linux_fundamentals directory
 cp example.txt scripts
 ```
-![Home Directory](/copy.png)
+![Home Directory](copy.png)
 
 ### 5. Move `example.txt` from linux_fundamentals to `linux_fundamentals/backup`.
 ```
@@ -87,7 +88,7 @@ cd ..  #back to Linux_fundamentals directory
 mkdir backup  # create backup directory
 mv example.txt backup  # move to backup
 ```
-![Home Directory](/move.png)
+![Home Directory](move.png)
 
 
 # <a name="permissions"></a>Permissions
@@ -112,4 +113,4 @@ ls -l example.txt
 * `rw-r--r--` indicates the permissions set for example.txt.
 * The first `rw-` specifies read and write permissions for the owner (user).
 * The `r--` specifies read-only permissions for the group and others.
-![Home Directory](/permission.png)
+![Home Directory](permission.png)
