@@ -306,3 +306,89 @@ git stash
 ```
 
 ![alt text](screenshots/status.png)
+
+## Branching and Merging
+
+### Git Branch
+
+> To show how many local branch in the reposatory
+
+```
+git branch
+```
+
+### Create a new branch
+
+```
+git branch branch_name
+```
+
+![alt text](screenshots/branch-1.png)
+
+### Creates a new branch and switches to it
+
+```
+git checkout -b branch_name
+```
+
+### Switches to the specified branch
+
+```
+git checkout branch_name
+```
+
+### Delete a branch
+
+> Deletes the specified branch.
+
+```
+git branch -d branch_name
+```
+
+![alt text](screenshots/branch-22.png)
+
+### Lists all local and remote branches.
+
+```
+git branch -a
+```
+
+### List remote branches
+
+```
+git branch -r
+```
+
+![alt text](screenshots/branch-all.png)
+
+### Git Tag
+
+> Show all tags
+
+```
+git tag
+```
+
+### Creates a lightweight tag at the current commit.
+
+```
+git tag tag_name
+```
+
+### Show specific tag information
+
+```
+git show tag_name
+```
+
+![alt text](screenshots/tag.png)
+
+### Merge branch
+
+> Merges the specified branch into the current branch.
+
+```
+git merge branch_name
+```
+
+![alt text](screenshots/git-merge.png)
