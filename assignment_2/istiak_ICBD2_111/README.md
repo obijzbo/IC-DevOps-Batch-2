@@ -89,7 +89,8 @@ mv example.txt backup  # move to backup
 ```
 ![Home Directory](/move.png)
 
-## Permissions {#permissions}
+
+# <a name="permissions"></a>Permissions
 
 ### 1. Change the permissions of example.txt to read and write for the owner, and `read-only` for the group and others.
 
