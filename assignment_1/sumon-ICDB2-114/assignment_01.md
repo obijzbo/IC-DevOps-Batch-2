@@ -23,6 +23,61 @@
   - [Windows](#windows)
   - [Mac](#mac)
   - [Linux](#linux)
+- [Quick start](#quick-start)
+
+- [Installation](#installation)
+
+  - [Windows](#windows)
+  - [Mac](#mac)
+  - [Linux](#linux)
+
+- [Configuration](#configuration)
+
+  - [Git Version](#check-git-version)
+  - [User Name](#setup-git-user-name)
+  - [User Email](#setup-git-user-email)
+  - [Git Configuration](#git-configuration)
+  - [Generate SSH Key](#generate-ssh-key)
+  - [Add Key to Github](#add-ssh-key-to-github)
+  - [Check SSH Connection](#heck-ssh-connection)
+
+- [Intialization and Commit](#intialization-and-commit)
+
+  - [Initialize a repo](#initialize-a-repo)
+  - [Git Clone](#git-clone)
+
+- [Basic Git Commands](#basic-git-commands)
+
+  - [Git Add](#add-a-file)
+  - [Git Status](#git-status)
+  - [Git Commit](#git-commit)
+  - [Git Reset](#git-reflog)
+  - [Git Reset](#git-reset)
+  - [Git Log ](#git-log)
+  - [Log Stat](#log-stat)
+  - [Git Stash](#git-stash)
+
+- [Branching and Merging](#branching-and-merging)
+
+  - [Show Branch List](#git-branch)
+  - [Show Branch List](#git-branch)
+  - [Create a Branch](#create-a-new-branch)
+  - [Switch to a Branch](#switches-to-the-specified-branch)
+  - [Delete a Branch](#delete-a-branch)
+  - [Git Tag](#git-tag)
+  - [Merge branch](#merge-branch)
+
+- [Remote Repositories](#remote-repositories)
+
+  - [Remote List](#remote-list)
+  - [Remote Add](#git-add-remote)
+  - [Git Fetch](#git-fetch)
+  - [Git Pull](#git-pull)
+  - [Git Push](#git-push)
+
+- [Git Managing History](#git-managing-history)
+  - [Git Revert](#git-revert)
+  - [Git Rebase](#git-rebase)
 
   
 ## Quick start
