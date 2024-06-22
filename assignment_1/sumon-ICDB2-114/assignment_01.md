@@ -392,3 +392,107 @@ git merge branch_name
 ```
 
 ![alt text](screenshots/git-merge.png)
+
+
+
+## Remote Repositories
+
+### Remote List
+
+> To see all remote repositories for your local repository with this command:
+
+```
+git remote -v
+```
+
+### Git add remote
+
+> Adds a new remote repository with the specified name and URL
+
+```
+git remote add name url
+```
+
+![alt text](screenshots/remote.png)
+
+### Git fetch
+
+> Retrieves change from a remote repository, including new branches and commit. and it don't not merge with local repository.Must be merge after fetching.
+
+```
+git fetch
+```
+
+> Retrieves change from the specified remote repository.
+
+```
+git fetch <remote>
+```
+
+![alt text](screenshots/fetch.png)
+
+### Git pull
+
+> Fetches changes from the remote repository and merges them into the current branch.
+
+```
+git pull
+```
+
+> Fetches changes from the specified remote repository and merges them into the current branch.
+
+```
+git pull <remote>
+```
+
+![alt text](screenshots/pull.png)
+
+### Git push
+
+> Pushes local commits to the remote repository.
+
+```
+git push
+```
+
+> Pushes local commits to the specified remote repository.
+
+```
+git push <remote>
+```
+
+> Pushes local commits to the specified branch of the remote repository.
+
+```
+git push <remote> <branch>
+```
+
+> This command will force a push request.
+
+```
+git push -f
+```
+
+![alt text](screenshots/push-1.png)
+
+## Git Managing History
+
+### Git revert
+
+> We will create a new commit that is the opposite of everything in the given commit
+
+```
+git revert HEAD
+```
+
+![alt text](screenshots/revert.png)
+
+### Git rebase
+
+> We can transfer completed work from one branch to another using git rebase
+
+```
+git rebase branch_name
+```
+
+![alt text](screenshots/rebase.png)
