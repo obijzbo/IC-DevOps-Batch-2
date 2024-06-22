@@ -173,3 +173,136 @@ git clone –branch <branch_name> <repository_url>
 ```
 
 ![alt text](screenshots/clone-2.png)
+
+## Basic Git Commands
+
+### Add a file
+
+> The command add a file to the staging area. Just replace filename with the name of the file you want to add.
+
+```
+git add file_name
+```
+
+### Add only certain files
+
+> With the asterisk in the command below, you can add all files starting with 'fil' in the staging area.
+
+```
+git add fil*
+```
+
+### Add all files in the staging area
+
+> To add all files in your project to the staging area, you can use a wildcard `. `
+
+```
+git add .
+```
+
+### Git Status
+
+> This command will show the status of the current repository including staged, unstaged, and untracked files.
+
+```
+git status
+```
+
+> Displays ignored files in addition to the regular status output.
+
+```
+git status –ignored
+```
+
+### Git Commit:
+
+> This command will open a text editor in the terminal where you can write a full commit message.
+> A commit message is made up of a short summary of changes, an empty line, and a full description of the changes after it.
+
+```
+git commit
+```
+
+### Commit changes with a message
+
+> You can add a commit message without opening the editor. This command lets you only specify a short summary for your commit message.
+
+```
+git commit -m "Add first and secound file"
+```
+
+<img src="screenshots/commit.png" alt="Commit to git repository">
+
+### Git Reset
+
+> Moves the branch pointer to a specified commit, resetting the staging area and the working directory to match the specified commit.
+
+```
+git reset HEAD~1
+```
+
+![alt text](screenshots/git-reset.png)
+
+> Moves the branch pointer to a specified commit, discarding all changes in the staging area and the working directory, effectively resetting the repository to the specified commit or branch.
+
+```
+git reset --hard HEAD
+```
+
+![alt text](screenshots/git-reset-hard.png)
+
+### Git reflog
+
+> Reflog command is used to display the reference log of the repository
+
+```
+git reflog
+```
+
+![alt text](screenshots/reflog.png)
+
+### Git Log
+
+> This command shows the commit history for the current repository
+
+```
+git log
+```
+
+### Commit history including changes
+
+> This command shows the commit's history including all files and their changes:
+
+```
+git log -p
+```
+
+### See a specific commit
+
+> This command shows a specific commit.
+
+```
+git show commit-id
+```
+
+<img src="screenshots/log.png" alt="Show git log">
+
+### Log stat
+
+> To show statistics about the changes in each commit, including line(s) changed and file names.
+
+```
+git log --stat
+```
+
+<img src="screenshots/status_details.png" alt="Show git log">
+
+### Git Stash
+
+> Stashes the changes in the working directory, allowing you to switch to a different branch or commit without committing the changes.
+
+```
+git stash
+```
+
+![alt text](screenshots/status.png)
