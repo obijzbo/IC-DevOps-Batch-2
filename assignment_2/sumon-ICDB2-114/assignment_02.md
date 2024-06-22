@@ -26,20 +26,21 @@
 - [Package installation](#package-installation)
 
 
+
 ## File System Navigation
 
 #### List the contents of the home directory.
 ```
 ls -al
 ```
-![alt text](screenshoots/1.png)
+![alt text](screenshots/1.png)
 
 #### Change the current directory to /var/log and list its contents.
 ```
 cd /var/log
 ls -al
 ```
-![alt text](screenshoots/2.png)
+![alt text](screenshots/2.png)
 
 #### Find and display the path to the bash executable using the which command.
 ```
@@ -49,7 +50,7 @@ which bash
 ```
 echo $SHELL
 ```
-![alt text](screenshoots/3.png)
+![alt text](screenshots/3.png)
 
 ## File and Directory Operations
 #### Create a directory named linux_fundamentals in your home directory.
@@ -82,10 +83,7 @@ sudo chmod 644 linux_fundamentals/backup/example.txt
 ```
 ls -l linux_fundamentals/backup/example.txt
 ```
-![alt text](screenshoots/file_directory.png)
-
-
-
+![alt text](screenshots/file_directory.png)
 ## File Modification
 #### Create a file named example.txt in your home directory.
 ```
@@ -107,7 +105,7 @@ sudo chgrp students example.txt
 ls -l example.txt
 ```
 
-![alt text](screenshoots/file-modification.png)
+![alt text](screenshots/file-modification.png)
 ## Ownership
 #### Create a directory named project in your home directory.
 ```
@@ -130,54 +128,7 @@ chmod 755 project/report.txt
 ls -l project/report.txt
 ls -l
 ```
-![alt text](screenshoots/ownership.png)
-
-
-## File Modification
-#### Create a file named example.txt in your home directory.
-```
-touch example.txt
-```
-#### Change the owner of example.txt to a user named student
-```
-sudo useradd student
-sudo chown student example.txt
-```
-#### Change the group of example.txt to a group named students.
-```
-sudo groupadd students
-sudo chgrp students example.txt
-```
-
-#### Verify the changes using appropriate commands.
-```
-ls -l example.txt
-```
-
-![alt text](screenshoots/file-modification.png)
-## Ownership
-#### Create a directory named project in your home directory.
-```
-mkdir project
-```
-#### Create a file named report.txt inside the project directory.
-```
-touch project/report.txt
-```
-#### Set the permissions of report.txt to read and write for the owner, and read-only for the group and others.
-```
-chmod 644 project/report.txt
-```
-#### Set the permissions of the project directory to read, write, and execute for the owner, and read and execute for the group and others
-```
-chmod 755 project/report.txt
-```
-#### Verify the changes using appropriate commands.
-```
-ls -l project/report.txt
-ls -l
-```
-![alt text](screenshoots/ownership.png)
+![alt text](screenshots/ownership.png)
 
 ## User add/modify
 ### User add
@@ -197,7 +148,7 @@ sudo usermod -s /bin/sh developer
 ```
 getent passwd developer
 ```
-![alt text](screenshoots/user_add.png)
+![alt text](screenshots/user_add.png)
 ### User modify
 #### Change the username of the user developer to devuser.
 ```
@@ -218,7 +169,7 @@ getent passwd devuser
 groups devuser
 
 ```
-![alt text](screenshoots/modify_user.png)
+![alt text](screenshots/modify_user.png)
 
 ## Hard/Soft Link
 #### Create a file named original.txt in your home directory.
@@ -239,7 +190,7 @@ rm original.txt
 ls -il softlink.txt
 
 ```
-![alt text](screenshoots/symlink.png)
+![alt text](screenshots/symlink.png)
 
 #### Create a file named datafile.txt in your home directory.
 ```
@@ -267,14 +218,14 @@ ls -il hardlink.txt
 ```
 rm datafile.txt
 ```
-![alt text](screenshoots/hardlink.png)
+![alt text](screenshots/hardlink.png)
 
 #### Find all .txt files in your home directory. ( use find command. Run find --help for usage)
 ```
 find . -type f -name "*.txt"
 ```
 
-![alt text](screenshoots/find.png)
+![alt text](screenshots/find.png)
 
 
 ## Package installation
@@ -297,9 +248,11 @@ sudo apt-get update && sudo apt-get install google-cloud-cli
 
 ```
 
-![alt text](screenshoots/gcloude_1.png)
+![alt text](screenshots/gcloude_1.png)
 <br > 
-![alt text](screenshoots/gcloude_2.png)
+![alt text](screenshots/gcloude_2.png)
 <br>
-![alt text](screenshoots/gcloude_3.png)
+![alt text](screenshots/gcloude_3.png)
+
+
 
