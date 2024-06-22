@@ -7,7 +7,7 @@
 
 
 
-# File System Navigation {#navigation}
+# File System Navigation {#navigation} 
 
 ## 1. For contents of the home directory
 ```
@@ -58,7 +58,7 @@ echo $SHELL
 ```
 ![Home Directory](/current-shell.png)
 
-# File and Directory Operations 
+# File and Directory Operations {#fileDirection}
 
 
 ### 1. Create a directory named `linux_fundamentals` in your home directory. 
