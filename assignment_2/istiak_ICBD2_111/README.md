@@ -1,13 +1,13 @@
 ## Table of Contents:
 
 - [File System Navigation](#navigation)
-- [File and Directory Operations](#fileDirection)
+- [File and Directory Operations](#file-direction)
 - [Permissions](#permissions)
 
 
 
 
-# # <a name="navigation"></a>File System Navigation
+# <a name="navigation"></a>File System Navigation
 
 ## 1. For contents of the home directory
 ```
@@ -59,7 +59,7 @@ echo $SHELL
 ![Home Directory](current-shell.png)
 
 
-# <a name="fileDirection"></a>File and Directory Operations
+# <a name="file-direction"></a>File and Directory Operations
 
 
 ### 1. Create a directory named `linux_fundamentals` in your home directory. 
