@@ -204,6 +204,7 @@ This guide provides instructions for file modification operations in a Unix oper
 #### 1. Create a file named `example.txt` in your home directory
 
 **Result:**
+
 ![Alt text](./screenshots/home_example_txt_file.png)
 
 Using this touch `~/example.txt` command we will get the following results:
@@ -215,6 +216,7 @@ Using this touch `~/example.txt` command we will get the following results:
 #### 2. Change the owner of `example.txt` to a user named student
 
 **Result:**
+
 ![Alt text](./screenshots/check_permit_example_txt.png)
 ![Alt text](./screenshots/create_student_students.png)
 ![Alt text](./screenshots/owner_change_example_txt.png)
@@ -229,6 +231,7 @@ Using this `sudo useradd student` command we will get the following results:
 #### 3. Change the group of `example.txt` to a group named `students`.
 
 **Result:**
+
 ![Alt text](./screenshots/create_student_students.png)
 ![Alt text](./screenshots/change_group_example_txt.png)
 Using this `sudo chgrp students ~/example.txt` command we will get the following results:
@@ -241,6 +244,7 @@ Using this `sudo chgrp students ~/example.txt` command we will get the following
 #### 4. Verify the changes using appropriate commands.
 
 **Result:**
+
 ![Alt text](./screenshots/verify_permissions_example_txt.png)
 
 Using the `ls -l example.txt` or `ls -la example.txt` command we will get the following results:
@@ -257,6 +261,7 @@ This guide provides instructions for basic ownership and permission operations i
 #### 1. Create a directory named project in your home directory.
 
 **Result:**
+
 ![Alt text](./screenshots/project_dir.png)
 
 Using the `mkdir ~/project` command we will get the following results:
@@ -268,6 +273,7 @@ Using the `mkdir ~/project` command we will get the following results:
 #### 2. Create a file named `report.txt` inside the `project` directory
 
 **Result:**
+
 ![Alt text](./screenshots/report_txt.png)
 
 Using the touch `~/project/report.txt` command we will get the following results:
@@ -279,6 +285,7 @@ Using the touch `~/project/report.txt` command we will get the following results
 #### 3. Set the permissions of `report.txt` to read and write for the owner, and read-only for the group and others
 
 **Result:**
+
 ![Alt text](./screenshots/permission_report_txt.png)
 
 Using the `chmod u=rw,go=r ~/project/report.txt` command we will get the following results:
@@ -301,6 +308,7 @@ Using the `chmod u=rwx,go=rx ~/project` command we will get the following result
 #### 5. Verify the changes using appropriate commands
 
 **Result:**
+
 ![Alt text](./screenshots/verify_permissions_project_report.png)
 
 Using the `ls -l ~/project/report.txt` and `ls -ld ~/project` commands:
@@ -316,6 +324,7 @@ This guide provides instructions for User add/modify operations in a Unix operat
 #### 1. Create a new user named developer
 
 **Result:**
+
 ![Alt text](./screenshots/create_developer_usr.png)
 
 Using the `sudo useradd developer` we will get the following results:
@@ -327,6 +336,7 @@ Using the `sudo useradd developer` we will get the following results:
 #### 2. Set the home directory of the user developer to /home/developer_home
 
 **Result:**
+
 ![Alt text](./screenshots/directory_set_developer.png)
 
 Using the `sudo usermod -d /home/developer_home developer` command we will get the following results:
@@ -338,6 +348,7 @@ Using the `sudo usermod -d /home/developer_home developer` command we will get t
 #### 3. Assign the shell `/bin/sh` to the user developer
 
 **Result:**
+
 ![Alt text](./screenshots/assign_bin_sh_developer.png)
 
 Using the `sudo usermod -s /bin/sh developer` command we will get the following results:
@@ -349,6 +360,7 @@ Using the `sudo usermod -s /bin/sh developer` command we will get the following 
 #### 4. Verify the new user's information
 
 **Result:**
+
 ![Alt text](./screenshots/verify_developer_usr.png)
 
 Using the `sudo id developer` command we will get the following results:
@@ -359,6 +371,7 @@ Using the `sudo id developer` command we will get the following results:
 #### 5. Change the username of the user developer to devuser
 
 **Result:**
+
 ![Alt text](./screenshots/change_username_developer.png)
 
 It changes the username of `developer` to `devuser`.
@@ -367,6 +380,7 @@ It changes the username of `developer` to `devuser`.
 #### 6. Add devuser to a group named devgroup
 
 **Result:**
+
 ![Alt text](./screenshots/devgroup_devuser.png)
 
 Using the `sudo usermod -aG devgroup devuser` command we will get the following results:
@@ -378,6 +392,7 @@ Using the `sudo usermod -aG devgroup devuser` command we will get the following 
 #### 7. Add devuser to a group named devgroup
 
 **Result:**
+
 ![Alt text](./screenshots/set_passwd_devuser.png)
 
 Using the `sudo passwd devuser` command we will get the following results:
@@ -388,6 +403,7 @@ Using the `sudo passwd devuser` command we will get the following results:
 #### 8. Verify the changes made to the user
 
 **Result:**
+
 ![Alt text](./screenshots/verify_devuser.png)
 
 Using the `id devuser`, `grep devuser /etc/passwd` and `groups devuser` commands we will get the following results:
@@ -404,6 +420,7 @@ This guide provides instructions for Hard/Soft Link operations in a Unix operati
 #### 1. Create a file named original.txt in your home directory
 
 **Result:**
+
 ![Alt text](./screenshots/original_txt.png)
 
 Using the command `original.txt`, we will get the following results:
@@ -414,6 +431,7 @@ Using the command `original.txt`, we will get the following results:
 #### 2. Create a symbolic link named `softlink.txt` pointing to `original.txt`
 
 **Result:**
+
 ![Alt text](./screenshots/create_link.png)
 
 Using the command `ln -s original.txt softlink.txt`, we will get the following results:
@@ -424,6 +442,7 @@ Using the command `ln -s original.txt softlink.txt`, we will get the following r
 #### 3. Verify the symbolic link and ensure it points to the correct file
 
 **Result:**
+
 ![Alt text](./screenshots/create_link.png)
 
 Using the command `ls -l softlink.txt`, we will get the following results:
@@ -434,6 +453,7 @@ Using the command `ls -l softlink.txt`, we will get the following results:
 #### 4. Delete the original file original.txt and observe the status of the symbolic link
 
 **Result:**
+
 ![Alt text](./screenshots/delete_original_txt.png)
 ![Alt text](./screenshots/verify_softlink_txt.png)
 
@@ -447,6 +467,7 @@ Using `rm original.txt` and `ls -l softlink.txt` commands, we will get the follo
 #### 5. Create a file named datafile.txt in your home directory
 
 **Result:**
+
 ![Alt text](./screenshots/datafile_txt.png)
 
 Using the command `touch datafile.txt`, we will get the following results:
