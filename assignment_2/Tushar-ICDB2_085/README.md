@@ -2,7 +2,11 @@
 
 - [File System Navigation](#file-system-navigation)
 - [File and Directory Operations](#file-and-directory-operations)
-- [Permissions](#permissions)
+- [File Modification](#file-modification)
+- [Ownership](#ownership)
+- [User add/modify](#user-add/modify)
+- [Hard/Soft Link](#hard/soft-link)
+- [Package installation](#package-installation)
 
 ## File System Navigation
 
@@ -123,9 +127,7 @@ Then move the file:
 
 **Explanation:** `mv` moves files. This moves `example.txt` to the backup directory.
 
-## Permissions
-
-#### 1. Change the permissions of example.txt to read and write for the owner, and read-only for the group and others:
+#### 6. Change the permissions of example.txt to read and write for the owner, and read-only for the group and others:
 
 **_Example :_**
 
@@ -137,7 +139,7 @@ Then move the file:
 
 **Explanation:** `chmod 644` changes the file permissions to `rw-r--r--.` This means the owner has read and write permissions (6), and the group and others have read-only permissions (4).
 
-#### 2. Verify the permission changes using `ls -l`:
+#### 7. Verify the permission changes using `ls -l`:
 
 **_Example :_**
 
@@ -147,3 +149,64 @@ Then move the file:
 
 ![cd Command](./screenshots/chmod.png)
 **Explanation:** `ls -l` displays detailed information about the file, including its permissions.
+
+## File Modification
+
+#### 1. Create a file named `example.txt` in your home directory.
+
+
+**Example :**
+```bash
+touch ~/example.txt
+```
+![cd Command](./screenshots/mv.png)
+
+**Explanation:**
+- `touch` is a command used to create an empty file if it does not exist.
+- `~/` is a shorthand for the home directory of the current user.
+
+
+#### 2. Change the owner of `example.txt` to a user named student
+
+**Example :**
+```bash
+    sudo chown student ~/example.txt
+```
+
+![cd Command](./screenshots/mv.png)
+
+**Explanation:**
+- `sudo` is used to execute a command with superuser privileges.
+- `chown` stands for "change owner".
+- `student` is the username of the new owner.
+- `~/example.txt` is the path to the file whose ownership we are changing.
+
+#### 3. Change the group of `example.txt` to a group named `students`
+**Example :**
+```bash
+sudo chgrp students ~/example.txt
+```
+
+![cd Command](./screenshots/mv.png)
+
+**Explanation:**.
+- `sudo` is used to execute a command with superuser privileges.
+- `chgrp` stands for "change group".
+- `students` is the name of the new group.
+- `~/example.txt` is the path to the file whose group we are changing.
+
+#### 4. Verify the changes using appropriate commands.
+**Example :**
+```bash
+
+```
+![cd Command](./screenshots/mv.png)
+
+
+## Ownership
+
+## User add/modify
+
+## Hard/Soft Link
+
+## Package installation
