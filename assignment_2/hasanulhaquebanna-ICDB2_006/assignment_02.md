@@ -8,7 +8,6 @@ This guide provides instructions for basic file system navigation and shell comm
 
 ![Alt text](./screenshots/home_contents.png)
 
-
 Using this `ls ~` command we will get the following results:
 
 - The `~` symbol is a shorthand for the current user's home directory
@@ -179,7 +178,6 @@ This guide provides instructions for changing file permissions in a Unix operati
 
 ![Alt text](./screenshots/user_permission.png)
 
-
 Using these command we will get the following results:
 
 - The `u=rw:` command Sets read and write permissions for the owner (`u` stands for user)
@@ -193,7 +191,6 @@ Using these command we will get the following results:
 
 ![Alt text](./screenshots/user_permission2.png)
 
-
 Using these command we will get the following results:
 
 - The `ls -l` command lists files and directories with detailed information, including permissions.
@@ -202,7 +199,7 @@ Using these command we will get the following results:
 
 # File Modification
 
-This guide provides instructions for basic file modification operations in a Unix operating system (Ubuntu).
+This guide provides instructions for file modification operations in a Unix operating system (Ubuntu).
 
 #### 1. Create a file named `example.txt` in your home directory
 
@@ -314,7 +311,7 @@ Using the `ls -l ~/project/report.txt` and `ls -ld ~/project` commands:
 
 # User add/modify
 
-This guide provides instructions for basic User add/modify operations in a Unix operating system (Ubuntu).
+This guide provides instructions for User add/modify operations in a Unix operating system (Ubuntu).
 
 #### 1. Create a new user named developer
 
@@ -398,3 +395,163 @@ Using the `id devuser`, `grep devuser /etc/passwd` and `groups devuser` commands
 - The command `id devuser` should show the UID, GID, and groups of `devuser`.
 - The command `grep devuser /etc/passwd` should display the entry for `devuser` confirming its username and home directory.
 - The command `groups devuser` show list the groups `devuser` belongs to, including `devgroup`
+  <br/> <br/> <br/>
+
+# Hard/Soft Link
+
+This guide provides instructions for Hard/Soft Link operations in a Unix operating system (Ubuntu).
+
+#### 1. Create a file named original.txt in your home directory
+
+**Result:**
+![Alt text](./screenshots/original_txt.png)
+
+Using the command `original.txt`, we will get the following results:
+
+- The command creates a file named `original.txt` with the specified content in the `home` directory.
+  <br/>
+
+#### 2. Create a symbolic link named `softlink.txt` pointing to `original.txt`
+
+**Result:**
+![Alt text](./screenshots/create_link.png)
+
+Using the command `ln -s original.txt softlink.txt`, we will get the following results:
+
+- The command creates a symbolic link `softlink.txt` that points to `original.txt`
+  <br/>
+
+#### 3. Verify the symbolic link and ensure it points to the correct file
+
+**Result:**
+![Alt text](./screenshots/create_link.png)
+
+Using the command `ls -l softlink.txt`, we will get the following results:
+
+- The symbolic link `softlink.txt` points to `original.txt`
+  <br/>
+
+#### 4. Delete the original file original.txt and observe the status of the symbolic link
+
+**Result:**
+![Alt text](./screenshots/delete_original_txt.png)
+![Alt text](./screenshots/verify_softlink_txt.png)
+
+Using `rm original.txt` and `ls -l softlink.txt` commands, we will get the following results:
+
+- The command `rm original.txt` will delete `original.txt` file.
+- The command `ls -l softlink.txt` will verify the `softlink.txt` to `original.txt`
+- After deleting `original.txt`, `softlink.txt` will still appear in the directory listing, but attempting to open `softlink.txt` will result in an error since the target file no longer exists.
+  <br/>
+
+#### 5. Create a file named datafile.txt in your home directory
+
+**Result:**
+![Alt text](./screenshots/datafile_txt.png)
+
+Using the command `touch datafile.txt`, we will get the following results:
+
+- The command creates a file named `datafile.txt` with the specified content in the `home` directory.
+  <br/>
+
+#### 6. Create a hard link named `hardlink.txt` pointing to `datafile.txt`
+
+**Result:**
+
+![Alt text](./screenshots/datafile_txt_hardlink_txt.png)
+
+Using the command `ln datafile.txt hardlink.txt`, we will get the following results:
+
+- The command creates a hard link `hardlink.txt` that points to `datafile.txt`.
+  <br/>
+
+#### 7. Verify the hard link and ensure it correctly points to the file
+
+**Result:**
+
+![Alt text](./screenshots/verify_hardlink_txt.png)
+
+Using the command `ls -li datafile.txt hardlink.txt`, we will get the following results:
+
+- Both `datafile.txt` and `hardlink.txt` share the same inode number, indicating they are hard links to the same data.
+  <br/>
+
+#### 8. Check the inode of both `datafile.txt` and `hardlink.txt`
+
+**Result:**
+
+![Alt text](./screenshots/inode_datafile_txt_hardlink_txt.png)
+
+Using `ls -i datafile.txt` and `ls -i hardlink.txt`, we will get the following results:
+
+- Both the inode numbers for `datafile.txt` and `hardlink.txt` are identical.
+- <br/>
+
+#### 9. Delete the original file `datafile.txt` and observe the status of the hard link
+
+**Result:**
+
+![Alt text](./screenshots/delete_datafile_txt.png)
+![Alt text](./screenshots/check_hardlink_txt.png)
+
+Using the commands `rm datafile.txt` and `ls -li hardlink.txt`, we will get the following results:
+
+- Even after deleting `datafile.txt`, `hardlink.txt` remains and can still be accessed.
+- <br/>
+
+#### 10. Find all `.txt` files in your home directory
+
+**Result:**
+
+![Alt text](./screenshots/find_all_txt.png)
+
+Using the command `find ~ -name "*.txt`, we will get the following results:
+
+- The command finds all `.txt` files in the home directory.
+
+<br/><br/><br/>
+
+# Package Installation
+
+This guide provides instructions for Package Installation operations in a Unix operating system (Ubuntu)
+
+#### 1. Update repository cache using `apt/apt-get`
+
+**Result:**
+
+![Alt text](./screenshots/cache_update.png)
+
+Using the command `sudo apt update`, we will get the following results:
+
+- This command update the repository cache to ensure we have the latest information about available packages.
+- his command updates the local database of available packages from the repositories configured on your system.
+  <br/>
+
+#### 2. Install a package named `tree`
+
+**Result:**
+
+![Alt text](./screenshots/install_tree.png)
+
+Using the command `sudo apt install tree`, we will get the following results:
+
+- This command will install the tree package, which is a utility for displaying directory structures.
+- This command installs the `tree` package and along with some its dependencies.
+  <br/>
+
+#### 3. Install `gcloud` CLI tool using apt
+
+**Result:**
+
+![Alt text](./screenshots/google_cli_download.png)
+![Alt text](./screenshots/google_cli_download2.png)
+![Alt text](./screenshots/google_cli_download3.png)
+![Alt text](./screenshots/google_cli_download4.png)
+![Alt text](./screenshots/google_cli_download5.png)
+![Alt text](./screenshots/google_cli_download6.png)
+![Alt text](./screenshots/google_cli_download7.png)
+![Alt text](./screenshots/google_cli_download8.png)
+![Alt text](./screenshots/google_cli_download9.png)
+![Alt text](./screenshots/google_cli_download10.png)
+![Alt text](./screenshots/google_cli_download11.png)
+![Alt text](./screenshots/google_cli_download11.png)
