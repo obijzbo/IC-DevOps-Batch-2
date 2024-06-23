@@ -163,6 +163,80 @@ Then move the file:
 ![cd Command](./screenshots/permission.png)
 **Explanation:** `ls -l` presents detailed file information, inclusive of its permissions.
 
+## Ownership
+
+### Steps to Create Directory and File with Specific Permissions
+
+#### 1. Create a directory named project in your home directory
+
+```bash
+mkdir ~/project
+```
+
+![cd Command](./screenshots/own-mkdir.png)
+**Explanation:**  
+This command creates a directory named `project` within your home directory (`~`).
+
+#### 2. Create a file named report.txt inside the project directory
+
+```bash
+touch ~/project/report.txt
+```
+
+![cd Command](./screenshots/own-touch.png)
+**Explanation:**  
+`touch` is used to create an empty file named `report.txt` inside the `project` directory.
+
+#### 3. Set the permissions of report.txt as specified
+
+```bash
+chmod 644 ~/project/report.txt
+```
+
+![cd Command](./screenshots/own-file-permission.png)
+**Explanation:**  
+`chmod 644` sets the permissions for `report.txt` as follows:
+
+- `6` (read and write) for the owner.
+- `4` (read only) for the group.
+- `4` (read only) for others.
+
+#### 4. Set the permissions of the project directory as specified
+
+```bash
+chmod 755 ~/project
+```
+
+![cd Command](./screenshots/own-dir-permission.png)
+**Explanation:**  
+`chmod 755` sets the permissions for the `project` directory as follows:
+
+- `7` (read, write, execute) for the owner.
+- `5` (read, execute) for the group.
+- `5` (read, execute) for others.
+
+### Verification
+
+#### Verify the permissions of report.txt
+
+```bash
+ls -l ~/project/report.txt
+```
+
+![cd Command](./screenshots/own-verify-permission.png)
+**Explanation:**  
+The output `-rw-r-----` indicates that `report.txt` has the permissions `rw` (read and write) for the owner, `r` (read only) for the group, and `r` (read only) for others.
+
+#### Verify the permissions of the project directory
+
+```bash
+ls -ld ~/project
+```
+
+![cd Command](./screenshots/own-verify-permission.png)
+**Explanation:**  
+The output `drwxr-xr-x` indicates that `project` directory has the permissions `rwx` (read, write, execute) for the owner, `r-x` (read, execute) for the group, and `r-x` (read, execute) for others.
+
 ## Managing Users in Linux
 
 ### 1. Create a new user named developer:
