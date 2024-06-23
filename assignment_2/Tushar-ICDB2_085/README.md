@@ -160,7 +160,7 @@ Then move the file:
 touch ~/example.txt
 ```
 
-![cd Command](./screenshots/mv.png)
+![cd Command](./screenshots/file-in-home.png)
 
 **Explanation:**
 
@@ -175,7 +175,8 @@ touch ~/example.txt
     sudo chown student ~/example.txt
 ```
 
-![cd Command](./screenshots/mv.png)
+![cd Command](./screenshots/owner-change.png)
+![cd Command](./screenshots/owner-change-ls.png)
 
 **Explanation:**
 
@@ -192,7 +193,7 @@ touch ~/example.txt
 sudo chgrp students ~/example.txt
 ```
 
-![cd Command](./screenshots/mv.png)
+![cd Command](./screenshots/change-group.png)
 
 **Explanation:**.
 
@@ -206,12 +207,13 @@ sudo chgrp students ~/example.txt
 **Example :**
 
 ```bash
-
+ls -l example.txt
 ```
 
-![cd Command](./screenshots/mv.png)
+![cd Command](./screenshots/verify-change.png)
 
 ## Ownership
+
 
 ## User add/modify
 
