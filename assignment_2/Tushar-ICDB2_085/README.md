@@ -425,6 +425,153 @@ getent group devgroup
 
 ## Hard/Soft Link
 
+#### 1. Create a file named original.txt in your home directory.
+
+**Example :**
+```bash
+
+touch ~/original.txt
+```
+
+![cd Command](./screenshots/original-file.png)
+
+**Explanation:**
+- `touch` is a command used to create an empty file if it doesn't exist, or update the timestamp of an existing file. Here, it creates a file named original.txt in your home directory `(~/)`.
+
+
+#### 2. Create a symbolic link named softlink.txt pointing to original.txt.
+
+**Example :**
+```bash
+
+ln -s ~/original.txt ~/softlink.txt
+```
+
+![cd Command](./screenshots/original-to-softlink.png)
+
+**Explanation:**
+- `ln` is the command for creating links between files. The `-s` option creates a symbolic (or soft) link.
+- `~/original.txt` is the target file (the file to link to).
+- `~/softlink.txt` is the symbolic link (the new link that points to original.txt).
+
+#### 3. Verify the symbolic link and ensure it points to the correct file.
+
+**Example :**
+```bash
+
+ls -l ~/softlink.txt
+```
+
+![cd Command](./screenshots/softlink.png)
+
+**Explanation:**
+- `ls -l` lists files in long format, showing permissions, number of links, owner, group, size, and timestamp.
+- `~/softlink.txt`  should show as a symbolic link (l in the beginning of the output), and it should indicate that it points to original.txt.
+
+#### 4. Delete the original file original.txt and observe the status of the symbolic link.
+
+**Example :**
+```bash
+
+rm ~/original.txt
+ls -l ~/softlink.txt
+```
+
+![cd Command](./screenshots/rm-original.png)
+
+**Explanation:**
+
+- `rm` is used to remove files.
+After deleting original.txt, `ls -l ~/softlink.txt` shows that softlink.txt still exists but is 
+- now a broken symbolic link because its target `(original.txt)` no longer exists.
+
+#### 5. Create a file named datafile.txt in your home directory.
+
+**Example :**
+```bash
+
+touch ~/datafile.txt
+```
+
+![cd Command](./screenshots/datafile.png)
+
+**Explanation:**
+- This creates an empty file named `datafile.txt` in your home directory (~/).
+
+#### 6. Create a hard link named hardlink.txt pointing to datafile.txt.
+
+**Example :**
+```bash
+
+ln ~/datafile.txt ~/hardlink.txt
+```
+
+![cd Command](./screenshots/hardlink.png)
+
+**Explanation:**
+- `ln` without the -s option creates a hard link by default.
+- `~/datafile.txt` is the existing file that you want to link to.
+- `~/hardlink.txt` is the new hard link that will point to datafile.txt.
+
+#### 7. Verify the hard link and ensure it correctly points to the file.
+
+**Example :**
+```bash
+
+ls -li ~/datafile.txt ~/hardlink.txt
+```
+
+![cd Command](./screenshots/datafile-hardlink.png)
+
+**Explanation:**
+- `ls -li` lists files in long format along with their inode numbers (i option).
+- Both` datafile.txt` and `hardlink.txt` will have the same inode number, indicating they are hard links pointing to the same underlying data.
+
+#### 8. Check the inode of both datafile.txt and hardlink.txt
+
+**Example :**
+```bash
+
+ls -i ~/datafile.txt ~/hardlink.txt
+```
+
+![cd Command](./screenshots/inode.png)
+
+**Explanation:**
+- `ls -i` lists the inode number of each file.
+As explained earlier, both files will have identical inode numbers because they are hard links.
+
+#### 9. Delete the original file datafile.txt and observe the status of the hard link.
+
+**Example :**
+```bash
+
+rm ~/datafile.txt
+ls -li ~/hardlink.txt
+```
+
+![cd Command](./screenshots/mv.png)
+
+**Explanation:**
+
+- Even after deleting `datafile.txt`, `hardlink.txt` remains because a hard link is just another name for the same inode on disk. It effectively preserves the file's data until all hard links to it are removed.
+
+#### 10. Find all .txt files in your home directory. ( use find command. Run find --help for usage)
+
+**Example :**
+```bash
+
+find ~/ -name "*.txt"
+```
+
+![cd Command](./screenshots/find.png)
+
+**Explanation:**
+- `find` is used for searching files in a directory hierarchy.
+- `~/` specifies the starting directory (home directory in this case).
+- `-name "*.txt"` specifies the pattern to search for (files ending in .txt).
+
+
 ## Package installation
 
 #### 1. Update repo cache using apt/apt-get
