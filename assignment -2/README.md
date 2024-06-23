@@ -17,6 +17,7 @@ which -a bash
 
 Find current shell
 echo "$SHELL"
+
 ![alt text](<screenshot/Screenshot 2024-06-23 at 11.47.49 AM-1.png>)
 
 
