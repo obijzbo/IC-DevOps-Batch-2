@@ -241,7 +241,7 @@
   echo "hello world" >> datafile.txt
   cat hardlink.txt
 ```
-![Git Version](./screenshots/29png)
+![Git Version](./screenshots/29.png)
 
 - Check the inode of both datafile.txt and hardlink.txt.
 ```bash
