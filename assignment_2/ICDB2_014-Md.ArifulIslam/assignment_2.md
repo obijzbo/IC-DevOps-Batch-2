@@ -27,8 +27,8 @@
 
 # 3.Permissions
 
-## 3.1.Change the permissions of example.txt:
-`chmod 640 ~/linux_fundamentals/example.txt`
+## 3.1.Change the permissions of example.txt to read and write for the owner, and read-only for the group and others
+`chmod 644 ~/linux_fundamentals/example.txt`
 ## 3.2.Verify the permission changes using ls -l:`
 `ls -l ~/linux_fundamentals/example.txt`
 
@@ -40,7 +40,7 @@
 `sudo chown student ~/example.txt`
 ## 4.3.Change the group of example.txt to a group named students:
 `sudo chgrp students ~/example.txt`
-## Verify the changes using appropriate commands:
+## 4.4.Verify the changes using appropriate commands:
 `ls -l ~/example.txt`
 
 # 5.Ownership
@@ -51,7 +51,7 @@
 `touch ~/project/report.txt`
 ## 5.3.Set the permissions of report.txt to read and write for the owner, and read-only for the group and others.
 `chmod 644 ~/project/report.txt`
-## 5.4.Set the permissions of the project director to read, write, and execute for the owner, and read and execute for the group and others
+## 5.4.Set the permissions of the project directory to read, write, and execute for the owner, and read and execute for the group and others
 `chmod 755 ~/project`
 ## 5.5.Verify the changes using appropriate commands:
 `ls -l ~/project`
@@ -65,7 +65,7 @@
 ## 6.3.Assign the shell /bin/sh to the user developer:
 `sudo usermod -s /bin/sh developer`
 ## 6.4.Verify the new user's information:
-`finger developer`
+`id developer`
 ## 6.5.Change the username of the user developer to devuser:
 `sudo usermod -l devuser developer`
 ## 6.6.Add devuser to a group named devgroup:
@@ -120,14 +120,13 @@
 ## To install the Google Cloud SDK, which includes the gcloud CLI tool, follow these steps:
 
 ## Add the Cloud SDK distribution URI for Debian-based systems:
-`export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"`
-`echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/``google-cloud-sdk.list`
+`echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list`
 ## Import the Google Cloud public key:
-`curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -`
+`curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg`
 ## Update the package list:
 `sudo apt-get update`
 ## Install the Google Cloud SDK:
-`sudo apt-get install google-cloud-sdk`
+`sudo apt-get install google-cloud-cli`
 ## Additional Steps after Installation
 ## After installing Google Cloud SDK, you can initialize it and configure your credentials and project settings using:
 `gcloud init`
