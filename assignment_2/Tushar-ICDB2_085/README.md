@@ -294,6 +294,135 @@ ls -ld ~/project
 
 ## User add/modify
 
+#### 1. Create a new user named developer.
+
+**Example :**
+```bash
+sudo useradd -m developer
+```
+
+![cd Command](./screenshots/useradd.png)
+
+
+**Explanation:**
+- `sudo` is used to run commands with superuser privileges.
+- `useradd` is the command to add a new user.
+- `-m` creates the home directory if it does not exist.
+
+
+#### 2. Set the home directory of the user developer to /home/developer_home.
+
+**Example :**
+```bash
+sudo usermod -d /home/developer_home -m developer
+
+```
+
+![cd Command](./screenshots/mv.png)
+
+
+**Explanation:**
+- `sudo usermod` Runs the user modification command with superuser privileges.
+- `-d /home/developer_home` Specifies the new home directory.
+- `-m:` Moves the contents of the current home directory to the new home directory.
+- `developer` The username to be modified.
+
+#### 3. Assign the shell /bin/sh to the user developer.
+
+**Example :**
+```bash
+sudo usermod -s /bin/sh developer
+
+```
+
+![cd Command](./screenshots/mv.png)
+
+
+**Explanation:**
+
+- ` sudo usermod` Runs the user modification command with superuser privileges.
+- `-s /bin/sh ` Specifies the new shell for the user.
+- `developer` The username to be modified.
+
+#### 4. Verify the new user's information.
+
+**Example :**
+```bash
+getent passwd developer
+```
+
+![cd Command](./screenshots/getent.png)
+
+
+**Explanation:**
+- `getent` passwd retrieves entries from the passwd database.
+- `developer` is the username whose information is being retrieved.
+
+#### 5. Change the username of the user developer to devuser.
+
+**Example :**
+```bash
+sudo usermod -l devuser developer
+```
+
+![cd Command](./screenshots/user-modify.png)
+
+
+**Explanation:**
+- `sudo` is used to run commands with superuser privileges.
+- `usermod` is the command to modify a user account.
+- `-l` devuser changes the username to devuser.
+developer is the current username.
+
+#### 6. Add devuser to a group named devgroup.
+
+**Example :**
+```bash
+sudo groupadd devgroup
+sudo usermod -aG devgroup devuser
+```
+
+![cd Command](./screenshots/groupadd-useraddd.png)
+
+
+**Explanation:**
+- `sudo groupadd devgroup` creates a new group named devgroup.
+- `sudo usermod -aG devgroup devuser ` adds devuser to the group devgroup.
+- `-aG` appends the user to the supplementary group(s).
+
+
+#### 7. Set the password of devuser to devpass. ( hint: use passwd command. Run passwd --help to see available options)
+
+**Example :**
+```bash
+echo "devuser:devpass" | sudo chpasswd
+
+```
+
+![cd Command](./screenshots/mv.png)
+
+
+**Explanation:**
+- `echo "devuser:devpass" ` creates a string with the username and password.
+- `sudo chpasswd ` updates the user's password using the provided input.
+
+#### 8. Verify the changes made to the user.
+
+**Example :**
+```bash
+getent passwd devuser
+getent group devgroup
+```
+
+![cd Command](./screenshots/dev-group-user.png)
+
+
+**Explanation:**
+- `getent passwd devuser` retrieves entries from the passwd database for devuser.
+- `getent group devgroup` retrieves entries from the group database for devgroup.
+
+
+
 ## Hard/Soft Link
 
 ## Package installation
