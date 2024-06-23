@@ -2,6 +2,7 @@
 
 List the contents of the home directory.
 ls
+
 ![alt text](<screenshot/Screenshot 2024-06-23 at 11.37.34 AM.png>)
 
 
