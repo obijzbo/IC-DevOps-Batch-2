@@ -169,3 +169,203 @@ Using these command we will get the following results:
 
 - The `ls -l` command lists files and directories with detailed information, including permissions.
 - This command verifies the permissions of `example.txt`.
+  <br/><br/><br/>
+
+# File Modification
+
+This guide provides instructions for basic file modification operations in a Unix operating system (Ubuntu).
+
+#### 1. Create a file named `example.txt` in your home directory
+
+**Result:**
+![Alt text](./screenshots/home_example_txt_file.png)
+
+Using this touch `~/example.txt` command we will get the following results:
+
+- The `touch` command is used to create an empty file.
+- This command creates an empty file named `example.txt` in the user's home directory, in this case `hasanulhaquebanna@DESKTOP-ELBL87C`.
+  <br/>
+
+#### 2. Change the owner of `example.txt` to a user named student
+
+**Result:**
+![Alt text](./screenshots/check_permit_example_txt.png)
+![Alt text](./screenshots/create_student_students.png)
+![Alt text](./screenshots/owner_change_example_txt.png)
+
+Using this `sudo useradd student` command we will get the following results:
+
+- Before assigning the file we created a student user using `sudo useradd -m student` command.
+- The `useradd` command is used to create a new user in this case `student`.
+- This command creates a user named student.
+  <br/>
+
+#### 3. Change the group of `example.txt` to a group named `students`.
+
+**Result:**
+![Alt text](./screenshots/create_student_students.png)
+![Alt text](./screenshots/change_group_example_txt.png)
+Using this `sudo chgrp students ~/example.txt` command we will get the following results:
+
+- Before assigning the file we created a student user using `sudo groupadd students` command.
+- The chgrp command is used to change the group ownership of a file.
+- This command changes the group of example.txt to students.
+  <br/>
+
+#### 4. Verify the changes using appropriate commands.
+
+**Result:**
+![Alt text](./screenshots/verify_permissions_example_txt.png)
+
+Using the `ls -l example.txt` or `ls -la example.txt` command we will get the following results:
+
+- Before assigning the file we created a student user using `sudo groupadd students` command.
+- The chgrp command is used to change the group ownership of a file.
+- This command changes the group of example.txt to students.
+  <br/><br/><br/>
+
+# Ownership
+
+This guide provides instructions for basic ownership and permission operations in a Unix operating system (Ubuntu).
+
+#### 1. Create a directory named project in your home directory.
+
+**Result:**
+![Alt text](./screenshots/project_dir.png)
+
+Using the `mkdir ~/project` command we will get the following results:
+
+- The mkdir command is used to create a new directory in this case `project`.
+- This command creates a directory named project in the user's home directory.
+  <br/>
+
+#### 2. Create a file named `report.txt` inside the `project` directory
+
+**Result:**
+![Alt text](./screenshots/report_txt.png)
+
+Using the touch `~/project/report.txt` command we will get the following results:
+
+- The `touch` command is used to create an empty file.
+- This command creates an empty file named `report.txt` inside the project directory.
+  <br/>
+
+#### 3. Set the permissions of `report.txt` to read and write for the owner, and read-only for the group and others
+
+**Result:**
+![Alt text](./screenshots/permission_report_txt.png)
+
+Using the `chmod u=rw,go=r ~/project/report.txt` command we will get the following results:
+
+- The `chmod` command changes the file permissions.
+- This command sets the permissions of `report.txt` to read and write for the owner, and read-only for the group and others.
+  <br/>
+
+#### 4. Set the permissions of the project directory to read, write, and execute for the owner, and read and execute for the group and others
+
+**Result:**
+![Alt text](./screenshots/permission_project_dir.png)
+
+Using the `chmod u=rwx,go=rx ~/project` command we will get the following results:
+
+- The `chmod` command changes the directory permissions.
+- This command sets the permissions of the project directory to read, write, and execute for the owner, and read and execute for the group and others.
+  <br/>
+
+#### 5. Verify the changes using appropriate commands
+
+**Result:**
+![Alt text](./screenshots/verify_permissions_project_report.png)
+
+Using the `ls -l ~/project/report.txt` and `ls -ld ~/project` commands:
+
+- The `ls -l` command displays detailed information about the file, showing the updated permissions for `report.txt`.
+- The `ls -ld` command displays detailed information about the directory, showing the updated permissions for the `project` directory.
+  <br/><br/><br/>
+
+# User add/modify
+
+This guide provides instructions for basic User add/modify operations in a Unix operating system (Ubuntu).
+
+#### 1. Create a new user named developer
+
+**Result:**
+![Alt text](./screenshots/create_developer_usr.png)
+
+Using the `sudo useradd developer` we will get the following results:
+
+- The command will create a new user after succesfully provide the root user password
+- The command will create a user in this case `developer`.
+  <br/>
+
+#### 2. Set the home directory of the user developer to /home/developer_home
+
+**Result:**
+![Alt text](./screenshots/directory_set_developer.png)
+
+Using the `sudo usermod -d /home/developer_home developer` command we will get the following results:
+
+- The `-d` option for `usermod` is used to change the home directory of the specified user (`developer`) to `/home/developer_home`.
+- This command updates the home directory for the user `developer` to `/home/developer_home`.
+  <br/>
+
+#### 3. Assign the shell `/bin/sh` to the user developer
+
+**Result:**
+![Alt text](./screenshots/assign_bin_sh_developer.png)
+
+Using the `sudo usermod -s /bin/sh developer` command we will get the following results:
+
+- The `-s` option for `usermod` is used to change the default shell of the specified user (`developer`) to `/bin/sh`.
+- This command updates the shell for the user `developer` to `/bin/sh`.
+  <br/>
+
+#### 4. Verify the new user's information
+
+**Result:**
+![Alt text](./screenshots/verify_developer_usr.png)
+
+Using the `sudo id developer` command we will get the following results:
+
+- This command verifies the user information for `developer`, confirming its UID, GID, and groups.
+  <br/>
+
+#### 5. Change the username of the user developer to devuser
+
+**Result:**
+![Alt text](./screenshots/change_username_developer.png)
+
+It changes the username of `developer` to `devuser`.
+<br/>
+
+#### 6. Add devuser to a group named devgroup
+
+**Result:**
+![Alt text](./screenshots/devgroup_devuser.png)
+
+Using the `sudo usermod -aG devgroup devuser` command we will get the following results:
+
+- Before assigning the command first we need to create a group named `devgroup` using `sudo groupadd devgroup` command.
+- The command set the `devuser` to a group named `devgroup`
+  <br/>
+
+#### 7. Add devuser to a group named devgroup
+
+**Result:**
+![Alt text](./screenshots/set_passwd_devuser.png)
+
+Using the `sudo passwd devuser` command we will get the following results:
+
+- This command prompted to enter and confirm the new password for `devuser`.
+  <br/>
+
+#### 8. Verify the changes made to the user
+
+**Result:**
+![Alt text](./screenshots/verify_devuser.png)
+
+Using the `id devuser`, `grep devuser /etc/passwd` and `groups devuser` commands we will get the following results:
+
+- The command `id devuser` should show the UID, GID, and groups of `devuser`.
+- The command `grep devuser /etc/passwd` should display the entry for `devuser` confirming its username and home directory.
+- The command `groups devuser` show list the groups `devuser` belongs to, including `devgroup`
