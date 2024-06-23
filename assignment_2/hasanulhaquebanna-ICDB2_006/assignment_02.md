@@ -5,7 +5,9 @@ This guide provides instructions for basic file system navigation and shell comm
 #### 1. List the contents of the home directory
 
 **Result 1:**
+
 ![Alt text](./screenshots/home_contents.png)
+
 
 Using this `ls ~` command we will get the following results:
 
@@ -14,7 +16,9 @@ Using this `ls ~` command we will get the following results:
   <br/>
 
 **Result 2:**
+
 ![Alt text](./screenshots/home_contents1.png)
+
 Using this `ls` command we will get the following results:
 
 - Lists the files and directories in the current directory.
@@ -22,14 +26,18 @@ Using this `ls` command we will get the following results:
   <br/>
 
 **Result 3:**
+
 ![Alt text](./screenshots/home_contents2.png)
+
 Using this `ls -a` command we will get the following results:
 
 - Lists all files and directories, including hidden ones (those starting with a dot).
   <br/>
 
 **Result 4:**
+
 ![Alt text](./screenshots/home_contents3.png)
+
 Using this `ls -la` command we will get the following results:
 
 - Combining the options `-l` meaning long listing format and `-a` meaning show all files including hidden ones (Long listing format provides detailed information about each file as well directories, such as permissions, number of links, owner, group, size and modification time and more).
@@ -38,14 +46,18 @@ Using this `ls -la` command we will get the following results:
 #### 2. Change the current directory to /var/log and list its contents
 
 **Result 1:**
+
 ![Alt text](./screenshots/var_log_contents1.png)
+
 Using this `cd /var/log` command we will get the following results:
 
 - The command changes the directory to /var/log.
   <br/>
 
 **Result 2:**
+
 ![Alt text](./screenshots/var_log_contents2.png)
+
 Using this `ls` command we will get the following results:
 
 - Lists the files and directories in the current directory.
@@ -53,14 +65,18 @@ Using this `ls` command we will get the following results:
   <br/>
 
 **Result 3:**
+
 ![Alt text](./screenshots/var_log_contents3.png)
+
 Using this `ls -a` command we will get the following results:
 
 - Lists all files and directories, including hidden ones (those starting with a dot).
   <br/>
 
 **Result 4:**
+
 ![Alt text](./screenshots/var_log_contents4.png)
+
 Using this `ls -la` command we will get the following results of the `/var/log` directory :
 
 - Combining the options `-l` meaning long listing format and `-a` meaning show all files including hidden ones (Long listing format provides detailed information about each file as well directories, such as permissions, number of links, owner, group, size and modification time and more).
@@ -69,14 +85,18 @@ Using this `ls -la` command we will get the following results of the `/var/log` 
 #### 3. Find and display the path to the bash executable using the which command
 
 **Result 1:**
+
 ![Alt text](./screenshots/which_bash.png)
+
 Using this `which bash` command we will get the following results:
 
 - This command locates the executable file, in this case we got`/usr/bin/bash`.
   <br/>
 
 **Result 2:**
+
 ![Alt text](./screenshots/current_shell.png)
+
 Using this `echo $SHELL` command we will get the following results:
 
 - This command prints the path of the shell, in this case we got `/bin/bash`.
@@ -89,6 +109,7 @@ This guide provides instructions for basic file and directory operations in a Un
 #### 1. Create a directory named `linux_fundamentals` in your home directory
 
 **Result:**
+
 ![Alt text](./screenshots/linux_fundamentals_dir.png)
 
 Using this `mkdir ~/linux_fundamentals
@@ -101,6 +122,7 @@ Using this `mkdir ~/linux_fundamentals
 #### 2. Inside `linux_fundamentals` create a subdirectory named `scripts`
 
 **Result:**
+
 ![Alt text](./screenshots/linux_fundamentals_subdir.png)
 
 Using this `mkdir ~/linux_fundamentals
@@ -113,6 +135,7 @@ Using this `mkdir ~/linux_fundamentals
 #### 3. Create an empty file named `example.txt` inside the `linux_fundamentals` directory
 
 **Result:**
+
 ![Alt text](./screenshots/example_file_create.png)
 
 Using this `touch ~/linux_fundamentals/example.txt` command we will get the following results:
@@ -124,6 +147,7 @@ Using this `touch ~/linux_fundamentals/example.txt` command we will get the foll
 #### 4. Copy `example.txt` to the `scripts` directory
 
 **Result:**
+
 ![Alt text](./screenshots/example_file_copy.png)
 
 Using this `cp ~/linux_fundamentals/example.txt ~/linux_fundamentals/scripts/
@@ -136,6 +160,7 @@ Using this `cp ~/linux_fundamentals/example.txt ~/linux_fundamentals/scripts/
 #### 5. Move `example.txt` from `linux_fundamentals` to `linux_fundamentals/backup`
 
 **Result:**
+
 ![Alt text](./screenshots/example_file_move_backup.png)
 
 Using these command we will get the following results:
@@ -151,7 +176,9 @@ This guide provides instructions for changing file permissions in a Unix operati
 #### 1. Change the permissions of `example.txt` to read and write for the owner, and read-only for the group and others
 
 **Result:**
+
 ![Alt text](./screenshots/user_permission.png)
+
 
 Using these command we will get the following results:
 
@@ -163,7 +190,9 @@ Using these command we will get the following results:
 #### 2. Verify the permission changes using `ls -l`
 
 **Result:**
+
 ![Alt text](./screenshots/user_permission2.png)
+
 
 Using these command we will get the following results:
 
