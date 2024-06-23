@@ -154,21 +154,23 @@ Then move the file:
 
 #### 1. Create a file named `example.txt` in your home directory.
 
-
 **Example :**
+
 ```bash
 touch ~/example.txt
 ```
+
 ![cd Command](./screenshots/mv.png)
 
 **Explanation:**
+
 - `touch` is a command used to create an empty file if it does not exist.
 - `~/` is a shorthand for the home directory of the current user.
-
 
 #### 2. Change the owner of `example.txt` to a user named student
 
 **Example :**
+
 ```bash
     sudo chown student ~/example.txt
 ```
@@ -176,13 +178,16 @@ touch ~/example.txt
 ![cd Command](./screenshots/mv.png)
 
 **Explanation:**
+
 - `sudo` is used to execute a command with superuser privileges.
 - `chown` stands for "change owner".
 - `student` is the username of the new owner.
 - `~/example.txt` is the path to the file whose ownership we are changing.
 
 #### 3. Change the group of `example.txt` to a group named `students`
+
 **Example :**
+
 ```bash
 sudo chgrp students ~/example.txt
 ```
@@ -190,18 +195,21 @@ sudo chgrp students ~/example.txt
 ![cd Command](./screenshots/mv.png)
 
 **Explanation:**.
+
 - `sudo` is used to execute a command with superuser privileges.
 - `chgrp` stands for "change group".
 - `students` is the name of the new group.
 - `~/example.txt` is the path to the file whose group we are changing.
 
 #### 4. Verify the changes using appropriate commands.
+
 **Example :**
+
 ```bash
 
 ```
-![cd Command](./screenshots/mv.png)
 
+![cd Command](./screenshots/mv.png)
 
 ## Ownership
 
@@ -210,3 +218,92 @@ sudo chgrp students ~/example.txt
 ## Hard/Soft Link
 
 ## Package installation
+
+#### 1. Update repo cache using apt/apt-get
+
+Updating the package repository cache ensures that we have the latest information about available packages.
+
+**Example :**
+
+```bash
+sudo apt update
+```
+
+![cd Command](./screenshots/apt-update.png)
+
+**Explanation:**
+
+- `sudo` is used to execute the command with superuser privileges.
+- `apt update` refreshes the local package index with the latest changes made in the repositories.
+
+#### 2. Install a package named tree
+
+The tree package displays directory structures in a tree-like format.
+
+**Example :**
+
+```bash
+sudo apt install tree
+```
+
+![cd Command](./screenshots/install-tree.png)
+
+**Explanation:**
+
+- `sudo` is used to execute the command with superuser privileges.
+- `apt install tree` installs the tree package.
+
+#### 3. Install gcloud CLI tool using apt ( Follow instructions from here:
+
+(https://cloud.google.com/sdk/docs/install#deb)
+
+##### 1. Add the Cloud SDK distribution URI as a package source:
+
+**Example :**
+
+```bash
+    echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+
+```
+
+![cd Command](./screenshots/google-echo.png)
+
+**Explanation:**
+
+- `echo` prints the distribution URI.
+- `tee -a` appends the output to the file.
+- `/etc/apt/sources.list.d/google-cloud-sdk.list` is the file where the Cloud SDK distribution URI is added.
+
+##### 2. Import the Google Cloud public key:
+
+**Example :**
+
+```bash
+sudo apt-get install apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo tee /usr/share/keyrings/cloud.google.gpg
+
+```
+![cd Command](./screenshots/google-install.png)
+
+**Explanation:**
+
+- `apt-get install apt-transport-https ca-certificates gnupg` installs necessary packages for secure transport and key management.
+- `curl` downloads the public key.
+- `tee` saves the public key to the specified file.
+
+##### 3. Update and install the Cloud SDK:
+
+**Example :**
+
+```bash
+sudo apt-get update && sudo apt-get install google-cloud-sdk
+
+sudo apt-get install google-cloud-cli
+```
+
+![cd Command](./screenshots/gcloud.png)
+![cd Command](./screenshots/google-cli.png)
+
+**Explanation:**
+- `apt-get update` updates the package list.
+- `apt-get install google-cloud-sdk `installs the Google Cloud SDK.
