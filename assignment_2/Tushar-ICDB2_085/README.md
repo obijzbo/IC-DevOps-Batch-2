@@ -214,6 +214,83 @@ ls -l example.txt
 
 ## Ownership
 
+#### 1. Create a directory named project in your home directory.
+
+**Example :**
+```bash
+mkdir ~/project
+
+```
+
+![cd Command](./screenshots/mv.png)
+
+**Explanation:**
+- `mkdir` is a command used to create a new directory.
+- `~/project ` is the path where the directory will be created.
+
+
+#### 2. Create a file named report.txt inside the project directory.
+
+**Example :**
+```bash
+touch ~/project/report.txt
+
+```
+
+![cd Command](./screenshots/report.png)
+
+**Explanation:**
+- `touch` is a command used to create an empty file.
+- `~/project/report.txt` is the path to the new file inside the project directory.
+
+#### 3. Set the permissions of report.txt to read and write for the owner, and read-only for the group and others.
+
+**Example :**
+```bash
+chmod 644 ~/project/report.txt
+
+```
+
+![cd Command](./screenshots/project-permission.png)
+
+**Explanation:**
+- `chmod` is used to change file permissions.
+- `644` sets read and write permissions for the owner, and read-only permissions for the group and others.
+- `~/project/report.txt` is the path to the file.
+
+#### 4. Set the permissions of the project directory to read, write, and execute for the owner, and read and execute for the group and others
+
+
+**Example :**
+```bash
+chmod 755 ~/project
+
+```
+
+![cd Command](./screenshots/project-755.png)
+
+**Explanation:**
+- `chmod `is used to change file permissions.
+- `755` sets read, write, and execute permissions for the owner, and read and execute permissions for the group and others.
+- `~/project` is the path to the directory.
+
+#### 5. Verify the changes using appropriate commands.
+
+**Example :**
+```bash
+ls -l ~/project/report.txt
+ls -ld ~/project
+```
+
+![cd Command](./screenshots/verify-chagne-2.png)
+
+**Explanation:**
+- `ls -l` lists files in long format, showing detailed information.
+- `~/project/report.txt` is the path to the file to verify permissions.
+- `ls -ld` lists directory information in long format.
+- `~/project` is the path to the directory to verify permissions.
+
+
 
 ## User add/modify
 
