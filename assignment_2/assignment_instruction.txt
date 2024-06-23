@@ -1,0 +1,16 @@
+File System Navigation
+- List the contents of the home directory.
+- Change the current directory to `/var/log` and list its contents.
+- Find and display the path to the `bash` executable using the `which` command.
+- Find current shell
+
+File and Directory Operations
+- Create a directory named `linux_fundamentals` in your home directory.
+- Inside `linux_fundamentals`, create a subdirectory named `scripts`.
+- Create an empty file named `example.txt` inside the `linux_fundamentals` directory.
+- Copy `example.txt` to the `scripts` directory.
+- Move `example.txt` from linux_fundamentals to `linux_fundamentals/backup`.
+
+Permissions
+- Change the permissions of example.txt to read and write for the owner, and `read-only` for the group and others.
+- Verify the permission changes using ls -l
