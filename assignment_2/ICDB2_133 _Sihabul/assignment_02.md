@@ -12,3 +12,16 @@
 > ls -la
 
 ![](screenshots/var_log.png)
+
+### Find and display the path to the bash executable using the which command.
+
+> which bash
+
+![](screenshots/which_bash.png)
+
+### Find current shell
+
+> echo $SHELL
+
+![](screenshots/current_shell.png)
+
