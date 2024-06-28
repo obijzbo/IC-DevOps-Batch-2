@@ -89,6 +89,7 @@
 > sudo useradd student
 >
 > sudo chown student example.txt 
+
 ![](screenshots/permission_change.png)
 
 ### Change the group of example.txt to a group named students.
@@ -102,6 +103,44 @@
 > ls -la | grep example.txt
 
 ![](screenshots/group_change.png)
+
+
+# Ownership
+
+### Create a directory named project in your home directory.
+
+> mkdir ~/project
+
+![](screenshots/create_directory.png)
+
+### Create a file named report.txt inside the project directory.
+
+> touch project/report.txt
+
+![](screenshots/create_project_file.png)
+
+### Set the permissions of report.txt to read and write for the owner, and read-only for the group and others.
+
+> chmod 644 project/report.txt 
+
+![](screenshots/change_file_permission.)
+
+### Set the permissions of the project directory to read, write, and execute for the owner, and read and execute for the group and others
+
+> chmod 755 project/
+
+![](screenshots/change_group_permission.png)
+
+### Verify the changes using appropriate commands.
+
+> ls -la | grep project
+>
+> cd project/
+> 
+> ls -la
+
+![](screenshots/verify_permission.png)
+
 
 
 
