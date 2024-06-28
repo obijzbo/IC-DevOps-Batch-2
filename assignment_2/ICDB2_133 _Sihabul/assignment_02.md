@@ -76,4 +76,34 @@
 
 ![](screenshots/permissions.png)
 
+# File Modification
+
+### Create a file named example.txt in your home directory.
+
+> touch example.txt
+
+![](screenshots/create_file.png)
+
+### Change the owner of example.txt to a user named student
+
+> sudo useradd student
+>
+> sudo chown student example.txt 
+![](screenshots/permission_change.png)
+
+### Change the group of example.txt to a group named students.
+
+> sudo chown :student example.txt 
+
+![](screenshots/group_change.png)
+
+### Verify the changes using appropriate commands.
+
+> ls -la | grep example.txt
+
+![](screenshots/group_change.png)
+
+
+
+
 
