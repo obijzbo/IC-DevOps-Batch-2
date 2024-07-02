@@ -141,6 +141,60 @@
 
 ![](screenshots/verify_permission.png)
 
+# User add/modify
+### Create a new user named developer.
+
+> sudo useradd developer
+
+![](screenshots/user_add.png)
+
+### Set the home directory of the user developer to /home/developer_home.
+
+> sudo usermod -d /home/developer_home developer
+
+![](screenshots/specify_homedir.png)
+
+![](screenshots/specify_homedir2.png)
+
+### Assign the shell /bin/sh to the user developer.
+
+> sudo chsh --shell /bin/sh developer
+
+![](screenshots/change_shell.png)
+
+### Verify the new user's information.
+
+> cat /etc/passwd | grep developer
+
+![](screenshots/verify_devuser_info.png)
+
+### Change the username of the user developer to devuser.
+
+> sudo usermod -l devuser developer
+
+![](screenshots/change_username.png)
+
+### Add devuser to a group named devgroup.
+
+> sudo groupadd devgroup
+>
+> sudo usermod -aG devgroup devuser
+
+![](screenshots/group.png)
+
+### Set the password of devuser to devpass. ( hint: use passwd command. Run passwd --help to see available options)
+
+> sudo passwd devuser
+
+![](screenshots/change_pass.png)
+
+### Verify the changes made to the user.
+
+> cat /etc/passwd | grep developer
+
+![](screenshots/verify_devuser_newinfo.png)
+
+
 
 
 
