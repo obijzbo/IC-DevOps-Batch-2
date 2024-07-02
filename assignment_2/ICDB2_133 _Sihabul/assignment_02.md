@@ -194,9 +194,67 @@
 
 ![](screenshots/verify_devuser_newinfo.png)
 
+# Hard/Soft Link
+### Create a file named original.txt in your home directory.
 
+> touch original.txt
 
+![](screenshots/create_file2.png)
 
+### Create a symbolic link named softlink.txt pointing to original.txt.
 
+> ln -s original.txt softlink.txt
 
+![](screenshots/softlink.png)
 
+### Verify the symbolic link and ensure it points to the correct file.
+
+> ls -l softlink.txt
+
+![](screenshots/verify_softlink.png)
+
+### Delete the original file original.txt and observe the status of the symbolic link.
+
+> rm original.txt
+>
+> ls -l softlink.txt
+
+![](screenshots/del_original_file.png)
+
+### Create a file named datafile.txt in your home directory
+
+> touch datafile.txt
+
+![](screenshots/create_datafile.png)
+
+### Create a hard link named hardlink.txt pointing to datafile.txt
+
+> ln datafile.txt hardlink.txt
+
+![](screenshots/create_hardlink.png)
+
+### Verify the hard link and ensure it correctly points to the file
+
+> ls -l datafile.txt hardlink.txt
+
+![](screenshots/verify_hardlink.png)
+
+### Check the inode of both datafile.txt and hardlink.txt
+
+> ls -i datafile.txt hardlink.txt
+
+![](screenshots/check_inode.png)
+
+### Delete the original file datafile.txt and observe the status of the hard link
+
+> rm datafile.txt
+>
+> ls -l hardlink.txt
+
+![](screenshots/check_hardlink.png)
+
+### Find all .txt files in your home directory. (Use the find command. Run find --help for usage.)
+
+> find ~ -name "*.txt"
+
+![](screenshots/check_txt_file.png)
