@@ -206,7 +206,7 @@ sudo chown :students example.txt
 ls -l ~/example.txt
 ```
 
-`ls -l <file_path>` shows the permissions and ownership of a file.
+`ls -l <file_path>` shows the permissions and ownership of a file/directory.
 
 ![Image](./screenshots/verify-chown.png)
 
@@ -267,6 +267,98 @@ ls -l ~/project/report.txt
 ls -l ~
 ```
 
-`ls -l <file_path>` shows the permissions and ownership of a file.
+`ls -l <file_path>` shows the permissions and ownership of a file/directory.
 
 ![Image](./screenshots/verify-changes.png)
+
+## User add/modify
+
+#### 1. Create a new user named developer.
+
+```bash
+sudo useradd developer
+```
+
+`useradd <username>` command is used to add a user.
+
+![Image](./screenshots/user-add.png)
+
+#### 2. Set the home directory of the user developer to /home/developer_home.
+
+```bash
+# create /home/developer_home directory
+sudo mkdir /home/developer_home
+
+# modifying home directory for user: developer
+sudo usermod -d /home/developer_home developer
+```
+
+`usermod` command is used to modify user's attributes. Such as, `sudo usermod -d /home/developer_home developer` changes directory to /home/developer_home. 
+
+![Image](./screenshots/set-home.png)
+
+#### 3. Assign the shell /bin/sh to the user developer.
+
+```bash
+sudo usermod -s /bin/sh developer
+```
+
+In `sudo usermod -s /bin/sh developer` command, the -s flag along with shell directory is passed to assign a shell.
+
+![Image](./screenshots/shell-assign.png)
+
+#### 4. Verify the new user's information.
+
+```bash
+# View user info
+tail /etc/passwd
+```
+
+The /etc/passwd file contains user information, by using the `tail` we can view the /etc/passwd fille from last.
+
+![Image](./screenshots/verify-user.png
+)
+
+#### 5. Change the username of the user developer to devuser.
+
+```bash
+sudo usermod -l devuser developer
+```
+
+In `usermod -l <new_username> <current_username>` command, the -l flag is used to update the user name.
+
+![Image](./screenshots/change-username.png)
+
+#### 6. Add devuser to a group named devgroup.
+
+```bash
+# Create a group
+sudo addgroup devgroup
+# Add devuser to devgroup
+sudo usermod -aG devgroup devuser
+```
+
+The -aG flag is used to add a user to a group.
+
+![Image](./screenshots/devgroup.png)
+
+#### 7. Set the password of devuser to devpass. ( hint: use passwd command. Run passwd --help to see available options)
+
+```bash
+sudo passwd devuser
+```
+
+`passwd <username>` command is used to set password of the specified user.
+
+![Image](./screenshots/devpass.png)
+
+#### 8. Verify the changes made to the user.
+
+```bash
+ls -l ~/project/report.txt
+ls -l ~
+```
+
+`ls -l <file_path>` shows the permissions and ownership of a file.
+
+![Image](./screenshots/verify-changesss.png)
