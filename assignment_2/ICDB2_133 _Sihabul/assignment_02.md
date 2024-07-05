@@ -258,3 +258,20 @@
 > find ~ -name "*.txt"
 
 ![](screenshots/check_txt_file.png)
+
+# Package installation
+### Update repo cache using apt/apt-get
+
+> sudo apt update
+
+![](screenshots/apt_update.png)
+
+### Install a package named tree
+
+> sudo apt install tree
+
+![](screenshots/tree_install.png)
+
+### Install gcloud CLI tool using apt ( Follow instructions from here: https://cloud.google.com/sdk/docs/install#deb )
+
+> ![](screenshots/google_cli.png)
