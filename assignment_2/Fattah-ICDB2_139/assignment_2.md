@@ -21,7 +21,7 @@
 - [Hard/Soft Link](#hardsoft-link)
 - [Package installation](#package-installation)
 
-## File System Navigation :
+## File System Navigation
 
 #### 1. List the contents of the home directory.
 
@@ -34,7 +34,7 @@ The '~' tilde symbol is a shorthand for the home directory. Doing `ls -la ~` wil
 - `-l` flag shows detailed information of files and directories
 - `-a` flag shows all files and directories including hidden files
 
-![Image](./screenshots/list-home-files.png)
+![Image](./Screenshots/list-home-files.png)
 
 #### 2. Change the current directory to /var/log and list its contents.
 
@@ -45,7 +45,7 @@ ls
 
 `cd <directory_path>` command is used to change directory.
 
-![Image](./screenshots/change-directory.png)
+![Image](./Screenshots/change-directory.png)
 
 #### 3. Find and display the path to the bash executable using the which command.
 
@@ -55,7 +55,7 @@ which bash
 
 `which <command name>` command is used to display path to the executable file.
 
-![Image](./screenshots/which.png)
+![Image](./Screenshots/which.png)
 
 #### 4. Find current shell
 
@@ -65,9 +65,9 @@ echo $SHELL
 
 `echo` command prints a string and `$SHELL` is a global environment variable which stores the current shell that is being by the user. Therefore, `echo $SHELL` displays the current shell.
 
-![Image](./screenshots/shell.png)
+![Image](./Screenshots/shell.png)
 
-## File and Directory Operations :
+## File and Directory Operations
 
 #### 1. Create a directory named linux_fundamentals in your home directory.
 
@@ -78,7 +78,7 @@ mkdir linux_fundamentals
 
 `mkdir <directory name>` command is used to create a directory .
 
-![Image](./screenshots/create-directory.png)
+![Image](./Screenshots/create-directory.png)
 
 #### 2. Inside linux_fundamentals, create a subdirectory named scripts.
 
@@ -88,7 +88,7 @@ mkdir linux_fundamentals/scripts
 
 `mkdir linux_fundamentals/<new directory>` this command will create a new directory inside linux_fundamentals
 
-![Image](./screenshots/script-directory.png)
+![Image](./Screenshots/script-directory.png)
 
 #### 3. Create an empty file named example.txt inside the linux_fundamentals directory.
 
@@ -98,7 +98,7 @@ touch example.txt
 
 `touch <filename>` command is used to create an empty file.
 
-![Image](./screenshots/empty-file.png)
+![Image](./Screenshots/empty-file.png)
 
 #### 4. Copy example.txt to the scripts directory.
 
@@ -108,7 +108,7 @@ cp example.txt scripts
 
 `cp <sourcefile_path> <target_directory>` command is used to copy file from source path to target directory. Both source path and target directory can be both relative or absolute.
 
-![Image](./screenshots/cp-example.png)
+![Image](./Screenshots/cp-example.png)
 
 #### 5. Move example.txt from linux_fundamentals to linux_fundamentals/backup.
 
@@ -120,7 +120,7 @@ mkdir backup && mv example.txt backup/
 
 - The `&&` operator can be used to execute to commands sequentially.
 
-![Image](./screenshots/mv-example.png)
+![Image](./Screenshots/mv-example.png)
 
 ## Permissions
 
@@ -144,7 +144,7 @@ ls -l
   - `u=rw` sets read and write permission for user
   - `g=r` , `o=r` sets read permission for group and others respectively.
 
-![Image](./screenshots/chmod-example.png)
+![Image](./Screenshots/chmod-example.png)
 
 #### 2. Verify the permission changes using ls -l
 
@@ -154,7 +154,7 @@ ls -l linux_fundamentals/scripts/example.txt
 
 When we do `ls -l` we can see that user has read and write (rw-) permission, group and others have read (r--) permission.
 
-![Image](./screenshots/verify-permission.png)
+![Image](./Screenshots/verify-permission.png)
 
 ## File Modification
 
@@ -166,7 +166,7 @@ touch ~/example.txt
 
 `touch` command is used to create an example.txt file in home directory
 
-![Image](./screenshots/create-exmple.png)
+![Image](./Screenshots/create-exmple.png)
 
 #### 2. Change the owner of example.txt to a user named student
 
@@ -182,7 +182,7 @@ sudo chown student ~/example.txt
 - `useradd <username>` command is used to add a user.
 - `chown <username> <filename>` command is used to change ownership of a file.
 
-![Image](./screenshots/chown-student.png)
+![Image](./Screenshots/chown-student.png)
 
 #### 3. Change the group of example.txt to a group named students.
 
@@ -198,7 +198,7 @@ sudo chown :students example.txt
 - `groupadd <group_name>` command is used to create a group.
 - `chown :<group_name> <filename>` command is used to change group of a file.
 
-![Image](./screenshots/chown-group.png)
+![Image](./Screenshots/chown-group.png)
 
 #### 4. Verify the changes using appropriate commands.
 
@@ -208,7 +208,7 @@ ls -l ~/example.txt
 
 `ls -l <file_path>` shows the permissions and ownership of a file/directory.
 
-![Image](./screenshots/verify-chown.png)
+![Image](./Screenshots/verify-chown.png)
 
 ## Ownership
 
@@ -220,7 +220,7 @@ mkdir ~/project
 
 `mkdir ~/<diretory_name>` creates a directory in the home directory.
 
-![Image](./screenshots/mk-project.png)
+![Image](./Screenshots/mk-project.png)
 
 #### 2. Create a file named report.txt inside the project directory.
 
@@ -230,7 +230,7 @@ touch ~/project/report.txt
 
 `touch ~/project/report.txt` command creates report.txt file inside project directory.
 
-![Image](./screenshots/mkrpt.png)
+![Image](./Screenshots/mkrpt.png)
 
 #### 3. Set the permissions of report.txt to read and write for the owner, and read-only for the group and others.
 
@@ -244,7 +244,7 @@ chmod 644  ~/project/report.txt
   - 4: Read-only for the group.
   - 4: Read-only for others.
 
-![Image](./screenshots/chmod-rptx.png)
+![Image](./Screenshots/chmod-rptx.png)
 
 #### 4. Set the permissions of the project directory to read, write, and execute for the owner, and read and execute for the group and others
 
@@ -258,7 +258,7 @@ chmod 755  ~/project
   - 5: Read (4) + Execute(1) for the group.
   - 5: Read (4) + Execute(1) for others.
 
-![Image](./screenshots/chmod-proj.png)
+![Image](./Screenshots/chmod-proj.png)
 
 #### 5. Verify the changes using appropriate commands.
 
@@ -269,7 +269,7 @@ ls -l ~
 
 `ls -l <file_path>` shows the permissions and ownership of a file/directory.
 
-![Image](./screenshots/verify-changes.png)
+![Image](./Screenshots/verify-changes.png)
 
 ## User add/modify
 
@@ -281,7 +281,7 @@ sudo useradd developer
 
 `useradd <username>` command is used to add a user.
 
-![Image](./screenshots/user-add.png)
+![Image](./Screenshots/user-add.png)
 
 #### 2. Set the home directory of the user developer to /home/developer_home.
 
@@ -295,7 +295,7 @@ sudo usermod -d /home/developer_home developer
 
 `usermod` command is used to modify user's attributes. Such as, `sudo usermod -d /home/developer_home developer` changes directory to /home/developer_home. The `-d` flag is used to change home direcotry.
 
-![Image](./screenshots/set-home.png)
+![Image](./Screenshots/set-home.png)
 
 #### 3. Assign the shell /bin/sh to the user developer.
 
@@ -305,7 +305,7 @@ sudo usermod -s /bin/sh developer
 
 In `sudo usermod -s /bin/sh developer` command, the `-s` flag along with shell directory is passed to assign a shell.
 
-![Image](./screenshots/shell-assign.png)
+![Image](./Screenshots/shell-assign.png)
 
 #### 4. Verify the new user's information.
 
@@ -316,7 +316,7 @@ tail /etc/passwd
 
 The /etc/passwd file contains user information, by using the `tail` we can view the /etc/passwd fille from last.
 
-![Image](./screenshots/verify-user.png)
+![Image](./Screenshots/verify-user.png)
 
 #### 5. Change the username of the user developer to devuser.
 
@@ -326,7 +326,7 @@ sudo usermod -l devuser developer
 
 In `usermod -l <new_username> <current_username>` command, the -l flag is used to update the user name.
 
-![Image](./screenshots/change-username.png)
+![Image](./Screenshots/change-username.png)
 
 #### 6. Add devuser to a group named devgroup.
 
@@ -339,7 +339,7 @@ sudo usermod -aG devgroup devuser
 
 The -aG flag is used to add a user to a group.
 
-![Image](./screenshots/devgroup.png)
+![Image](./Screenshots/devgroup.png)
 
 #### 7. Set the password of devuser to devpass. ( hint: use passwd command. Run passwd --help to see available options)
 
@@ -349,7 +349,7 @@ sudo passwd devuser
 
 `passwd <username>` command is used to set password of the specified user.
 
-![Image](./screenshots/devpass.png)
+![Image](./Screenshots/devpass.png)
 
 #### 8. Verify the changes made to the user.
 
@@ -360,7 +360,7 @@ tail /etc/group
 
 The `tail` command shows the last 10 lines of a file, here the `/etc/passwd` directory contains user information and `/etc/group` contain group information. Using the `tail` command on both files we can see that the user name of developer has been changed to **devuser** and the dev user is in **developer** group
 
-![Image](./screenshots/verify-usermod.png)
+![Image](./Screenshots/verify-usermod.png)
 
 ```bash
 sudo su - devuser
@@ -369,7 +369,7 @@ groups
 
 We can also verify the changes by switching user to devuser using `sudo su - devuser` command. After that executing the `groups` command will list all the users the devuser belongs to.
 
-![Image](./screenshots/verify-usermod2.png)
+![Image](./Screenshots/verify-usermod2.png)
 
 ## Hard/Soft Link
 
@@ -383,7 +383,7 @@ ls
 
 `cd ~` command changed directory to home directory and then `touch original.txt` creates original.txt file in the home directory.
 
-![Image](./screenshots/touch-og.png)
+![Image](./Screenshots/touch-og.png)
 
 #### 2. Create a symbolic link named softlink.txt pointing to original.txt.
 
@@ -393,7 +393,7 @@ ln -s original.txt softlink.txt
 
 To create a symbolic link we need to use the `ln -s <original_file> <softlink_name>` command along with `-s` flag, which is used to create a softlink.
 
-![Image](./screenshots/slink.png)
+![Image](./Screenshots/slink.png)
 
 #### 3. Verify the symbolic link and ensure it points to the correct file.
 
@@ -403,7 +403,7 @@ ls -l softlink.txt
 
 `ls -l softlink.txt` shows the softlink and the actual file that it is pointing to.
 
-![Image](./screenshots/verify-softlink.png)
+![Image](./Screenshots/verify-softlink.png)
 
 #### 4. Delete the original file original.txt and observe the status of the symbolic link
 
@@ -413,7 +413,7 @@ rm original.txt
 
 `rm original.txt` removes the original.txt as a result the softlink now no longer points to a valid file.
 
-![Image](./screenshots/rm-og.png)
+![Image](./Screenshots/rm-og.png)
 
 #### 5. Create a file named datafile.txt in your home directory.
 
@@ -424,7 +424,7 @@ ls -l datafile.txt
 
 `touch datafile.txt` creates datafile.txt file in the home directory.
 
-![Image](./screenshots/touch-datafile.png)
+![Image](./Screenshots/touch-datafile.png)
 
 #### 6. Create a hard link named hardlink.txt pointing to datafile.txt
 
@@ -434,7 +434,7 @@ ln datafile.txt hardlink.txt
 
 To create a hard link we need to use the `ln <data_file> <hardlink_name>` command with or without the `-P` flag. This will create a hard link that points to the same data blocks on disk as datafile.txt. Both data file and hard link file share the same inode.
 
-![Image](./screenshots/create-hardlink.png)
+![Image](./Screenshots/create-hardlink.png)
 
 #### 7. Verify the hard link and ensure it correctly points to the file
 
@@ -444,7 +444,7 @@ ls -li hardlink.txt datafile.txt
 
 Using the `-i` flag in the `ls` command we can view the inod of each file. Since, both datafile.txt and hardlink.txt have same inode, the hardlink creation has been successfull.
 
-![Image](./screenshots/verfiy-hardlink.png)
+![Image](./Screenshots/verfiy-hardlink.png)
 
 #### 8. Check the inode of both datafile.txt and hardlink.txt
 
@@ -454,7 +454,7 @@ ls -i datafile.txt hardlink.txt
 
 The `-i` flag in `ls` command is used to check inodes of files
 
-![Image](./screenshots/check-inode.png)
+![Image](./Screenshots/check-inode.png)
 
 #### 9. Delete the original file datafile.txt and observe the status of the hard link.
 
@@ -465,7 +465,7 @@ ls -li hardlink.txt
 
 Deleting the datafile.txt has no impact on the hardlink as you can see that it has the same inode as before.
 
-![Image](./screenshots/del-datafile.png)
+![Image](./Screenshots/del-datafile.png)
 
 #### 10. Find all .txt files in your home directory. ( use find command. Run find --help for usage)
 
@@ -478,7 +478,7 @@ Find command is used to find files or directories in the specified direcotry.
 - `- type` flag is used to specify the type of file to search (`f` for regular files and `d` for directory)
 - `- name` flag is used to match files based on specific pattern.
 
-![Image](./screenshots/find-txt.png)
+![Image](./Screenshots/find-txt.png)
 
 ## Package Installation
 
@@ -490,7 +490,7 @@ sudo apt update
 
 This command fetches the latest package lists from the repositories specified in the `/etc/apt/sources.list` file or any files in the `/etc/apt/sources.list.d` directory.
 
-![Image](./screenshots/apt-update.png)
+![Image](./Screenshots/apt-update.png)
 
 #### 2. Install a package named tree
 
@@ -500,17 +500,49 @@ sudo apt install tree
 
 `apt install <package_name>` command is used to install a specific package from the repositories mentioned in the sources.
 
-![Image](./screenshots/install-tree.png)
+![Image](./Screenshots/install-tree.png)
 
 #### 3. Install gcloud CLI tool using apt ( Follow instructions from here: https://cloud.google.com/sdk/docs/install#deb )
 
+1. #### Installing dependencies
+
 ```bash
-find ~/ -type f -name '*.txt'
+sudo apt install apt-transport-https ca-certificates gnupg
 ```
 
-Find command is used to find files or directories in the specified direcotry.
+This command Installs the necessary dependencies for managing keys and transporting securely.
 
-- `- type` flag is used to specify the type of file to search (`f` for regular files and `d` for directory)
-- `- name` flag is used to match files based on specific pattern.
+![Image](./Screenshots/install-dep.png)
 
-![Image](./screenshots/find-txst.png)
+2. #### Importing the Google Cloud public key
+
+```bash
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+```
+
+- `curl https://packages.cloud.google.com/apt/doc/apt-key.gpg` command fetches public key from google cloud repository.
+
+- `sudo gpg --dearmor` command is used to convert GPG file from binary to plain text
+- `-o /usr/share/keyrings/cloud.google.gpg` command defines the path to store the public key.
+
+![Image](./Screenshots/public-key.png)
+
+3. #### Add the gcloud CLI distribution URI as a package source
+
+```bash
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+```
+
+The distribution URL is piped to the `tee` command which appends the URL to the `/etc/apt/sources.list.d/google-cloud-sdk.list` file using `-a` flag.
+
+![Image](./Screenshots/gcloud-source.png)
+
+4. #### Update and install the gcloud CLI:
+
+```bash
+sudo apt update && sudo apt install google-cloud-cli
+```
+
+`sudo apt update` command updates the package repositories and `sudo apt install google-cloud-cli` command installs **google-cloud-cli** from the repository that is in the source list.
+
+![Image](./Screenshots/install-gcloud.png)
