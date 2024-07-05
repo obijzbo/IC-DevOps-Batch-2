@@ -14,12 +14,12 @@
 ## Table of contents
 
 - [File System Navigation](#file-system-navigation)
-- [File and Directory Operations](#inspection-and-comparison)
-- [File Modification](#branching-and-merging)
-- [Ownership](#Ownership)
-- [User add/modify](#User-add/modify)
-- [Hard/Soft Link](#Hard/Soft-Link)
-- [Package installation](#Package-installation)
+- [File and Directory Operations](#file-and-directory-operations)
+- [File Modification](#file-modification)
+- [Ownership](#ownership)
+- [User add/modify](#user-addmodify)
+- [Hard/Soft Link](#hardsoft-link)
+- [Package installation](#package-installation)
 
 ## File System Navigation :
 
@@ -40,7 +40,7 @@ The '~' tilde symbol is a shorthand for the home directory. Doing `ls -la ~` wil
 
 ```bash
 cd /var/log
-ls -l
+ls
 ```
 
 `cd <directory_path>` command is used to change directory.
@@ -293,7 +293,7 @@ sudo mkdir /home/developer_home
 sudo usermod -d /home/developer_home developer
 ```
 
-`usermod` command is used to modify user's attributes. Such as, `sudo usermod -d /home/developer_home developer` changes directory to /home/developer_home. 
+`usermod` command is used to modify user's attributes. Such as, `sudo usermod -d /home/developer_home developer` changes directory to /home/developer_home. The `-d` flag is used to change home direcotry.
 
 ![Image](./screenshots/set-home.png)
 
@@ -303,7 +303,7 @@ sudo usermod -d /home/developer_home developer
 sudo usermod -s /bin/sh developer
 ```
 
-In `sudo usermod -s /bin/sh developer` command, the -s flag along with shell directory is passed to assign a shell.
+In `sudo usermod -s /bin/sh developer` command, the `-s` flag along with shell directory is passed to assign a shell.
 
 ![Image](./screenshots/shell-assign.png)
 
@@ -316,8 +316,7 @@ tail /etc/passwd
 
 The /etc/passwd file contains user information, by using the `tail` we can view the /etc/passwd fille from last.
 
-![Image](./screenshots/verify-user.png
-)
+![Image](./screenshots/verify-user.png)
 
 #### 5. Change the username of the user developer to devuser.
 
@@ -355,10 +354,163 @@ sudo passwd devuser
 #### 8. Verify the changes made to the user.
 
 ```bash
-ls -l ~/project/report.txt
-ls -l ~
+tail /etc/passwd
+tail /etc/group
 ```
 
-`ls -l <file_path>` shows the permissions and ownership of a file.
+The `tail` command shows the last 10 lines of a file, here the `/etc/passwd` directory contains user information and `/etc/group` contain group information. Using the `tail` command on both files we can see that the user name of developer has been changed to **devuser** and the dev user is in **developer** group
 
-![Image](./screenshots/verify-changesss.png)
+![Image](./screenshots/verify-usermod.png)
+
+```bash
+sudo su - devuser
+groups
+```
+
+We can also verify the changes by switching user to devuser using `sudo su - devuser` command. After that executing the `groups` command will list all the users the devuser belongs to.
+
+![Image](./screenshots/verify-usermod2.png)
+
+## Hard/Soft Link
+
+#### 1. Create a file named original.txt in your home directory.
+
+```bash
+cd ~
+touch original.txt
+ls
+```
+
+`cd ~` command changed directory to home directory and then `touch original.txt` creates original.txt file in the home directory.
+
+![Image](./screenshots/touch-og.png)
+
+#### 2. Create a symbolic link named softlink.txt pointing to original.txt.
+
+```bash
+ln -s original.txt softlink.txt
+```
+
+To create a symbolic link we need to use the `ln -s <original_file> <softlink_name>` command along with `-s` flag, which is used to create a softlink.
+
+![Image](./screenshots/slink.png)
+
+#### 3. Verify the symbolic link and ensure it points to the correct file.
+
+```bash
+ls -l softlink.txt
+```
+
+`ls -l softlink.txt` shows the softlink and the actual file that it is pointing to.
+
+![Image](./screenshots/verify-softlink.png)
+
+#### 4. Delete the original file original.txt and observe the status of the symbolic link
+
+```bash
+rm original.txt
+```
+
+`rm original.txt` removes the original.txt as a result the softlink now no longer points to a valid file.
+
+![Image](./screenshots/rm-og.png)
+
+#### 5. Create a file named datafile.txt in your home directory.
+
+```bash
+touch datafile.txt
+ls -l datafile.txt
+```
+
+`touch datafile.txt` creates datafile.txt file in the home directory.
+
+![Image](./screenshots/touch-datafile.png)
+
+#### 6. Create a hard link named hardlink.txt pointing to datafile.txt
+
+```bash
+ln datafile.txt hardlink.txt
+```
+
+To create a hard link we need to use the `ln <data_file> <hardlink_name>` command with or without the `-P` flag. This will create a hard link that points to the same data blocks on disk as datafile.txt. Both data file and hard link file share the same inode.
+
+![Image](./screenshots/create-hardlink.png)
+
+#### 7. Verify the hard link and ensure it correctly points to the file
+
+```bash
+ls -li hardlink.txt datafile.txt
+```
+
+Using the `-i` flag in the `ls` command we can view the inod of each file. Since, both datafile.txt and hardlink.txt have same inode, the hardlink creation has been successfull.
+
+![Image](./screenshots/verfiy-hardlink.png)
+
+#### 8. Check the inode of both datafile.txt and hardlink.txt
+
+```bash
+ls -i datafile.txt hardlink.txt
+```
+
+The `-i` flag in `ls` command is used to check inodes of files
+
+![Image](./screenshots/check-inode.png)
+
+#### 9. Delete the original file datafile.txt and observe the status of the hard link.
+
+```bash
+rm datafile.txt
+ls -li hardlink.txt
+```
+
+Deleting the datafile.txt has no impact on the hardlink as you can see that it has the same inode as before.
+
+![Image](./screenshots/del-datafile.png)
+
+#### 10. Find all .txt files in your home directory. ( use find command. Run find --help for usage)
+
+```bash
+find ~/ -type f -name '*.txt'
+```
+
+Find command is used to find files or directories in the specified direcotry.
+
+- `- type` flag is used to specify the type of file to search (`f` for regular files and `d` for directory)
+- `- name` flag is used to match files based on specific pattern.
+
+![Image](./screenshots/find-txt.png)
+
+## Package Installation
+
+#### 1. Update repo cache using apt/apt-get
+
+```bash
+sudo apt update
+```
+
+This command fetches the latest package lists from the repositories specified in the `/etc/apt/sources.list` file or any files in the `/etc/apt/sources.list.d` directory.
+
+![Image](./screenshots/apt-update.png)
+
+#### 2. Install a package named tree
+
+```bash
+sudo apt install tree
+```
+
+`apt install <package_name>` command is used to install a specific package from the repositories mentioned in the sources.
+
+![Image](./screenshots/install-tree.png)
+
+#### 3. Install gcloud CLI tool using apt ( Follow instructions from here: https://cloud.google.com/sdk/docs/install#deb )
+
+```bash
+find ~/ -type f -name '*.txt'
+```
+
+Find command is used to find files or directories in the specified direcotry.
+
+- `- type` flag is used to specify the type of file to search (`f` for regular files and `d` for directory)
+- `- name` flag is used to match files based on specific pattern.
+
+![Image](./screenshots/find-txst.png)
