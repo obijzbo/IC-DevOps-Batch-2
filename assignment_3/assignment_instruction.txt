@@ -1,0 +1,9 @@
+Design a network architecture for a platform that will serve as a real estate finder. People will come and search for houses, bid on them, chat with the buyer/seller. The platform will fetch data from many 3rd party services for different countries and cities. The networking architecture must support 2 regions and 2 availability zones. Developers will be using the network to do development work as well 
+
+Key checkpoints:
+1. Design the diagram using any free online tools like draw.io, lucid chart, excalidraw. The diagram must be added as a picture in the readme file in the PR
+2. ⁠List all assumptions you are making for the design 
+3. ⁠Write a detailed 200-500 word summary with the following 4 sections: project details, architecture decisions, reasoning and networking components used and their use case. 
+4. ⁠Make cost estimates for different number of users(concurrent 100, 10000, 100000 user, monthly 1 lacs, 10 lacs and 100 million user) and data component wise. There should be a table. 
+5. Deadline is 2 weeks 
+6. ⁠Early submission is on till Wednesday 1 pm. Early submission feedbacks will be given during Wednesday live class.
