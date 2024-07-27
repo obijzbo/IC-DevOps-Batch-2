@@ -48,37 +48,35 @@ NB: region B is a replica of region A, that's why it's blank in the diagram.
 The platform aims to facilitate users in searching for houses, placing bids, and communicating with buyers or sellers. To ensure high availability, the platform will be deployed across two AWS regions with two availability zones each. It will integrate with third-party services to gather real estate data and support secure development access via VPN.
 
 #### Architecture Decisions:
-Regions and Availability Zones: Two AWS regions with two availability zones each will ensure high availability and disaster recovery.
-Load Balancing: Use of AWS Elastic Load Balancers (ELB) to distribute incoming traffic across multiple servers.
-Auto Scaling: Implementing AWS Auto Scaling groups to manage varying loads and ensure resource optimization.
-Data Storage: Utilize Amazon RDS for relational data, Amazon S3 for object storage, and Amazon DynamoDB for NoSQL data.
-Third-Party Data Integration: Use Amazon API Gateway and AWS Lambda for seamless integration with third-party services.
-Messaging and Notifications: Amazon SQS and Amazon SNS for handling chat messages and notifications.
-Security: VPN access for developers using AWS Client VPN and securing data with AWS KMS.
-Monitoring and Logging: AWS CloudWatch and AWS CloudTrail for monitoring and logging activities.
+- Regions and Availability Zones: Two AWS regions with two availability zones each will ensure high availability and disaster recovery.
+- Load Balancing: Use of AWS Elastic Load Balancers (ELB) to distribute incoming traffic across multiple servers.
+- Auto Scaling: Implementing AWS Auto Scaling groups to manage varying loads and ensure resource optimization.
+- Data Storage: Utilize Amazon RDS for relational data, Amazon S3 for object storage, and Amazon DynamoDB for NoSQL data.
+- Third-Party Data Integration: Use Amazon API Gateway and AWS Lambda for seamless integration with third-party services.
+- Messaging and Notifications: Amazon SQS and Amazon SNS for handling chat messages and notifications.
+- Security: VPN access for developers using AWS Client VPN and securing data with AWS KMS.
+- Monitoring and Logging: AWS CloudWatch and AWS CloudTrail for monitoring and logging activities.
 
 #### Reasoning
 The architecture aims to ensure high availability, fault tolerance, and scalability. Deploying across two AWS regions with two availability zones mitigates the risk of downtime. Elastic Load Balancers and auto-scaling groups ensure optimal resource utilization and handling of traffic surges. Separating storage types based on data requirements optimizes performance and cost. Integrating third-party services via API Gateway and Lambda provides flexibility and ease of maintenance. Security is ensured through VPN access and data encryption. Monitoring and logging services help in proactive management and troubleshooting.
 
 #### Networking Components Used and Their Use Case
-VPC (Virtual Private Cloud): Isolates the network for the platform, ensuring security and management of resources.
-Subnets: Divides the VPC into public and private subnets across two availability zones in each region for better resource organization and security.
-Internet Gateway: Allows access to the internet for public-facing components.
-NAT Gateway: Enables private subnet instances to access the internet securely.
-Elastic Load Balancer (ELB): Distributes incoming traffic across multiple instances for high availability and fault tolerance.
-Auto Scaling Groups: Automatically adjusts the number of EC2 instances based on traffic demand.
-Amazon RDS: Provides a managed relational database for transactional data.
-Amazon S3: Offers scalable object storage for user-generated content and media files.
-Amazon DynamoDB: Supports NoSQL database needs for high-speed data access.
-Amazon API Gateway: Manages API calls to third-party services.
-AWS Lambda: Runs code in response to events for third-party data processing.
-Amazon SQS and SNS: Handles messaging and notifications between users.
-AWS Client VPN: Provides secure VPN access for developers.
-AWS CloudWatch and CloudTrail: Monitors and logs system activities for management and compliance.
+- VPC (Virtual Private Cloud): Isolates the network for the platform, ensuring security and management of resources.
+- Subnets: Divides the VPC into public and private subnets across two availability zones in each region for better resource organization and security.
+- Internet Gateway: Allows access to the internet for public-facing components.
+- NAT Gateway: Enables private subnet instances to access the internet securely.
+- Elastic Load Balancer (ELB): Distributes incoming traffic across multiple instances for high availability and fault tolerance.
+- Auto Scaling Groups: Automatically adjusts the number of EC2 instances based on traffic demand.
+- Amazon RDS: Provides a managed relational database for transactional data.
+- Amazon S3: Offers scalable object storage for user-generated content and media files.
+- Amazon DynamoDB: Supports NoSQL database needs for high-speed data access.
+- Amazon API Gateway: Manages API calls to third-party services.
+- AWS Lambda: Runs code in response to events for third-party data processing.
+- Amazon SQS and SNS: Handles messaging and notifications between users.
+- AWS Client VPN: Provides secure VPN access for developers.
+- AWS CloudWatch and CloudTrail: Monitors and logs system activities for management and compliance.
 
 ### Cost Estimates
-<!-- Component100 Concurrent Users10,000 Concurrent Users100,000 Concurrent UsersEC2 (Web Server)$50$500$5,000EC2 (App Server)$50$500$5,000RDS$100$1,000$10,000S3$20$200$2,000CloudFront$50$500$5,000Load Balancer$20$200$2,000NAT Gateway$30$300$3,000VPN$40$40$40Route 53$1$10$100Data Transfer$100$1,000$10,000Total (Approx.)$461$4,250$42,140
-Monthly Active UsersEstimated Cost Range100,000$1,000 - $5,0001,000,000$5,000 - $20,000100,000,000$50,000 - $200,000 -->
 
 | Component | 100 Concurrent Users | 10,000 Concurrent Users | 100,000 Concurrent Users |
 |-----------|----------------------|-------------------------|---------------------------|
