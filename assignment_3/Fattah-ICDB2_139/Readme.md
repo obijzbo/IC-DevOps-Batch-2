@@ -1,10 +1,10 @@
-# Design a Network Architecture
+# **Design a Network Architecture**
 
-## Project Requirements:
+## **Project Requirements:**
 
 Design a network architecture for a platform that will serve as a real estate finder. People will come and search for houses, bid on them, chat with the buyer/seller. The platform will fetch data from many 3rd party services for different countries and cities. The networking architecture must support 2 regions and 2 availability zones. Developers will be using the network to do development work as well
 
-## Key checkpoints:
+## **Key checkpoints:**
 
 1. Design the diagram using any free online tools like draw.io, lucid chart, excalidraw. The diagram must be added as a picture in the readme file in the PR
 
@@ -14,13 +14,13 @@ Design a network architecture for a platform that will serve as a real estate fi
 
 4. Make cost estimates for different number of users (concurrent 100, 10000, 100000 user, monthly 1 lac, 10 lacs and 100 million user) and data component wise. There should be a table.
 
-## Solution:
+## **Solution:**
 
-### Project Details:
+### **Project Details:**
 
 The real estate finder platform is designed to allow users to search for houses, place bids, and communicate with buyers/sellers. It integrates data from multiple third-party services across different countries and cities. The platform is structured across two regions: Region 1 is dedicated to development, while Region 2 hosts the production environment. The production environment in region 2 is designed to support high availability, scalability, and fault tolerance across two availability zones, ensuring robust performance and reliability for end-users.
 
-### Assumptions:
+### **Assumptions:**
 
 - The cloud-based platform will be AWS.
 - This project will run in Asia region.
@@ -36,11 +36,11 @@ The real estate finder platform is designed to allow users to search for houses,
 - Elasticsearch will be used as the search engine for real-time search.
 - The system will scale horizontally.
 
-### Network Diagram:
+### **Network Diagram:**
 
 ![Image](./Screenshots/Network_Diagram.svg)
 
-### Architecture decisions:
+### **Architecture decisions:**
 
 This architecture ensures high availability, scalability and fault tolerance.
 
@@ -64,7 +64,7 @@ This architecture ensures high availability, scalability and fault tolerance.
 
 10. Clients' requests go through Route53 which provides robust DNS management, it provides benefits such as health checks, failover support, and traffic management within the region.
 
-### Reasoning:
+### **Reasoning:**
 
 1. **High Availability and Scalability:** The use of auto-scaling groups across multiple availability zones ensures the system can handle varying loads and remain available even if one zone experiences issues.
 
@@ -82,7 +82,7 @@ This architecture ensures high availability, scalability and fault tolerance.
 
 8. **Data Analysis and User Experience:** The use of Elasticsearch enables advanced features such as personalized recommendations, market trend analysis, and efficient property searches, enhancing the overall user experience.
 
-### Networking components and their use cases:
+### **Networking components and their use cases:**
 
 - **VPC (Virtual Private Cloud):** Provides isolated network environments for AWS resources, controlling IP addressing, routing, and network gateways.
 
@@ -108,11 +108,11 @@ This architecture ensures high availability, scalability and fault tolerance.
 
 - **ElastiCache:** Fully managed in-memory caching service that enhances web application performance by quickly retrieving data from fast, in-memory caches like Redis and Memcached.
 
-### Cost Estimate:
+### **Cost Estimate:**
 
 [Refer to the Pricing Breakdown Page for detailed pricing for each components](./Pricing_Breakdown.md)
 
-## Concurrent Users Table
+## **Cost Estimate for Concurrent Users**
 
 | AWS Component | 100 Users | 10,000 Users | 100,000 Users |
 | ------------- | --------- | ------------ | ------------- |
@@ -127,7 +127,7 @@ This architecture ensures high availability, scalability and fault tolerance.
 | ALB           | $26.43    | $116.43      | $1,032.86     |
 | Total Cost    | $396.39   | $5,559.07    | $47,338.70    |
 
-## Monthly Users Table
+## **Cost Estimate Monthly Users**
 
 | AWS Component | 1 Lac Users | 10 Lac Users | 100 Million Users |
 | ------------- | ----------- | ------------ | ----------------- |
