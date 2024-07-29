@@ -107,3 +107,37 @@ This architecture ensures high availability, scalability and fault tolerance.
 - **Elasticsearch:** Distributed search and analytics engine for storing, searching, and analyzing large volumes of data quickly and in near real-time.
 
 - **ElastiCache:** Fully managed in-memory caching service that enhances web application performance by quickly retrieving data from fast, in-memory caches like Redis and Memcached.
+
+### Cost Estimate:
+
+[Refer to the Pricing Breakdown Page for detailed pricing for each components](./Pricing_Breakdown.md)
+
+## Concurrent Users Table
+
+| AWS Component | 100 Users | 10,000 Users | 100,000 Users |
+| ------------- | --------- | ------------ | ------------- |
+| EC2           | $22.78    | $2,482.00    | $24,820.00    |
+| EBS           | $4.80     | $160.00      | $800.00       |
+| Data Transfer | $9.00     | $900.00      | $7,800.00     |
+| NAT           | $171.36   | $445.76      | $2,965.76     |
+| Route53       | $0.54     | $4.50        | $40.50        |
+| RDS           | $72.64    | $538.40      | $3,230.40     |
+| Elasticsearch | $62.56    | $687.14      | $4,432.90     |
+| ElastiCache   | $26.28    | $224.84      | $2,216.28     |
+| ALB           | $26.43    | $116.43      | $1,032.86     |
+| Total Cost    | $396.39   | $5,559.07    | $47,338.70    |
+
+## Monthly Users Table
+
+| AWS Component | 1 Lac Users | 10 Lac Users | 100 Million Users |
+| ------------- | ----------- | ------------ | ----------------- |
+| EC2           | $1,861.50   | $8,687.00    | $99,280.00        |
+| EBS           | $120.00     | $420.00      | $3,200.00         |
+| Data Transfer | $450.00     | $4,250.00    | $35,800.00        |
+| NAT           | $87.36      | $320.88      | $1,283.52         |
+| Route53       | $0.54       | $20.50       | $200.50           |
+| RDS           | $538.40     | $1,076.80    | $8,614.40         |
+| Elasticsearch | $687.14     | $1,791.44    | $14,159.68        |
+| ElastiCache   | $224.84     | $738.76      | $5,910.08         |
+| ALB           | $91.43      | $532.86      | $5,065.72         |
+| Total Cost    | $4,061.21   | $17,838.24   | $173,513.90       |
