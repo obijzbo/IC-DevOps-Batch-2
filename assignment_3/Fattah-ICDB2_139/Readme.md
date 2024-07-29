@@ -27,12 +27,12 @@ The real estate finder platform is designed to allow users to search for houses,
 - Concurrently 100 users can use the application daily.
 - A total of 10 GB of data will be processed per day.
 - There will be 2 multi-region VPCs. Region 1 will be in Hyderabad and Region 2 will be in Singapore.
-- Each VPC will have two Availability Zones (AZs), and each AZ will have a private and a public subnet.
-- VPC Peering will be established between the two VPCs.
 - Region 1 will be the development server and Region 2 will be the production server.
+- Each VPC will have two Availability Zones
 - The developers will connect to region 1 (Development Server) through VPN.
-- There will be a total of four NAT Gateways in each Azs.
-- Elastic Load balancer will be used to distribute traffic efficiently.
+- PostgreSQL(RDS) data base will be used for the platform.
+- There will be a caching layer.
+- A Load balancer will be used to distribute traffic efficiently.
 - Elasticsearch will be used as the search engine for real-time search.
 - The system will scale horizontally.
 
