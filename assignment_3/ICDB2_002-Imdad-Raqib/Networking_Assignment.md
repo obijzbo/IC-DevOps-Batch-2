@@ -1,6 +1,6 @@
 ## Network Diagram
 
-![[Network Diagram for Real Estate Platform]](aws-vpc.drawio.svg)
+![[Network Diagram for Real Estate Platform]](aws-vpc.drawio.png)
 
 
 ## Project Details
