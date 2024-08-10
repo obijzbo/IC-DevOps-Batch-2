@@ -17,3 +17,28 @@ The platform is a real estate finder allowing users to search for homes, place b
 - **Data Storage**: Data is stored in a combination of RDS (for structured data) and NoSQL databases (for unstructured data). Data replication is set up between regions for high availability.
 - **API Gateway**: An API Gateway handles requests to/from 3rd party services.
 - **Developer Environment**: A dedicated VPC or subnets for development and staging environments, isolated from production.
+
+#### c. **Reasoning**
+
+- **Scalability**: Auto-scaling and multi-region architecture ensure that the system can handle from hundreds to millions of users.
+- **Fault Tolerance**: Deploying across multiple AZs in two regions ensures the system remains available even during failures.
+- **Cost-Effectiveness**: Resources are provisioned dynamically, and storage options are chosen to balance cost and performance.
+- **Security**: All communications are encrypted, and network security groups are configured to restrict access to sensitive resources.
+
+#### d. **Networking Components Used and Their Use Cases**
+
+- **VPC (Virtual Private Cloud)**: Isolated network environments for production and development.
+- **Subnets**: Separate public, private, and isolated subnets for different components.
+- **Internet Gateway**: Allows internet access for public-facing services.
+- **NAT Gateway**: Allows private subnets to access the internet securely.
+- **Load Balancer (ALB & NLB)**: Distributes incoming traffic across multiple instances in different AZs.
+- **Security Groups & NACLs**: Protect resources by controlling inbound and outbound traffic.
+- **VPN Gateway**: For secure developer access and cross-region communication.
+
+### **Cost Estimates**
+
+| **Users/Month** | **Concurrent Users** | **EC2 Instances** | **Load Balancer** | **RDS/NoSQL** | **API Gateway**   | **Total Estimate (USD)** |
+| --------------- | -------------------- | ----------------- | ----------------- | ------------- | ----------------- | ------------------------ |
+| 100,000         | 100                  | Small instances   | Light usage       | Small DB      | Low requests      | $500 - $1000             |
+| 10,000,000      | 10,000               | Medium instances  | Moderate usage    | Medium DB     | Moderate requests | $10,000 - $20,000        |
+| 100,000,000     | 100,000              | Large instances   | Heavy usage       | Large DB      | High requests     | $100,000 - $200,000      |
