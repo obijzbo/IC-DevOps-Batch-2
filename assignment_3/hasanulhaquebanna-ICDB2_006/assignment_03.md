@@ -1,6 +1,20 @@
+### **Assumptions**
+
+Before we begin the design, let's list some key assumptions:
+
+- **User Behavior**: Users will browse listings, place bids, and chat. The number of concurrent users can vary widely depending on demand.
+- **Data Sources**: Data will be pulled from multiple 3rd party APIs, and the platform will handle different formats and structures of real estate data.
+- **Security**: All communications and data exchanges must be secure, especially during bidding and payment processes.
+- **Availability & Redundancy**: The system should be highly available, fault-tolerant, and capable of scaling automatically.
+- **Regions & Availability Zones**: The architecture will span 2 regions and each region will include 2 availability zones (AZs).
+- **Developer Access**: Developers need access to the environment for continuous development and deployment.
+- **Cost Consideration**: Costs should be optimized while ensuring scalability, security, and performance.
+
 ### **Network Architecture Diagram**
 
-[Network Architecture Diagram using Excalidraw](https://excalidraw.com) - Once the design is ready, it will be added as an image in the README file of the project.
+[Network Architecture Diagram using Eraser.io](https://eraser.io/)
+
+![Alt text](./diagram.png)
 
 ### **Summary**
 
