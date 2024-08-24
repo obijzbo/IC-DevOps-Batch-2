@@ -1,4 +1,3 @@
-1.Git init:
 
 
 
@@ -14,7 +13,7 @@
 
 ## Table of contents
 
-- [Git Clone](#git-clone)
+- [Git Clone](#home-dfirectory)
 - [Git Initialize](#git-initialize)
 - [Git Status](#git-status)
 - [Git Add](#git-add)
