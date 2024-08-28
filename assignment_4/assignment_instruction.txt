@@ -1,0 +1,16 @@
+- Choose a project of your preference
+- Create a new repository
+- Add a Git action workflow
+- Repository need to have one 'dev' branch
+- Repository may have multiple 'feature/' branch
+- When ever any commits have been made to any of the 'feature/*' branch CI will be triggered
+- In CI, following stages need to be passed
+	- Linter
+	- Code quality check
+	- Unit test
+- If all stages are passed successfully, CI will merge the code into the 'dev' branch
+- To submit the project, in assignment_4 directory create a sub directory like <your_name>-<your_ID>
+- Inside the sub directory have a README.md file
+- In the readme file describe the process and add the link to your project repository
+- Create a PR
+- Submit the PR link in the classroom
