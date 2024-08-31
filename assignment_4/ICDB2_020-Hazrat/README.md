@@ -7,7 +7,9 @@
 
 4. **Unit Tests**: After lint checks, unit tests are executed to ensure that all functionalities work as expected. The tests are run using the `npm test` command.
 
-5. **Merging Changes**: If both lint checks and unit tests pass, the workflow automatically merges the changes from the feature branch to the `dev` branch. This step is conditional on the success of the previous steps to ensure code quality.
+5. **SonarCloud Code Quality**: This is usually done in SonarCloud settings and GitHub marketplace by installing SonarCloud on your repository.
+
+6. **Merging Changes**: If both lint checks and unit tests pass, the workflow automatically merges the changes from the feature branch to the `dev` branch. This step is conditional on the success of the previous steps to ensure code quality.
 
 ## Project Repository
 
