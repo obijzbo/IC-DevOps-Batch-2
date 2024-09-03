@@ -13,4 +13,6 @@
 
 ## Project Repository
 
-`https://github.com/Hazrat16/urban-eats-client`
+**Client side repo**: `https://github.com/Hazrat16/urban-eats-client`
+
+**Server side repo**: `https://github.com/Hazrat16/urban-eats-server`
