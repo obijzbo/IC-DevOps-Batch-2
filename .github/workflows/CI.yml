@@ -1,0 +1,129 @@
+name: unit tests lint code quality
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install docker-compose
+
+      - name: Generate required .env file
+        run: |
+          echo DEBUG=True >> .env
+          echo FLASK_DEBUG=1 >> .env
+          echo FLASK_APP=run.py >> .env
+
+      - name: Building containers
+        run: docker-compose build
+
+      - name: Run tests
+        run: docker-compose up unit-test-container
+
+
+  pylint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10"]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install docker-compose
+
+      - name: Generate required .env file
+        run: |
+          echo DEBUG=True >> .env
+          echo FLASK_DEBUG=1 >> .env
+          echo FLASK_APP=run.py >> .env
+
+      - name: Building containers
+        run: docker-compose build
+
+      - name: Run tests
+        run: docker-compose up unit-test-container
+
+  sonarcloud:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Java (required for SonarCloud)
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+    - name: Cache SonarCloud dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.sonar/cache
+        key: ${{ runner.os }}-sonar
+    - name: Install dependencies for analysis
+      run: |
+        pip install pylint pytest pytest-cov
+    - name: Run SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@v2
+      with:
+        projectBaseDir: .
+        args: >
+          -Dsonar.projectKey=ahsanulhabib93_assignment-04
+          -Dsonar.organization=ahsanulhabib93
+
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  merge:
+    runs-on: ubuntu-latest
+    needs: [build, pylint, sonarcloud]
+    if: success()
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Ensure all branches are fetched
+
+    - name: Set up Git config
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+
+    - name: Fetch all branches
+      run: |
+        git fetch --all
+    - name: Debug branch names
+      run: |
+        git branch -a
+        git status
+
+    - name: Checkout dev branch
+      run: |
+        git checkout dev
+        git pull origin dev  # Ensure the latest changes are pulled
+    
+    - name: Checkout master branch
+      run: |
+        git checkout master
+        git pull origin master  # Ensure the latest changes are pulled
+
+    - name: Merge to dev branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git checkout dev  # Make sure the dev branch exists
+        git merge master --no-ff -m "Merging main into dev"
+        git push origin dev
+
