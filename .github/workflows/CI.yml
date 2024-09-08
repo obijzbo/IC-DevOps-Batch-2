@@ -85,7 +85,7 @@ jobs:
           -Dsonar.organization=ahsanulhabib93
 
       env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN2 }}
   merge:
     runs-on: ubuntu-latest
     needs: [build, pylint, sonarcloud]
