@@ -8,7 +8,7 @@ on:
     types: [opened, reopened]
 
 jobs:
-  unit-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
