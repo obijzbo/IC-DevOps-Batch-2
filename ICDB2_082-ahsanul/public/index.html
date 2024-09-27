@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Owner App</title>
+</head>
+<body>
+  <h1>Add a New Dog</h1>
+  <form id="dogForm">
+    <input type="text" id="breed" placeholder="Breed" required><br>
+    <input type="number" id="expectedLifespan" placeholder="Expected Lifespan" required><br>
+    <textarea id="description" placeholder="Description" required></textarea><br>
+    <button type="submit">Add Dog</button>
+  </form>
+
+  <h1>Add a New Owner</h1>
+  <form id="ownerForm">
+    <input type="text" id="name" placeholder="Name" required><br>
+    <input type="text" id="contact" placeholder="Contact" required><br>
+    <input type="text" id="address" placeholder="Address" required><br>
+    <input type="text" id="dogs" placeholder="Dog IDs (comma-separated)" required><br>
+    <button type="submit">Add Owner</button>
+  </form>
+
+  <script>
+    // Submit Dog Form
+    document.getElementById('dogForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      
+      const breed = document.getElementById('breed').value;
+      const expectedLifespan = document.getElementById('expectedLifespan').value;
+      const description = document.getElementById('description').value;
+
+      const response = await fetch('/dogs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ breed, expectedLifespan, description })
+      });
+
+      if (response.ok) {
+        alert('Dog added successfully!');
+      } else {
+        alert('Failed to add dog');
+      }
+    });
+
+    // Submit Owner Form
+    document.getElementById('ownerForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const contact = document.getElementById('contact').value;
+      const address = document.getElementById('address').value;
+      const dogs = document.getElementById('dogs').value.split(',').map(id => id.trim());
+
+      const response = await fetch('/owners', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, contact, address, dogs })
+      });
+
+      if (response.ok) {
+        alert('Owner added successfully!');
+      } else {
+        alert('Failed to add owner');
+      }
+    });
+  </script>
+</body>
+</html>
