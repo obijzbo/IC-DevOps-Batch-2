@@ -1,0 +1,11 @@
+Project local dev
+1. Setup front-end and back-end project and db
+2. Run this project without docker
+3. Containerise the apps and db if needed
+4. Setup localdev with hot reloading
+5. Write a wrapper tool with python/bash/any language
+        1. Docker commands. For example
+          docker logs -f <container name>  —> mdt logs service_name
+          docke run -it 80:800 ...         —> mdt run app -p 80
+        docker prune -f                   —> mdt clean <-image or -everything >
+        2. DB data populate and destroy
