@@ -1,0 +1,48 @@
+name: CI and Auto Merge to Dev
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['feature/*']
+
+jobs:
+  lint:
+    uses: ./.github/workflows/lint.yml
+
+  test:
+    uses: ./.github/workflows/test_and_code_quality.yml
+    with:
+      jobs: test
+
+  merge_to_dev:
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAT_TOKEN }}
+          
+      - name: Configure Git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+      
+      - name: Fetch latest changes
+        run: |
+          git fetch origin dev
+          git checkout -B dev origin/dev
+      
+      - name: Attempt to Merge Changes
+        run: |
+          git merge --no-ff "${{ github.ref_name }}" -m "Merge feature branch '${{ github.ref_name }}' into dev" || (
+          echo "Merge failed"
+          echo "Conflict detected. Manual intervention required."
+          git merge --abort
+          exit 1)
+
+      - name: Push changes to dev
+        if: success()
+        run: |
+          git push origin dev

@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  backend-app:
+    image: "${DOCKERHUB_USERNAME}/real-estate-backend"
+    ports:
+      - "4444:8800"
+  
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/
+    depends_on:
+      - backend-app
