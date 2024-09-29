@@ -1,0 +1,19 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+RUN adduser -u 5678 --disabled-password --gecos "" appuser
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN chown -R appuser:appuser /app
+
+USER appuser
+
+EXPOSE 5173
+
+CMD [ "npm","run","dev" ]

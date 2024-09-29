@@ -1,0 +1,114 @@
+name: CI
+
+on:
+    workflow_dispatch:
+    push:
+      branches: [ main, dev, 'feature/*' ]
+    pull_request:
+      branches: [dev]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: |
+          if [ ${{ github.event_name }} == 'pull_request' ]; then
+            # For pull requests, check files changed in the PR
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} -- '*.js' '*.ts' '*.jsx' '*.tsx')
+          else
+            # For pushes, check files changed in the last commit
+            CHANGED_FILES=$(git diff --name-only HEAD^ HEAD -- '*.js' '*.ts' '*.jsx' '*.tsx')
+          fi
+          
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No relevant files changed. Skipping lint."
+            exit 0
+          fi
+          
+          echo "Files to lint:"
+          echo "$CHANGED_FILES"
+          echo "Running ESLint..."
+          npx eslint $CHANGED_FILES
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: 2
+          
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '20'
+        
+        - name: Install dependencies
+          run: npm install
+        
+        - name: Run tests
+          run: npm test
+  
+  sonarcloud:
+    # permissions:
+    #   contents: read
+    #   pull-requests: read
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  merge_to_dev:
+    if: ${{ github.event_name == 'push' && contains(github.ref, 'feature/') }}
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAT_TOKEN }}
+            
+      - name: Configure Git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+        
+      - name: Fetch latest changes
+        run: |
+          git fetch origin dev
+          git checkout -B dev origin/dev
+        
+      - name: Attempt to Merge Changes
+        run: |
+          if git merge --no-ff "${{ github.ref_name }}" -m "Merge feature branch '${{ github.ref_name }}' into dev"; then
+            git push origin dev
+            echo "Merge successful"
+          else
+            echo "Merge failed. Creating a pull request instead."
+            gh pr create --base dev --head "${{ github.ref_name }}" --title "Merge ${{ github.ref_name }} into dev" --body "Automated PR due to merge conflict"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

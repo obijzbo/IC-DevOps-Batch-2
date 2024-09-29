@@ -1,0 +1,30 @@
+FROM node:20-bullseye
+
+# Build arguments (used during build phase)
+# ARG ARG_JWT_SECRET_KEY
+# ARG ARG_DATABASE_URL
+
+# # Set environment variables (used during runtime)
+# ENV NODE_ENV=production
+# ENV DATABASE_URL=${ARG_DATABASE_URL}
+# ENV JWT_SECRET_KEY=${ARG_JWT_SECRET_KEY}
+
+WORKDIR /app
+
+RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
+
+COPY package*.json ./
+
+RUN npm install --production
+
+RUN npm install -g pm2
+
+COPY . .
+
+RUN npx prisma generate
+
+USER appuser
+
+EXPOSE 8800
+
+CMD ["pm2-runtime", "start", "ecosystem.config.cjs"]

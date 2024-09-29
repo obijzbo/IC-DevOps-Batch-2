@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  backend-app:
+    image: real-estate-api
+    build:
+      context: ../Real-estate-api
+    ports:
+      - "9000:8800"
+    volumes:
+      - ../Real-estate-api/:/app
+      - /app/node_modules
+    environment:
+      DATABASE_URL: mongodb://admin:123123@localhost:27017/real_estate_db?authSource=admin
+      JWT_SECRET_KEY: supersecretkey
+
+  frontend:
+    image: real-estate-client
+    build:
+      context: ../real-estate-client/
+      dockerfile: Dockerfile.dev
+    ports:
+      - "1112:5173"
+    volumes:
+      - ../real-estate-client/:/app
+      - /app/node_modules
+
+  mongo-container:
+    image: mongo:latest
+    container_name: mongo-container
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 123123
+      MONGO_INITDB_DATABASE: real_estate_db
+    command: mongod --auth
+
+
+volumes:
+  mongo_data:

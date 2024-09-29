@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  app:
+    image: realestate-client-container
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: production
+    ports:
+      - "3000:3000"
+  
+  unit-test-container:
+    image: unit-test-container
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: unit_test
