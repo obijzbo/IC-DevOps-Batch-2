@@ -1,0 +1,6 @@
+- Create a sub-directory with <your_name>-<your_ID> inside assignment_5
+- Write ansible playbook/ role to install docker on a remote server
+- Write a dockerfile with best practices for any of your project ( personal/ hobby ) , if you don't have any project then look for     boilerplate or project template in github
+- In the readme file describe the process
+- Create a PR
+- Submit the PR link in the classroom
