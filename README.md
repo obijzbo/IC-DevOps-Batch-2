@@ -8,14 +8,14 @@
 <br /><br /><br /><br />
 
 
-## assignment: Git Action Test of Linter and Unit Test
-- Project Name- Test Git Action
-- [Project Link](https://github.com/kamruzzamanripon/test-git-action)
+## assignment: CI/CD project - 1
+- Project -- Ansible playbook/ role to install docker on a remote server
+- [Project Link](https://github.com/kamruzzamanripon/ansible-docker-basic)
+
+- Project Name -- Dockerfile with best practices
+- [Project Link](https://github.com/kamruzzamanripon/laravel-dockerize-2)
 
 
-## Description About This Project
-- This is Laravel Simple App. You can do login, Registration and others.
-- Here i add two yaml file
-- linter.yaml file. This file check linter related all syntex.
-- unit_test.yaml file. This File test laravel several function.
+
+
 
