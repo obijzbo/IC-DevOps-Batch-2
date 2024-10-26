@@ -1,0 +1,132 @@
+# Create a sub-directory with <your_name>-<your_ID> inside assignment_5
+mkdir hello-world-node
+cd hello-world-node
+
+#Write ansible playbook/ role to install docker on a remote server
+
+docker_install.yml:
+
+---
+- name: Install Docker on Remote Server
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install required packages
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+        state: present
+
+    - name: Add Docker's official GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Set up the Docker repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Update the apt package index
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker-ce
+        state: present
+
+    - name: Start and enable Docker service
+      systemd:
+        name: docker
+        enabled: yes
+        state: started
+
+
+
+
+
+#Inventory File Example (inventory.ini):
+[servers]
+server1 ansible_host=192.168.122.184 ansible_user=nafija
+
+
+#Command to Run the Playbook
+ansible-playbook docker_install.yml -i inventory.ini --become --ask-become-pass
+
+
+2 . #- Write a dockerfile with best practices for any of your project ( personal/ hobby ) , if you don't have any project then look for     boilerplate or project template in github
+
+# I am deploying a javascript project with docker 
+# here are my code
+
+npm init -y
+npm install express
+vim index.js
+
+// index.js
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+
+# Dockerfile
+#Next, create a Dockerfile in the same directory.
+
+
+# Use the official Node.js image as a base
+FROM node:16-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json first for better caching
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install --production
+
+# Copy the rest of your application code
+COPY . .
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "index.js"]
+
+
+#.dockerignore
+#It’s also a good idea to create a .dockerignore file to prevent unnecessary files from being included in your Docker image. Create a file named .dockerignore with the following content:
+node_modules
+npm-debug.log
+
+
+#Build and Run the Docker Container
+docker build -t hello-world-node .
+docker run -p 3000:3000 hello-world-node
+
+
+#output
+
+Access the Application
+Open your web browser and navigate to http://localhost:3000. You should see the message "Hello, World!".
+
+
+#Push the image to docker hub registry
+docker login
+docker tag hello-world-node your_username/hello-world-node:latest
+docker push your_username/hello-world-node:latest
+
+
