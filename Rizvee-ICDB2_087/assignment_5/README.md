@@ -1,16 +1,24 @@
-# Ansible Playbook to Setup Dockerfile on Remote Ubuntu Server
+# Ansible Playbook to Install Docker
 
-This repository contains an Ansible playbook that installs Docker on a remote Ubuntu server and creates a Dockerfile for a Python application. The playbook ensures that Docker is installed, the service is running, and a specific directory with a Dockerfile is created.
+This repository contains an Ansible playbook that automates the installation of Docker on a remote server. It ensures that Docker is installed, running, and set to start on boot, along with adding a specified user to the Docker group.
 
 ## Prerequisites
 
 Before you begin, ensure you have the following:
 
 - Ansible installed on your local machine.
-- SSH access to the remote Ubuntu server.
-- The remote server should be running Ubuntu 20.04 (or a compatible version).
+- SSH access to the remote server.
+- The remote server should be running Ubuntu (or any supported Linux distribution).
+- A valid inventory file containing the remote server's hostname or IP address.
 
 ## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/docker-install-playbook.git
+cd docker-install-playbook
+
 
 # Deploying React with Docker: A Complete Guide
 
