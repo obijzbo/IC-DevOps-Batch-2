@@ -1,0 +1,58 @@
+---
+- name: Setup Dockerfile on Remote Ubuntu Server
+  hosts: all
+  become: true
+  tasks:
+  
+    - name: Update apt package index
+      apt:
+        update_cache: yes
+    
+    - name: Install Docker on Ubuntu
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Start and enable Docker service
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Create directory for Dockerfile
+      file:
+        path: /home/ubuntu/docker_project
+        state: directory
+        mode: '0755'
+        owner: ubuntu
+        group: ubuntu
+
+    - name: Create Dockerfile on remote server
+      copy:
+        dest: /home/ubuntu/docker_project/Dockerfile
+        content: |
+          # Use an official Ubuntu as a parent image
+          FROM ubuntu:20.04
+          
+          # Install Python and pip
+          RUN apt-get update && \
+              apt-get install -y python3 python3-pip && \
+              apt-get clean
+          
+          # Set the working directory in the container
+          WORKDIR /app
+          
+          # Copy the current directory contents into the container at /app
+          COPY . /app
+          
+          # Install any Python dependencies
+          RUN pip3 install -r requirements.txt
+          
+          # Make port 80 available to the world outside this container
+          EXPOSE 80
+          
+          # Run app.py when the container launches
+          CMD ["python3", "app.py"]
+      owner: ubuntu
+      group: ubuntu
+      mode: '0644'
