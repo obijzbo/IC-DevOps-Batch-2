@@ -92,7 +92,7 @@ git log
 #### Screenshots:
 ![git commit & check history](https://github.com/riyad20038/IC-DevOps-Batch-2/blob/branch1/assignment_1/Riyad-ICDB2_056/Screenshots/4.git%20commit%20%26%20check%20history.png)
 
-### 12. `git reset --soft HEAD^`
+### 13. `git reset --soft HEAD^`
 **Description**: uncommit in HEAD and keeps changes in the staging area.
 ### **Example**:
 ```bash
@@ -102,7 +102,7 @@ git reset --soft HEAD^
 ![git reset command](https://github.com/riyad20038/IC-DevOps-Batch-2/blob/branch1/assignment_1/Riyad-ICDB2_056/Screenshots/4.1%20git%20reset%20soft.png)
 
 
-### 13. `git reset --hard HEAD^`
+### 14. `git reset --hard HEAD^`
 **Description**: uncommit in HEAD and discards all changes in the staging area and working directory.
 ### **Example**:
 ```bash
@@ -111,13 +111,13 @@ git reset --hard HEAD^
 #### Screenshots:
 ![git reset command](https://github.com/riyad20038/IC-DevOps-Batch-2/blob/branch1/assignment_1/Riyad-ICDB2_056/Screenshots/4.2%20reset%20hard.png)
 
-### 14. `git branch -c <Name>`
+### 15. `git branch -c <Name>`
 **Description**: Create a branch
 ### **Example**:
 ```bash
 git branch -c branch1
 ```
-### 15. `git checkout <Branch_Name>`
+### 16. `git checkout <Branch_Name>`
 **Description**: For Switch  Branch
 ### **Example**:
 ```bash
@@ -125,7 +125,7 @@ git checkout branch1
 ```
 
 
-### 16. `git remote add <remote_name> <remote_url>`
+### 17. `git remote add <remote_name> <remote_url>`
 **Description**: remote (github) add in local repository.
 ### **Example**:
 ```bash
@@ -134,14 +134,14 @@ git remote add origin https://github.com/riyad20038/my-assignment.git
 #### Screenshots:
 ![git reset command](https://github.com/riyad20038/IC-DevOps-Batch-2/blob/branch1/assignment_1/Riyad-ICDB2_056/Screenshots/6.branch%20create%20%2Cswitch%20%26%20remote%20add.png)
 
-### 17. `git push -u origin <master/main/branch_name>`
+### 18. `git push -u origin <master/main/branch_name>`
 **Description**: the command uploads changes from your local branch to a branch in the remote repository.
 ### **Example**:
 ```bash
 git push -u origin branch1
 ```
 
-### 18. `git pull`
+### 19. `git pull`
 **Description**: command fetches changes from a remote repository and merges them into your local branch.
 ### **Example**:
 ```bash
