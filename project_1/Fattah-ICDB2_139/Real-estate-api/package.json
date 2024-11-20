@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.11.0",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "jsonwebtoken": "^9.0.2",
+    "prisma": "^5.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
+    "jsdom": "^25.0.0",
+    "supertest": "^7.0.0",
+    "vitest": "^2.0.5"
+  }
+}

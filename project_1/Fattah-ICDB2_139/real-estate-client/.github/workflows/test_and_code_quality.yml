@@ -1,0 +1,46 @@
+name: Test
+
+on:
+  workflow_call:
+  workflow_dispatch:
+  push:
+    branches: [ main, dev, 'feature/*' ]
+  pull_request:
+    branches: [dev]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: 2
+          
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '20'
+        
+        - name: Install dependencies
+          run: npm install
+        
+        - name: Run tests
+          run: npm test
+  
+  sonarcloud:
+    permissions:
+      contents: read
+      pull-requests: read
+      
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

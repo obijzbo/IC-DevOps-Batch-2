@@ -1,0 +1,58 @@
+name: Build and Deploy
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+  INSTANCE_IP: ${{ secrets.INSTANCE_IP }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # - name: Generate required .env file
+      #   run: |
+      #     echo NODE_ENV=production >> .env
+      #     echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
+      #     echo JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }} >> .env
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ env.DOCKERHUB_USERNAME }}
+          password: ${{ env.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile.production
+          push: true
+          tags: ${{ env.DOCKERHUB_USERNAME }}/real-estate-backend:latest
+
+      - name: Copy docker-compose and nginx files to EC2
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ env.INSTANCE_IP }}
+          username: ec2-user
+          key: ${{ secrets.RSA_KEY_EC2 }}
+          source: "docker-compose.yml,./nginx/"
+          target: "~/"
+      
+      - name: SSH into VM and deploy Docker Image
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.INSTANCE_IP }}
+          username: ec2-user
+          key: ${{ secrets.RSA_KEY_EC2 }}
+          script: |
+            DOCKERHUB_USERNAME=${{ env.DOCKERHUB_USERNAME }} JWT_SECRET_KEY="${{ secrets.JWT_SECRET_KEY }}" DATABASE_URL="${{ secrets.DATABASE_URL }}" NODE_ENV=production docker compose up --pull -d
+            docker image prune -f
