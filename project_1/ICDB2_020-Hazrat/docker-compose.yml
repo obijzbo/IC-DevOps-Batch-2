@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  urban-eats-server:
+    build:
+      context: ./urban-eats-server
+      dockerfile: Dockerfile # Specify the Dockerfile for the server
+    ports:
+      - "5000:5000" # Change as needed
+    environment:
+      - NODE_ENV=production
+      - MONGO_URL=mongodb://mongo:27017/urban-eats
+    depends_on:
+      - mongo
+
+  urban-eats-client:
+    build:
+      context: ./urban-eats-client
+      dockerfile: Dockerfile # Specify the Dockerfile for the client
+    ports:
+      - "5173:5173" # Change as needed
+
+  mongo:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
