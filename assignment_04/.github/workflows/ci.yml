@@ -1,0 +1,95 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Generate required .env file
+        run: |
+          echo DEBUG=True >> .env
+          echo FLASK_DEBUG=1 >> .env
+          echo FLASK_APP=run.py >> .env
+
+      - name: Building containers
+        run: docker-compose build
+
+      - name: Run tests
+        run: docker-compose up unit-test-container
+
+  pylint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10"]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Generate required .env file
+        run: |
+          echo DEBUG=True >> .env
+          echo FLASK_DEBUG=1 >> .env
+          echo FLASK_APP=run.py >> .env
+
+      - name: Building containers
+        run: docker-compose build
+
+      - name: Run tests
+        run: docker-compose up unit-test-container
+
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for better relevancy of analysis
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          projectBaseDir: .
+          args: >
+            -Dsonar.projectKey=Nafija-pinky_assignment_04
+            -Dsonar.organization=nafija-pinky
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  merge:
+    runs-on: ubuntu-latest
+    needs: [build, pylint, sonarcloud]
+    if: success()
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Ensure all branches are fetched
+
+      - name: Set up Git config
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          # Add more Git configuration if needed for merging
