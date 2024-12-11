@@ -8,12 +8,17 @@
 <br /><br /><br /><br />
 
 
-## Assignment 5
-- Project -- Ansible playbook/ role to install docker on a remote server
-- [Project Link](https://github.com/kamruzzamanripon/ansible-docker-basic)
+## Assignment 6 [Kubernetes Assignment]
+- Project -- Kubernetes Assignment - Dockerfile | git action | kubernets
+- [Project Link](https://github.com/kamruzzamanripon/dockerize-two-app)
 
-- Project Name -- Dockerfile with best practices
-- [Project Link](https://github.com/kamruzzamanripon/laravel-dockerize-2)
+
+
+
+
+
+
+
 
 
 
