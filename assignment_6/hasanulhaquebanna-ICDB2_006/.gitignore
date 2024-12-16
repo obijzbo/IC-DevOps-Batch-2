@@ -1,0 +1,46 @@
+# Dependencies
+node_modules
+npm-debug.log
+# Environment variables
+.env
+
+# Build output
+dist
+build
+*.tsbuildinfo
+
+# ditor files
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Docker
+.docker
+docker-compose.override.yml
+
+# Testing
+coverage
+.nyc_output
+
+# Temporary files
+*.tmp
+*.temp
+.cache
+
+# Kubernetes
+kubeconfig
+*.kubeconfig
+
+# Helm
+charts/*.tgz
+.helm
+
+# Operating System
+.DS_Store
+.DS_Store?
